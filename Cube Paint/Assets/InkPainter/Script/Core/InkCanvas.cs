@@ -14,6 +14,8 @@ using UnityEditor.SceneManagement;
 
 namespace Es.InkPainter
 {
+
+	
 	/// <summary>
 	/// Texture paint to canvas.
 	/// To set the per-material.
@@ -22,6 +24,7 @@ namespace Es.InkPainter
 	[DisallowMultipleComponent]
 	public class InkCanvas : MonoBehaviour
 	{
+
 		[Serializable]
 		public class PaintSet
 		{
@@ -258,6 +261,21 @@ namespace Es.InkPainter
 
 		#region UnityEventMethod
 
+		static RenderTexture renderTexture;
+		private int paintCount = 0;
+		public int PaintCount
+		{
+			get { return paintCount; }
+		}
+
+		private float per = 0.0f;
+		public float Per
+		{
+			get { return per; }
+		}
+		private Texture2D newTex;
+
+
 		private void Awake()
 		{
 			if(OnCanvasAttached != null)
@@ -268,13 +286,48 @@ namespace Es.InkPainter
 			MeshDataCache();
 		}
 
+		
 		private void Start()
-		{
-			if(OnInitializedStart != null)
+		{	
+
+			if (OnInitializedStart != null)
 				OnInitializedStart(this);
 			SetRenderTexture();
 			if(OnInitializedAfter != null)
 				OnInitializedAfter(this);
+
+			InkCanvas inkCanvas = gameObject.GetComponent<InkCanvas>();
+			Renderer r = inkCanvas.GetComponent<Renderer>();
+			RenderTexture rt = (RenderTexture)r.sharedMaterial.GetTexture("_MainTex");
+			renderTexture = rt;
+			newTex = new Texture2D(Screen.currentResolution.width, Screen.currentResolution.height, TextureFormat.RGBA32, false);
+
+		}
+
+		private void Update()
+		{
+			var render = GetComponent<Renderer>();
+			var renderTexture = (RenderTexture)render.sharedMaterial.GetTexture("_MainTex");
+			RenderTexture.active = renderTexture;
+			newTex.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
+			newTex.Apply();
+
+			paintCount = 0;
+			for (int y = renderTexture.height / 32 / 2; y < renderTexture.height; y += renderTexture.height / 32)
+			{
+				for (int x = renderTexture.width / 32 / 2; x < renderTexture.width; x += renderTexture.width / 32)
+				{
+					var color = newTex.GetPixel(x, y);
+					if (color != new Color(1, 1, 1, 1))
+						++paintCount;
+				}
+			}
+			per = (paintCount / (32.0f * 32.0f)) * 100;
+			
+			Debug.Log(per);
+			
+			RenderTexture.active = null;
+
 		}
 
 		private void OnDestroy()
@@ -1180,7 +1233,9 @@ namespace Es.InkPainter
 				}
 			}
 
-			private void ChangeValue(int paintSetIndex, string recordName, Action<PaintSet> assign)
+			
+
+				private void ChangeValue(int paintSetIndex, string recordName, Action<PaintSet> assign)
 			{
 				Undo.RecordObjects(targets, "Change " + recordName);
 				foreach(var t in targets.Where(_t => _t is InkCanvas).Select(_t => _t as InkCanvas))
