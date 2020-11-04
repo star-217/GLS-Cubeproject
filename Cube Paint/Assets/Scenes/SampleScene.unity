@@ -121,6 +121,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1230525957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1846125924038906367, guid: ed386ba92b397d14893cf375eb96237f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1899745684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1230525964
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230525957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1899745684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,6 +147,48 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1846125924038906363, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846125924038906364, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: f588ca583b0b9af449806d5f2faa92ee, type: 3}
+    - target: {fileID: 1846125924038906364, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 1985576965111452054, guid: 2e794a2331104664883eb9da029192ed,
+        type: 3}
+    - target: {fileID: 1846125924038906364, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846125924038906364, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846125924038906364, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.b
+      value: 0.11936569
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846125924038906365, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846125924038906366, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 1985576965111452054, guid: 2e794a2331104664883eb9da029192ed,
+        type: 3}
     - target: {fileID: 1846125924733791720, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -187,6 +248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846125925046696452, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: paintSet.Array.data[0].useHeightPaint
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed386ba92b397d14893cf375eb96237f, type: 3}

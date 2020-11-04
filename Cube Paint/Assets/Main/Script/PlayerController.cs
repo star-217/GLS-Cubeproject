@@ -24,22 +24,25 @@ public class PlayerController : MonoBehaviour
     float time = 0;
     float speed = 0;
 
+    
+
     //  private Vector3 screenPoint;
     //private Vector3 offset;
     //private int floarX,floarY;
 
-    
+
     //public GameObject obj;
     //nizigennSc script;
 
-   
 
-    
+
+
 
     // Start is called before the first frame update
     void Start()
     {
        rb = this.GetComponent<Rigidbody>();  // rigidbodyを取得
+       //effect =transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
      
     }
 
@@ -113,11 +116,8 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(explosion.normalized * 100, ForceMode.Impulse);
         }
 
-       
 
        
-        
-
     }
 
 
