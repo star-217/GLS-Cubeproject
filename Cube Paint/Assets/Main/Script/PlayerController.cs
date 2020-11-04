@@ -113,10 +113,6 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(explosion.normalized * 100, ForceMode.Impulse);
         }
 
-       
-
-       
-        
 
     }
 
