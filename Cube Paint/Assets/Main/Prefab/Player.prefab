@@ -123,7 +123,7 @@ MonoBehaviour:
     normalBlendType: 0
     heightBlendType: 0
   wait: 3
-  effect: {fileID: 1985576965111452054, guid: 2e794a2331104664883eb9da029192ed, type: 3}
+  effect: {fileID: 1758814872590016959, guid: 811380154a8d9f048ae8a51f5ec25918, type: 3}
 --- !u!54 &3128935329725473748
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e244f72f74792843acd8645b868f2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 0}
 --- !u!135 &3009802903957059958
 SphereCollider:
   m_ObjectHideFlags: 0
