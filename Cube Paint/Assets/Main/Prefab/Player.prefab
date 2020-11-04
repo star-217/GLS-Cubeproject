@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3128935329725473749}
   - component: {fileID: 3128935329725473748}
   - component: {fileID: 3128935329725473751}
+  - component: {fileID: 3009802903957059958}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -92,7 +93,7 @@ BoxCollider:
   m_GameObject: {fileID: 3128935329725473750}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -109,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brush:
-    brushTexture: {fileID: 2800000, guid: f588ca583b0b9af449806d5f2faa92ee, type: 3}
+    brushTexture: {fileID: 2800000, guid: 861781509e823974283db1660fc2fd7a, type: 3}
     brushNormalTexture: {fileID: 2800000, guid: 945b831b22eb06945bf77e00f16ff51a,
       type: 3}
     brushHeightTexture: {fileID: 0}
@@ -122,6 +123,7 @@ MonoBehaviour:
     normalBlendType: 0
     heightBlendType: 0
   wait: 3
+  effect: {fileID: 1985576965111452054, guid: 2e794a2331104664883eb9da029192ed, type: 3}
 --- !u!54 &3128935329725473748
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,7 +138,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 1
 --- !u!114 &3128935329725473751
 MonoBehaviour:
@@ -150,3 +152,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e244f72f74792843acd8645b868f2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 0}
+--- !u!135 &3009802903957059958
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3128935329725473750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

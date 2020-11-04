@@ -13,6 +13,9 @@ namespace Es.InkPainter.Sample
 
 		private int waitCount;
 
+		[SerializeField]
+		private ParticleSystem effect;
+
 		public void Awake()
 		{
 			GetComponent<MeshRenderer>().material.color = brush.Color;
@@ -34,7 +37,12 @@ namespace Es.InkPainter.Sample
 				var canvas = p.otherCollider.GetComponent<InkCanvas>();
 				if(canvas != null)
 					canvas.Paint(brush, p.point);
+
+				Instantiate(effect, p.point, Quaternion.identity);
 			}
+
+			
+			//Instantiate(effect, collision.transform.position, Quaternion.identity);
 		}
 	}
 }
