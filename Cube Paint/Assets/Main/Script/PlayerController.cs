@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     float dir = 0;
     float time = 0;
     float speed = 0;
-
+    [SerializeField] private float speed_up = 1;
     
 
     //  private Vector3 screenPoint;
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
             //rb.AddForce(force);  // 力を加える
             //rb.AddForce(mouseDirection.x * speed, 3, mouseDirection.z * speed);
             //parentPower.shock(mouseDirection, speed);
-            rb.AddForceAtPosition(new Vector3(mouseDirection.x * speed, 0, mouseDirection.z * speed), transform.position + new Vector3(0.0f, 0.2f, 0.0f));
+            rb.AddForceAtPosition(new Vector3(mouseDirection.x * speed * speed_up, 0, mouseDirection.z * speed*speed_up), transform.position + new Vector3(0.0f, 0.2f, 0.0f));
 
 
         }
