@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3128935329725473750}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &3128935329725473747
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -110,24 +110,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brush:
-    brushTexture: {fileID: 2800000, guid: 861781509e823974283db1660fc2fd7a, type: 3}
+    brushTexture: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
     brushNormalTexture: {fileID: 2800000, guid: 945b831b22eb06945bf77e00f16ff51a,
       type: 3}
     brushHeightTexture: {fileID: 0}
-    brushScale: 0.159
+    brushScale: 0.005
     rotateAngle: 0
-    brushNormalBlend: 0.19
+    brushNormalBlend: 0
     brushHeightBlend: 0
-    brushColor: {r: 0, g: 0.08256912, b: 1, a: 1}
+    brushColor: {r: 1, g: 0.31942484, b: 0.2688679, a: 1}
     colorBlendType: 0
-    normalBlendType: 0
+    normalBlendType: 3
     heightBlendType: 0
   wait: 3
+  effect_length: 0
   effect: {fileID: 1758814872590016959, guid: 811380154a8d9f048ae8a51f5ec25918, type: 3}
+  player_speed: 30
   count: 15
-  intervalSecond: 0.05
-  addScale: 0.0001
-  attenuation: 0.01
+  intervalSecond: 0.01
+  addScale: 0.03
+  attenuation: 0.85
 --- !u!54 &3128935329725473748
 Rigidbody:
   m_ObjectHideFlags: 0

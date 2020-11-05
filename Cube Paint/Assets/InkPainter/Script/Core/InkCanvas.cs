@@ -286,7 +286,7 @@ namespace Es.InkPainter
 			MeshDataCache();
 		}
 
-		
+		RenderTexture main_rendertexture;
 		private void Start()
 		{	
 
@@ -300,28 +300,39 @@ namespace Es.InkPainter
 			Renderer r = inkCanvas.GetComponent<Renderer>();
 			RenderTexture rt = (RenderTexture)r.sharedMaterial.GetTexture("_MainTex");
 			renderTexture = rt;
+			
 			newTex = new Texture2D(Screen.currentResolution.width, Screen.currentResolution.height, TextureFormat.RGBA32, false);
 
 		}
+		private int fps_count;
 
 		private void Update()
 		{
-			var render = GetComponent<Renderer>();
-			var renderTexture = (RenderTexture)render.sharedMaterial.GetTexture("_MainTex");
+			fps_count++;
+			if (fps_count >= 30)
+			{
+			
 			RenderTexture.active = renderTexture;
 			newTex.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
 			newTex.Apply();
 
 			paintCount = 0;
-			for (int y = renderTexture.height / 32 / 2; y < renderTexture.height; y += renderTexture.height / 32)
-			{
-				for (int x = renderTexture.width / 32 / 2; x < renderTexture.width; x += renderTexture.width / 32)
+			
+				for (int y = renderTexture.height / 32 / 2; y < renderTexture.height; y += renderTexture.height / 32)
 				{
-					var color = newTex.GetPixel(x, y);
-					if (color != new Color(1, 1, 1, 1))
-						++paintCount;
+					for (int x = renderTexture.width / 32 / 2; x < renderTexture.width; x += renderTexture.width / 32)
+					{
+						var color = newTex.GetPixel(x, y);
+						if (color != new Color(1, 1, 1, 1))
+							++paintCount;
+					}
 				}
 			}
+
+			if(fps_count >= 30)
+            {
+				fps_count = 0;
+            }
 			per = (paintCount / (32.0f * 32.0f)) * 100;
 			
 			Debug.Log(per);
