@@ -208,6 +208,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1846125924038906364, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: count
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846125924038906364, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: addScale
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846125924038906364, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: attenuation
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846125924038906364, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: intervalSecond
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846125924038906364, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846125924038906364, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846125924038906364, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushNormalBlend
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1846125924733791720, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: m_LocalPosition.x

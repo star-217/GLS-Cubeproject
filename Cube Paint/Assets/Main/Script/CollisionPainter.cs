@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using Es.InkPainter;
+
 
 namespace Es.InkPainter.Sample
 {
@@ -15,6 +18,11 @@ namespace Es.InkPainter.Sample
 
 		[SerializeField]
 		private ParticleSystem effect;
+
+		public int count = 15;// 塗りを行う回数
+		public float intervalSecond = 0.05f;// 塗りを行う隔(秒)
+		public float addScale = 0.01f; //インクが広がる強さ
+		public float attenuation = 0.85f;// インクが広がる強さの減衰率
 
 		public void Awake()
 		{
@@ -39,10 +47,35 @@ namespace Es.InkPainter.Sample
 					canvas.Paint(brush, p.point);
 
 				Instantiate(effect, p.point, Quaternion.identity);
-			}
+				StartCoroutine(HogePaint(canvas, p.point));
 
-			
+
+			}
 			//Instantiate(effect, collision.transform.position, Quaternion.identity);
 		}
-	}
+
+		private IEnumerator HogePaint(InkCanvas canvas, Vector3 contactPoint)
+		{
+			brush = new Brush(this.brush.BrushTexture, this.brush.Scale, this.brush.Color);
+			float addScale = this.addScale;
+			for (int i = 0; i < count; i++)
+			{
+				brush.Scale += addScale;
+				canvas.Paint(brush, contactPoint);
+				yield return new WaitForSeconds(intervalSecond);
+				addScale = attenuation;
+				
+			}
+		}
+
+        private void Update()
+        {
+			if(brush.Scale >= 0.15f)
+            {
+				brush.Scale = 0;
+
+			}
+
+		}
+    }
 }
