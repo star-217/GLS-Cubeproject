@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
             explosion = collision.gameObject.transform.position - transform.position;
             explosion.y = 0;
             //バンパーの跳ね返し 
-            rb.AddForce(explosion.normalized * 100, ForceMode.Impulse);
+            rb.AddForce(explosion.normalized * 300, ForceMode.Impulse);
         }
 
 
