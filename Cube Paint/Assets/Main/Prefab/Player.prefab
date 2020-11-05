@@ -118,7 +118,7 @@ MonoBehaviour:
     rotateAngle: 0
     brushNormalBlend: 0.19
     brushHeightBlend: 0
-    brushColor: {r: 0, g: 0.08256912, b: 1, a: 0.4392157}
+    brushColor: {r: 0, g: 0.08256912, b: 1, a: 1}
     colorBlendType: 0
     normalBlendType: 0
     heightBlendType: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e244f72f74792843acd8645b868f2ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed_up: 3
+  speed_up: 1
 --- !u!135 &3009802903957059958
 SphereCollider:
   m_ObjectHideFlags: 0
