@@ -24,6 +24,8 @@ namespace Es.InkPainter.Sample
 		[SerializeField]
 		private float player_speed;
 
+		[SerializeField] float ink_max = 200;
+		
 		public int count = 15;// 塗りを行う回数
 		public float intervalSecond = 0.05f;// 塗りを行う隔(秒)
 		public float addScale = 0.01f; //インクが広がる強さ
@@ -32,7 +34,7 @@ namespace Es.InkPainter.Sample
 		Rigidbody rigidbody;
 
 
-		Vector3[] vector3;
+		
 		public void Awake()
 		{
 			GetComponent<MeshRenderer>().material.color = brush.Color;
@@ -57,14 +59,19 @@ namespace Es.InkPainter.Sample
 			foreach (var p in collision.contacts)
 			{
 				var canvas = p.otherCollider.GetComponent<InkCanvas>();
+
 				if (canvas != null)
 				{
+					ink_max -= 1;
 					//canvas.Paint(brush, p.point);
-					if(rigidbody.velocity.sqrMagnitude > player_speed* player_speed) 
-					Instantiate(effect, p.point + dir * effect_length, Quaternion.identity);
+					if (ink_max > 0)
+					{
+						if (rigidbody.velocity.sqrMagnitude > player_speed * player_speed)
+							Instantiate(effect, p.point + dir * effect_length, Quaternion.identity);
 
 
-					StartCoroutine(HogePaint(canvas, p.point));
+						StartCoroutine(HogePaint(canvas, p.point));
+					}
 				}
 
 
@@ -89,14 +96,11 @@ namespace Es.InkPainter.Sample
 			}
 		}
 
-        private void Update()
+		private void Update()
         {
-			//if(brush.Scale >= 0.15f)
-   //         {
-			//	brush.Scale = 0;
 
-			//}
+        }
 
-		}
+      
     }
 }
