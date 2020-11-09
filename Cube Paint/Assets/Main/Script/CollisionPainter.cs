@@ -66,10 +66,16 @@ namespace Es.InkPainter.Sample
 					//canvas.Paint(brush, p.point);
 					if (ink_max > 0)
 					{
+						
 						if (rigidbody.velocity.sqrMagnitude > player_speed * player_speed)
 							Instantiate(effect, p.point + dir * effect_length, Quaternion.identity);
 
 
+						StartCoroutine(HogePaint(canvas, p.point));
+					}
+                    else
+                    {
+						brush.Color = new Color(0, 0, 1, 0.01f);
 						StartCoroutine(HogePaint(canvas, p.point));
 					}
 				}
@@ -96,10 +102,7 @@ namespace Es.InkPainter.Sample
 			}
 		}
 
-		private void Update()
-        {
-
-        }
+		
 
       
     }
