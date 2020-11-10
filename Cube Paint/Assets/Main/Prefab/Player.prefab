@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3128935329725473745}
   - component: {fileID: 3128935329725473744}
   - component: {fileID: 3128935329725473747}
-  - component: {fileID: 3128935329725473746}
   - component: {fileID: 3128935329725473749}
   - component: {fileID: 3128935329725473748}
   - component: {fileID: 3128935329725473751}
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3128935329725473746
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3128935329725473750}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3128935329725473749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brush:
-    brushTexture: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
+    brushTexture: {fileID: 2800000, guid: dfdf90c0959e3624abcbc171f6097c03, type: 3}
     brushNormalTexture: {fileID: 2800000, guid: 945b831b22eb06945bf77e00f16ff51a,
       type: 3}
     brushHeightTexture: {fileID: 0}
@@ -126,6 +112,7 @@ MonoBehaviour:
   effect_length: 0
   effect: {fileID: 1758814872590016959, guid: 811380154a8d9f048ae8a51f5ec25918, type: 3}
   player_speed: 30
+  ink_max: 200
   count: 15
   intervalSecond: 0.01
   addScale: 0.03
@@ -166,7 +153,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3128935329725473750}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1f96a5b75c05d9342bf3751e785ec1fa, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

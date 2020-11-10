@@ -25,20 +25,28 @@ namespace Es.InkPainter.Sample
 		private float player_speed;
 
 		[SerializeField] float ink_max = 200;
+		private Color default_color;
 		
 		public int count = 15;// 塗りを行う回数
 		public float intervalSecond = 0.05f;// 塗りを行う隔(秒)
 		public float addScale = 0.01f; //インクが広がる強さ
 		public float attenuation = 0.85f;// インクが広がる強さの減衰率
+		
 
 		Rigidbody rigidbody;
 
 
+		public float Ink_max
+        {
+            get { return ink_max; }
+			set { ink_max = value; }
+        }
 		
 		public void Awake()
 		{
 			GetComponent<MeshRenderer>().material.color = brush.Color;
 			rigidbody =  GetComponent<Rigidbody>();
+			default_color = brush.Color;
 		}
 
 		public void FixedUpdate()
@@ -66,7 +74,7 @@ namespace Es.InkPainter.Sample
 					//canvas.Paint(brush, p.point);
 					if (ink_max > 0)
 					{
-						
+						brush.Color = default_color;
 						if (rigidbody.velocity.sqrMagnitude > player_speed * player_speed)
 							Instantiate(effect, p.point + dir * effect_length, Quaternion.identity);
 
