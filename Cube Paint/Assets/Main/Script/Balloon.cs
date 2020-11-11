@@ -46,7 +46,7 @@ public class Balloon : MonoBehaviour
             gameObject.GetComponent<SphereCollider>().enabled = false;
             gameObject.GetComponent<MeshRenderer>().enabled = false;
 
-            collisionPainter.Ink_max += 200;
+            collisionPainter.Ink += 200;
 
         }
     }

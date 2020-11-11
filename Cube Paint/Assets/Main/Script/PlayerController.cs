@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
                 this.screenPoint = Input.mousePosition;
                 this.startPos = Input.mousePosition;
                 this.time = 0;
-                
+            
             }
 
             //スワイプ中の時間を取得する
@@ -71,7 +71,8 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetMouseButtonUp(0))
             {
-                force = new Vector3(mouseDirection.x, mouseDirection.y, mouseDirection.z);
+            rb.velocity = Vector3.zero;
+            force = new Vector3(mouseDirection.x, mouseDirection.y, mouseDirection.z);
                
 
                 this.endPos = Input.mousePosition;

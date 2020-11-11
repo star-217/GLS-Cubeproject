@@ -24,7 +24,8 @@ namespace Es.InkPainter.Sample
 		[SerializeField]
 		private float player_speed;
 
-		[SerializeField] float ink_max = 200;
+		[SerializeField] float ink_max = 50;
+		[SerializeField] float ink = 50;
 		private Color default_color;
 		
 		public int count = 15;// 塗りを行う回数
@@ -39,12 +40,18 @@ namespace Es.InkPainter.Sample
 		public float Ink_max
         {
             get { return ink_max; }
-			set { ink_max = value; }
+			
         }
-		
+		public float Ink
+		{
+			get { return ink; }
+			set { ink = value; }
+			
+		}
+
 		public void Awake()
 		{
-			GetComponent<MeshRenderer>().material.color = brush.Color;
+			//GetComponent<MeshRenderer>().material.color = brush.Color;
 			rigidbody =  GetComponent<Rigidbody>();
 			default_color = brush.Color;
 		}
@@ -70,9 +77,10 @@ namespace Es.InkPainter.Sample
 
 				if (canvas != null)
 				{
-					ink_max -= 1;
+					
+					ink -= 1;
 					//canvas.Paint(brush, p.point);
-					if (ink_max > 0)
+					if (ink > 0)
 					{
 						brush.Color = default_color;
 						if (rigidbody.velocity.sqrMagnitude > player_speed * player_speed)
