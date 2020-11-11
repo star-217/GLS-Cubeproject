@@ -47,6 +47,7 @@ public class Balloon : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().enabled = false;
 
             collisionPainter.Ink += 200;
+            player.transform.localScale += new Vector3(1, 1, 1);
 
         }
     }

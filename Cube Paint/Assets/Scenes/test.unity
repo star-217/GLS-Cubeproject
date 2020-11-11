@@ -121,47 +121,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &413344776 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5792332370148550591, guid: ed386ba92b397d14893cf375eb96237f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1163449608}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &413344778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413344776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30cf2aa18d4c66a4ea9b9bf41044c319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particle: {fileID: 5026318265150862923, guid: b3dfa0551979f874dbc3adc89a55dfb0,
-    type: 3}
---- !u!1 &1064916710 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5792332368762116134, guid: ed386ba92b397d14893cf375eb96237f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1163449608}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1064916712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064916710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30cf2aa18d4c66a4ea9b9bf41044c319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particle: {fileID: 5026318265150862923, guid: b3dfa0551979f874dbc3adc89a55dfb0,
-    type: 3}
---- !u!1001 &1163449608
+--- !u!1001 &1718715912
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -228,65 +188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1846125924038906366, guid: ed386ba92b397d14893cf375eb96237f, type: 3}
+    - target: {fileID: 5568685111361641451, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed386ba92b397d14893cf375eb96237f, type: 3}
---- !u!1 &1385836682 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5792332370096256163, guid: ed386ba92b397d14893cf375eb96237f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1163449608}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1385836684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385836682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30cf2aa18d4c66a4ea9b9bf41044c319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particle: {fileID: 5026318265150862923, guid: b3dfa0551979f874dbc3adc89a55dfb0,
-    type: 3}
---- !u!1 &2000510370 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5792332368969620267, guid: ed386ba92b397d14893cf375eb96237f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1163449608}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2000510372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000510370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30cf2aa18d4c66a4ea9b9bf41044c319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particle: {fileID: 5026318265150862923, guid: b3dfa0551979f874dbc3adc89a55dfb0,
-    type: 3}
---- !u!1 &2134589190 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1846125924038906367, guid: ed386ba92b397d14893cf375eb96237f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1163449608}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2134589192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2134589190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06b5a2ab371e00c4bb8dcdaabc6df47d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed_up: 5

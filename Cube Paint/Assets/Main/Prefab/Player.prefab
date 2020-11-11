@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3128935329725473750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 2.01}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   effect: {fileID: 1758814872590016959, guid: 811380154a8d9f048ae8a51f5ec25918, type: 3}
   player_speed: 30
   ink_max: 200
+  ink: 450
   count: 15
   intervalSecond: 0.01
   addScale: 0.03

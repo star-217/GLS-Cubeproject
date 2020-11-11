@@ -12,6 +12,7 @@ public class Inkdrein : MonoBehaviour
     private Material sponge_material;
     private Material player_material;
     private Color player_color;
+    bool full_flag = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,13 +32,16 @@ public class Inkdrein : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (full_flag == false)
         {
-            collisionPainter.Ink = 0;
-            sponge_material.SetColor("_BaseColor", player_color);
-            player_material.SetColor("_BaseColor",Color.white);   
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                collisionPainter.Ink = 0;
+                sponge_material.SetColor("_BaseColor", player_color);
+                player_material.SetColor("_BaseColor", Color.white);
+                full_flag = true;
 
-
+            }
         }
     }
 }
