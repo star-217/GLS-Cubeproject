@@ -15,7 +15,7 @@ public class wall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.z > 0)
+        if (player.transform.position.z > gameObject.transform.position.z)
             col.isTrigger = false;
         else
             col.isTrigger = true;

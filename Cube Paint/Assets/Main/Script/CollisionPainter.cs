@@ -24,8 +24,8 @@ namespace Es.InkPainter.Sample
 		[SerializeField]
 		private float player_speed;
 
-		[SerializeField] float ink_max = 50;
-		[SerializeField] float ink = 50;
+		public float ink_max = 100;
+		public float ink = 100;
 		private Color default_color;
 		
 		public int count = 15;// 塗りを行う回数
@@ -89,11 +89,11 @@ namespace Es.InkPainter.Sample
 
 						StartCoroutine(HogePaint(canvas, p.point));
 					}
-                    else
-                    {
-						brush.Color = new Color(0, 0, 1, 0.01f);
-						StartCoroutine(HogePaint(canvas, p.point));
-					}
+     //               else
+     //               {
+					//	brush.Color = new Color(0, 0, 1, 0.01f);
+					//	StartCoroutine(HogePaint(canvas, p.point));
+					//}
 				}
 
 

@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.9716981, b: 0.3667519, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d8819808565b84b87c777aee72e672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gauge: {fileID: 0}
+  gauge: {fileID: 6911555336638780494}
   player: {fileID: 0}
 --- !u!1 &8340461089470750762
 GameObject:

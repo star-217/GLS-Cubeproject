@@ -13,7 +13,7 @@ public class Balloon : MonoBehaviour
     private ParticleSystem particle2;
 
     private CollisionPainter collisionPainter;
-    [SerializeField] private GameObject player;
+    private GameObject player;
 
   
     // Start is called before the first frame update
@@ -21,6 +21,7 @@ public class Balloon : MonoBehaviour
     {
        // obj = GameObject.Find("percent");
         particle = new ParticleSystem[transform.childCount];
+        player = GameObject.FindGameObjectWithTag("Player");
         for (int i = 0; i< particle.Length; i++) 
         particle[i] = transform.GetChild(i).gameObject.GetComponent<ParticleSystem>();
         collisionPainter = player.GetComponent<CollisionPainter>();
@@ -46,7 +47,8 @@ public class Balloon : MonoBehaviour
             gameObject.GetComponent<SphereCollider>().enabled = false;
             gameObject.GetComponent<MeshRenderer>().enabled = false;
 
-            collisionPainter.Ink += 200;
+            collisionPainter.Ink = collisionPainter.Ink_max;
+            
             player.transform.localScale += new Vector3(1, 1, 1);
 
         }

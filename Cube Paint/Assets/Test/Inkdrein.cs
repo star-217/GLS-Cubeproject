@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Inkdrein : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    private GameObject player;
     private CollisionPainter collisionPainter;
     private MeshRenderer sponge_mesh;
     private MeshRenderer player_mesh;
@@ -16,6 +16,7 @@ public class Inkdrein : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         collisionPainter = player.GetComponent<CollisionPainter>();
         sponge_mesh = GetComponent<MeshRenderer>();
         sponge_material = sponge_mesh.material;
@@ -36,7 +37,7 @@ public class Inkdrein : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                collisionPainter.Ink = 0;
+                collisionPainter.Ink -= collisionPainter.Ink_max * 0.3f;
                 sponge_material.SetColor("_BaseColor", player_color);
                 player_material.SetColor("_BaseColor", Color.white);
                 full_flag = true;

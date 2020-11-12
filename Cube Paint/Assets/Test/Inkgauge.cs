@@ -18,8 +18,9 @@ public class Inkgauge : MonoBehaviour
         gaugeAnimation_control = false;
         gauge_animation = 0.001f;
         gauge.fillAmount = 1;
+        player = GameObject.FindGameObjectWithTag("Player");
         collisionPainter = player.GetComponent<CollisionPainter>();
-
+        
     }
 
     // Update is called once per frame

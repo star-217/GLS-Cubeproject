@@ -24,7 +24,9 @@ public class PlayerController : MonoBehaviour
     float time = 0;
     float speed = 0;
     [SerializeField] private float speed_up = 1;
-    
+    MeshRenderer player_meshRenderer;
+    Material player_material;
+    Color player_color;
 
     //  private Vector3 screenPoint;
     //private Vector3 offset;
@@ -41,8 +43,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       rb = this.GetComponent<Rigidbody>();  // rigidbodyを取得
-       //effect =transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
+        rb = this.GetComponent<Rigidbody>();  // rigidbodyを取得
+        player_meshRenderer = GetComponent<MeshRenderer>();
+        player_material = player_meshRenderer.material;
+        player_color = player_material.color;
+       
      
     }
 
@@ -119,6 +124,12 @@ public class PlayerController : MonoBehaviour
 
 
        
+    }
+
+   private void ColorController()
+    {
+        //player_material.SetColor("_BaseColor",)
+
     }
 
 

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GaugeBOXScript : MonoBehaviour
 {
-    public GameObject inkCanvas_obj;
+    private GameObject inkCanvas_obj;
     private InkCanvas inkCanvas;
 
     [Header("ImageGaugeを入れる")]
@@ -18,6 +18,7 @@ public class GaugeBOXScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        inkCanvas_obj = GameObject.FindGameObjectWithTag("Floor");
         gaugeAnimation_control = false;
         gauge_animation = 0.001f;
         cooldown.fillAmount = 0;
