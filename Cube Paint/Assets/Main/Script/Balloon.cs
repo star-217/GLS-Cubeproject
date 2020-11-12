@@ -14,8 +14,9 @@ public class Balloon : MonoBehaviour
 
     private CollisionPainter collisionPainter;
     private GameObject player;
+    private Material player_material;
+    private Color player_color;
 
-  
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +26,8 @@ public class Balloon : MonoBehaviour
         for (int i = 0; i< particle.Length; i++) 
         particle[i] = transform.GetChild(i).gameObject.GetComponent<ParticleSystem>();
         collisionPainter = player.GetComponent<CollisionPainter>();
-
-
+        player_material = player.GetComponent<MeshRenderer>().material;
+        player_color = player_material.GetColor("_BaseColor");
     }
 
     // Update is called once per frame
@@ -50,7 +51,9 @@ public class Balloon : MonoBehaviour
             collisionPainter.Ink = collisionPainter.Ink_max;
             
             player.transform.localScale += new Vector3(1, 1, 1);
-
+            player_material.SetColor("_BaseColor", player_color);
+            player_material.SetColor("_1st_ShadeColor", player_color);
+            
         }
     }
 

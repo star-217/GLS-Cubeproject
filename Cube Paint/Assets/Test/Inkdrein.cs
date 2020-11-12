@@ -39,7 +39,9 @@ public class Inkdrein : MonoBehaviour
             {
                 collisionPainter.Ink -= collisionPainter.Ink_max * 0.3f;
                 sponge_material.SetColor("_BaseColor", player_color);
+                sponge_material.SetColor("_1st_ShadeColor", player_color);
                 player_material.SetColor("_BaseColor", Color.white);
+                player_material.SetColor("_1st_ShadeColor", Color.white);
                 full_flag = true;
 
             }
