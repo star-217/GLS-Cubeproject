@@ -807,6 +807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8340461089487669528}
+  - component: {fileID: 4109145206127502477}
   m_Layer: 0
   m_Name: GaugeBOX
   m_TagString: Untagged
@@ -830,6 +831,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4109145206127502477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8340461089487669535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a94046d24b1ceec48ad0e6d78a2ca9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PercentageGauge_Object: {fileID: 8340461089888821513}
+  InkRemnantGauge_Object: {fileID: 5441250332632865864}
+  Title_Object: {fileID: 6173362745016186883}
+  TapToStart_Object: {fileID: 4429976849167636598}
+  Shop_Object: {fileID: 862827753420403164}
 --- !u!1 &8340461089501426281
 GameObject:
   m_ObjectHideFlags: 0

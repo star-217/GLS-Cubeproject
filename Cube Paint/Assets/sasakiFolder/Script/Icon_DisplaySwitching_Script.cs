@@ -36,6 +36,8 @@ public class Icon_DisplaySwitching_Script : MonoBehaviour
                     switching = true;
                     Shop_Object.SetActive(false);
                     //Configuration_Object.SetActive(false);
+
+                  
                 }
             }
         }
