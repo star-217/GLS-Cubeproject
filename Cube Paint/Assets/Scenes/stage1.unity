@@ -387,60 +387,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1373988388875001338, guid: fd12750030232b648b5af8b5707f15c2,
-        type: 3}
-      propertyPath: m_FillAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722476977584748663, guid: fd12750030232b648b5af8b5707f15c2,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722476977584748663, guid: fd12750030232b648b5af8b5707f15c2,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722476977584748663, guid: fd12750030232b648b5af8b5707f15c2,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722476977584748663, guid: fd12750030232b648b5af8b5707f15c2,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722476977584748663, guid: fd12750030232b648b5af8b5707f15c2,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -74
-      objectReference: {fileID: 0}
-    - target: {fileID: 1722476977584748663, guid: fd12750030232b648b5af8b5707f15c2,
+    - target: {fileID: 1885009605159408909, guid: fd12750030232b648b5af8b5707f15c2,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -68
-      objectReference: {fileID: 0}
-    - target: {fileID: 5257623272956830967, guid: fd12750030232b648b5af8b5707f15c2,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 1
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 5441250332632865864, guid: fd12750030232b648b5af8b5707f15c2,
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6347727416896962355, guid: fd12750030232b648b5af8b5707f15c2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6378551750934319710, guid: fd12750030232b648b5af8b5707f15c2,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -318
       objectReference: {fileID: 0}
     - target: {fileID: 8340461089487669528, guid: fd12750030232b648b5af8b5707f15c2,
         type: 3}
@@ -507,11 +462,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8340461089888821515, guid: fd12750030232b648b5af8b5707f15c2,
-        type: 3}
-      propertyPath: inkCanvas_obj
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd12750030232b648b5af8b5707f15c2, type: 3}
 --- !u!1 &1253219396 stripped
@@ -520,44 +470,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1245685649}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1253219401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253219396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1128135aad679843948fb482d757837, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!61 &1253219402
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253219396}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 250, y: 250}
-  m_EdgeRadius: 0
 --- !u!1 &1523996568 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4429976849167636598, guid: fd12750030232b648b5af8b5707f15c2,

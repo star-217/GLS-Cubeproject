@@ -16,14 +16,17 @@ public class nyokiScript : MonoBehaviour
     [SerializeField]
     RectTransform rectTran;
 
-    private bool swithi = false;
+    Button option_button;
+
+    private bool switch_option = false;
 
     // Start is called before the first frame update
     void Start()
     {
         //gauge_animation = 0.1f;
         //cooldown.fillAmount = 0;
-
+        option_button = GetComponent<Button>();
+        option_button.onClick.AddListener(OptionClick);
        
     }
 
@@ -32,9 +35,7 @@ public class nyokiScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            rectTran.DOScaleY(
-            3.0f,  //拡大後の座標
-            1.0f);
+            
 
         
 
@@ -47,6 +48,21 @@ public class nyokiScript : MonoBehaviour
         }
 
         //StartCoroutine("Option");
+    }
+
+    void OptionClick() 
+    {
+        if (switch_option == false)
+        {
+            rectTran.DOScaleY(4.0f, 0.3f);
+            switch_option = true;
+        }
+        else
+        {
+            rectTran.DOScaleY(0.0f, 0.3f);
+            switch_option = false;
+        }
+
     }
 
     //IEnumerator Option()
