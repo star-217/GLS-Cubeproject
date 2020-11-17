@@ -20,7 +20,12 @@ public class PlayerController : MonoBehaviour
 
     Vector3 startPos; //タップした場所を記録
     Vector3 endPos;　//指を離した場所を記録
-    float dir = 0;
+    private float dir = 0;
+    public float Dir
+    {
+        get { return dir; }
+    }
+
     float time = 0;
     float speed = 0;
     [SerializeField] private float speed_up = 1;
@@ -74,8 +79,8 @@ public class PlayerController : MonoBehaviour
                 this.time += Time.deltaTime;
             }
 
-            if (Input.GetMouseButtonUp(0))
-            {
+          if (Input.GetMouseButtonUp(0))
+          {
             rb.velocity = Vector3.zero;
             force = new Vector3(mouseDirection.x, mouseDirection.y, mouseDirection.z);
                
@@ -85,21 +90,24 @@ public class PlayerController : MonoBehaviour
 
                 //スワイプした距離を取得する
                 this.dir = Mathf.Abs(Vector3.Distance(this.startPos, this.endPos));
+               Debug.Log(dir);
 
                 //速度を計算する
                 this.speed = (this.dir / this.time);
 
-                
-                //if(speed > 2000)
-                //    speed = 2000;
 
-            //rb.AddForce(force);  // 力を加える
-            //rb.AddForce(mouseDirection.x * speed, 3, mouseDirection.z * speed);
-            //parentPower.shock(mouseDirection, speed);
-            rb.AddForceAtPosition(new Vector3(mouseDirection.x * speed * speed_up, 0, mouseDirection.z * speed*speed_up), transform.position + new Vector3(0.0f, 0.2f, 0.0f));
+            //if(speed > 2000)
+            //    speed = 2000;
 
+            if (dir >= 200.0f)
+            {
+                //rb.AddForce(force);  // 力を加える
+                //rb.AddForce(mouseDirection.x * speed, 3, mouseDirection.z * speed);
+                //parentPower.shock(mouseDirection, speed);
+                rb.AddForceAtPosition(new Vector3(mouseDirection.x * speed * speed_up, 0, mouseDirection.z * speed * speed_up), transform.position + new Vector3(0.0f, 0.2f, 0.0f));
+            }
 
-        }
+          }
 
        // rb.velocity = new Vector3(0, 2, 0);
        // rb.AddForce(new Vector3(0, - 9.81f, 0));

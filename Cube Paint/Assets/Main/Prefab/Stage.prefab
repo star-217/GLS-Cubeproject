@@ -360,6 +360,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b2a83d121a92cf42b399e2ae4248037, type: 3}
+--- !u!1 &1846125925046696453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 951293787206880245, guid: 2b2a83d121a92cf42b399e2ae4248037,
+    type: 3}
+  m_PrefabInstance: {fileID: 1489967000008307184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1846125925046696448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 951293787206880240, guid: 2b2a83d121a92cf42b399e2ae4248037,
@@ -503,6 +509,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3128935329725473749, guid: 898c0b64afe23a848ace49c4836486e5,
+        type: 3}
+      propertyPath: inkCanvas_obj
+      value: 
+      objectReference: {fileID: 1846125925046696453}
+    - target: {fileID: 3128935329725473749, guid: 898c0b64afe23a848ace49c4836486e5,
+        type: 3}
+      propertyPath: playerController_obj
+      value: 
+      objectReference: {fileID: 1846125924038906367}
     - target: {fileID: 3128935329725473750, guid: 898c0b64afe23a848ace49c4836486e5,
         type: 3}
       propertyPath: m_Name

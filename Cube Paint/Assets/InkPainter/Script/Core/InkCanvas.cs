@@ -275,6 +275,12 @@ namespace Es.InkPainter
 		}
 		private Texture2D newTex;
 
+		private bool paintSwitching = false;
+		public bool  PaintSwitching
+        {
+			get { return paintSwitching; }
+        }
+		
 
 		private void Awake()
 		{
@@ -308,36 +314,47 @@ namespace Es.InkPainter
 
 		private void Update()
 		{
-			fps_count++;
-			if (fps_count >= 30)
+			if (!paintSwitching)
 			{
-			
-			RenderTexture.active = renderTexture;
-			newTex.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
-			newTex.Apply();
-
-			paintCount = 0;
-			
-				for (int y = renderTexture.height / 32 / 2; y < renderTexture.height; y += renderTexture.height / 32)
+				if (Input.GetMouseButtonDown(0))
 				{
-					for (int x = renderTexture.width / 32 / 2; x < renderTexture.width; x += renderTexture.width / 32)
+					paintSwitching = true;
+				}
+		    }
+
+			if (paintSwitching)
+			{
+				fps_count++;
+				if (fps_count >= 30)
+				{
+
+					RenderTexture.active = renderTexture;
+					newTex.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
+					newTex.Apply();
+
+					paintCount = 0;
+
+					for (int y = renderTexture.height / 32 / 2; y < renderTexture.height; y += renderTexture.height / 32)
 					{
-						var color = newTex.GetPixel(x, y);
-						if (color != new Color(1, 1, 1, 1))
-							++paintCount;
+						for (int x = renderTexture.width / 32 / 2; x < renderTexture.width; x += renderTexture.width / 32)
+						{
+							var color = newTex.GetPixel(x, y);
+							if (color != new Color(1, 1, 1, 1))
+								++paintCount;
+						}
 					}
 				}
-			}
 
-			if(fps_count >= 30)
-            {
-				fps_count = 0;
-            }
-			per = (paintCount / (32.0f * 32.0f)) * 100;
-			
-			Debug.Log(per);
-			
-			RenderTexture.active = null;
+				if (fps_count >= 30)
+				{
+					fps_count = 0;
+				}
+				per = (paintCount / (32.0f * 32.0f)) * 100;
+
+				//Debug.Log(per);
+
+				RenderTexture.active = null;
+			}
 
 		}
 
