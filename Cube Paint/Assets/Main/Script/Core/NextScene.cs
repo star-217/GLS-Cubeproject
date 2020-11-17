@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
-     public Button testButton;
-    [SerializeField] private int stage = 1;
-
+    Button testButton;
+    public static int stage = 1;
     //public int Stage
     //{
     //    get { return stage; }
@@ -20,6 +19,8 @@ public class NextScene : MonoBehaviour
     {
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(OnclickScene);
+        PlayerPrefs.SetInt("stage", stage);
+        //stage = PlayerPrefs.GetInt("stage", stage);
     }
 
     // Update is called once per frame
@@ -31,7 +32,13 @@ public class NextScene : MonoBehaviour
 
     void OnclickScene()
     {
+      
         stage += 1;
+        if (stage > 8)
+        {
+            stage = 1;
+        }
+
         SceneManager.LoadScene("stage"+ stage);
     }
 }

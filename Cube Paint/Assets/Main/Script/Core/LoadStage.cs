@@ -15,7 +15,7 @@ public class LoadStage : MonoBehaviour
         stage = PlayerPrefs.GetInt("stage");
         if (PlayerPrefs.GetInt("stage") == 0)
             stage = 1;
-        
+        SceneManager.LoadScene(stage);
 
     }
 
