@@ -24,8 +24,8 @@ namespace Es.InkPainter.Sample
 		[SerializeField]
 		private float player_speed;
 
-		public float ink_max = 100;
-		public float ink = 100;
+		[SerializeField] private float ink_max = 100;
+		[SerializeField] private float ink = 100;
 		private Color default_color;
 		
 		public int count = 15;// 塗りを行う回数

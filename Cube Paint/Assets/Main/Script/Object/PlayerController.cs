@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Es.InkPainter;
 using UnityEngine.SceneManagement;
+using Es.InkPainter.Sample;
 
 public struct mVector
 {
@@ -31,21 +32,18 @@ public class PlayerController : MonoBehaviour
     float time = 0;
     float speed = 0;
     [SerializeField] private float speed_up = 1;
-    MeshRenderer player_meshRenderer;
-    Material player_material;
-    Color player_color;
+   
+   
 
     InkCanvas inkCanvas;
     GameObject floor;
     float defaultscale;
 
-    //  private Vector3 screenPoint;
-    //private Vector3 offset;
-    //private int floarX,floarY;
-
-
-    //public GameObject obj;
-    //nizigennSc script;
+    //プレイヤーのインク
+    CollisionPainter collisionPainter;
+    Color player_color;
+    Color player_color2;
+    float white;
 
 
 
@@ -55,14 +53,14 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();  // rigidbodyを取得
-        player_meshRenderer = GetComponent<MeshRenderer>();
         //for (int i = 0; i < particle.Length; i++)
         //    particle[i] = transform.GetChild(i).gameObject.GetComponent<ParticleSystem>();
-        player_material = player_meshRenderer.material;
-        player_color = player_material.color;
         floor = GameObject.FindGameObjectWithTag("Floor");
         inkCanvas = floor.GetComponent<InkCanvas>();
         defaultscale = gameObject.transform.localScale.x;
+        collisionPainter = GetComponent<CollisionPainter>();
+        player_color = GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
+        player_color2 = GetComponent<MeshRenderer>().material.GetColor("_1st_ShadeColor");
     }
 
    
@@ -70,7 +68,26 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if (inkCanvas.Per < 75) {
+        PlayerFlick();
+
+        ColorController();
+        //if (defaultscale + 5 < gameObject.transform.localScale.x)
+        //{
+
+        //    //for (int i = 0; i < transform.childCount; i++)
+        //    //    particle[i].Play();
+        //}
+
+
+
+
+
+    }
+
+    void PlayerFlick()
+    {
+        if (inkCanvas.Per < 75)
+        {
             mouseDirection = (Input.mousePosition - this.screenPoint);
             mouseDirection.z = mouseDirection.y;
             mouseDirection.y = 0;
@@ -127,25 +144,29 @@ public class PlayerController : MonoBehaviour
             {
                 gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
             }
-          
 
-        }
-        if (defaultscale + 5 < gameObject.transform.localScale.x)
-        {
 
-            //for (int i = 0; i < transform.childCount; i++)
-            //    particle[i].Play();
         }
 
 
-
-
-        // rb.velocity = new Vector3(0, 2, 0);
-        // rb.AddForce(new Vector3(0, - 9.81f, 0));
-        //int idx = (int)(pos.x * 18.0f / 60.0f);
-        //int idy = (int)(pos.z * 30.0f / 100.0f);
-        //script.data2d[idy, idx] = true;
     }
+
+
+    void ColorController()
+    {
+        if ((collisionPainter.Ink / collisionPainter.Ink_max < 0.3))
+            white = 1.0f;
+        else if ((collisionPainter.Ink / collisionPainter.Ink_max < 0.5))
+            white = 0.7f;
+        else if ((collisionPainter.Ink / collisionPainter.Ink_max < 0.7))
+            white = 0.4f;
+
+
+        GetComponent<MeshRenderer>().material.SetColor("_BaseColor", player_color * (1.0f - white) + Color.white * white);
+        GetComponent<MeshRenderer>().material.SetColor("_1st_ShadeColor", player_color2 * (1.0f - white) + Color.white * white);
+    }
+
+ 
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -165,11 +186,7 @@ public class PlayerController : MonoBehaviour
        
     }
 
-   private void ColorController()
-    {
-        //player_material.SetColor("_BaseColor",)
-
-    }
+  
 
 
 

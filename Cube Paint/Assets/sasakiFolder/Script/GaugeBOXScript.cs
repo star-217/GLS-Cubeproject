@@ -20,7 +20,7 @@ public class GaugeBOXScript : MonoBehaviour
     {
         inkCanvas_obj = GameObject.FindGameObjectWithTag("Floor");
         gaugeAnimation_control = false;
-        gauge_animation = 0.001f;
+        gauge_animation = 0.01f;
         cooldown.fillAmount = 0;
         inkCanvas = inkCanvas_obj.GetComponent<InkCanvas>();
     }
