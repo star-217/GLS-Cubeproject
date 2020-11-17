@@ -154,6 +154,8 @@ namespace Es.InkPainter
 			#endregion Constractor
 		}
 
+
+
 		private static Material paintMainMaterial = null;
 		private static Material paintNormalMaterial = null;
 		private static Material paintHeightMaterial = null;

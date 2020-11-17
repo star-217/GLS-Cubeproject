@@ -118,6 +118,8 @@ MonoBehaviour:
   intervalSecond: 0.01
   addScale: 0.03
   attenuation: 0.85
+  inkCanvas_obj: {fileID: 0}
+  playerController_obj: {fileID: 0}
 --- !u!54 &3128935329725473748
 Rigidbody:
   m_ObjectHideFlags: 0
