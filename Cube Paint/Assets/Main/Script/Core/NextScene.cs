@@ -6,7 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
-    Button testButton;
+     public Button testButton;
+    [SerializeField] private int stage = 1;
+
+    //public int Stage
+    //{
+    //    get { return stage; }
+    //    set { stage = value; }
+    //}
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +31,7 @@ public class NextScene : MonoBehaviour
 
     void OnclickScene()
     {
-        SceneManager.LoadScene("stage2");
+        stage += 1;
+        SceneManager.LoadScene("stage"+ stage);
     }
 }

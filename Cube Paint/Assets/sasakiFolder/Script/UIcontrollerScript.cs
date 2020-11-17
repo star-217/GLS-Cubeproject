@@ -20,10 +20,13 @@ public class UIcontrollerScript : MonoBehaviour
     [Header("ショップを入れる")]
     public GameObject Shop_Object;
 
+    [SerializeField] private GameObject result;
+
    
     // Start is called before the first frame update
     void Start()
     {
+        result.SetActive(false);
         PercentageGauge_Object.SetActive(false);
         InkRemnantGauge_Object.SetActive(false);
     }

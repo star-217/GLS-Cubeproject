@@ -7,6 +7,8 @@ TagManager:
   - Bumper
   - Wall
   - Floor
+  - Result
+  - Next
   layers:
   - Default
   - TransparentFX

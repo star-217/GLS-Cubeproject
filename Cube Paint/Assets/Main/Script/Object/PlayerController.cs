@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
     Color player_color2;
     float white;
 
+    [SerializeField] GameObject next;
+
 
 
 
@@ -61,6 +63,8 @@ public class PlayerController : MonoBehaviour
         collisionPainter = GetComponent<CollisionPainter>();
         player_color = GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         player_color2 = GetComponent<MeshRenderer>().material.GetColor("_1st_ShadeColor");
+        //next = GameObject.FindGameObjectWithTag("Result");
+        
     }
 
    
@@ -140,11 +144,12 @@ public class PlayerController : MonoBehaviour
         else
         {
             rb.velocity = Vector3.zero;
-            if (defaultscale + 6 > gameObject.transform.localScale.x)
-            {
-                gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
-            }
+            //if (defaultscale + 6 > gameObject.transform.localScale.x)
+            //{
+            //    gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+            //}
 
+            next.SetActive(true);
 
         }
 
