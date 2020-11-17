@@ -33,8 +33,13 @@ namespace Es.InkPainter.Sample
 		public float addScale = 0.01f; //インクが広がる強さ
 		public float attenuation = 0.85f;// インクが広がる強さの減衰率
 		
-
 		Rigidbody rigidbody;
+
+		public GameObject inkCanvas_obj;
+		private InkCanvas inkCanvas;
+
+		public GameObject playerController_obj;
+		private PlayerController playerController;
 
 
 		public float Ink_max
@@ -47,6 +52,12 @@ namespace Es.InkPainter.Sample
 			get { return ink; }
 			set { ink = value; }
 			
+		}
+
+		void Start()
+		{
+			inkCanvas = inkCanvas_obj.GetComponent<InkCanvas>();
+			playerController = playerController_obj.GetComponent<PlayerController>();
 		}
 
 		public void Awake()
@@ -63,43 +74,43 @@ namespace Es.InkPainter.Sample
 
 		public void OnCollisionStay(Collision collision)
 		{
-
-		    
-
-			if(waitCount < wait)
-				return;
-			waitCount = 0;
-			var dir = rigidbody.velocity.normalized * -1;
-
-			foreach (var p in collision.contacts)
-			{
-				var canvas = p.otherCollider.GetComponent<InkCanvas>();
-
-				if (canvas != null)
-				{
-					
-					ink -= 1;
-					//canvas.Paint(brush, p.point);
-					if (ink > 0)
-					{
-						brush.Color = default_color;
-						if (rigidbody.velocity.sqrMagnitude > player_speed * player_speed)
-							Instantiate(effect, p.point + dir * effect_length, Quaternion.identity);
+           if (inkCanvas.PaintSwitching) { 
 
 
-						StartCoroutine(HogePaint(canvas, p.point));
-					}
-     //               else
-     //               {
-					//	brush.Color = new Color(0, 0, 1, 0.01f);
-					//	StartCoroutine(HogePaint(canvas, p.point));
-					//}
-				}
+			    if(waitCount < wait)
+			    	return;
+			    waitCount = 0;
+			    var dir = rigidbody.velocity.normalized * -1;
+			    
+			    	foreach (var p in collision.contacts)
+			    	{
+			    		var canvas = p.otherCollider.GetComponent<InkCanvas>();
+			    
+			    		if (canvas != null)
+			    		{
 
-
-				
-
-			}
+                        if (playerController.Dir >= 200)
+                        {
+                            ink -= 1;
+						}
+			    			//canvas.Paint(brush, p.point);
+			    			if (ink > 0)
+			    			{
+			    				brush.Color = default_color;
+			    				if (rigidbody.velocity.sqrMagnitude > player_speed * player_speed)
+			    					Instantiate(effect, p.point + dir * effect_length, Quaternion.identity);
+			    
+			    
+			    				StartCoroutine(HogePaint(canvas, p.point));
+			    			}
+			    			//               else
+			    			//               {
+			    			//	brush.Color = new Color(0, 0, 1, 0.01f);
+			    			//	StartCoroutine(HogePaint(canvas, p.point));
+			    			//}
+			    		}
+			    	}
+		   }
 			//Instantiate(effect, collision.transform.position, Quaternion.identity);
 		}
 
