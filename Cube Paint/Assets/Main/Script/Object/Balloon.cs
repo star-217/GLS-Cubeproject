@@ -52,8 +52,8 @@ public class Balloon : MonoBehaviour
 
             collisionPainter.Ink = collisionPainter.Ink_max;
             
-            player.transform.localScale += new Vector3(1, 1, 1);
-            
+            //player.transform.localScale += new Vector3(1, 1, 1);
+            //player.transform.position += new Vector3(0, 0.5f, 0);
             
         }
     }

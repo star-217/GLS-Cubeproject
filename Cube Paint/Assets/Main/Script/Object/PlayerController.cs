@@ -37,13 +37,18 @@ public class PlayerController : MonoBehaviour
 
     InkCanvas inkCanvas;
     GameObject floor;
-    float defaultscale;
+    Vector3 defaultscale;
+    Vector3 defaultposition;
+    float ink_ratio;
+    int ration_change1, ration_change2, ration_change3;
+    Vector3 high;
 
     //プレイヤーのインク
     CollisionPainter collisionPainter;
     Color player_color;
     Color player_color2;
     float white;
+    
 
     [SerializeField] GameObject next;
 
@@ -59,22 +64,26 @@ public class PlayerController : MonoBehaviour
         //    particle[i] = transform.GetChild(i).gameObject.GetComponent<ParticleSystem>();
         floor = GameObject.FindGameObjectWithTag("Floor");
         inkCanvas = floor.GetComponent<InkCanvas>();
-        defaultscale = gameObject.transform.localScale.x;
+        defaultscale = gameObject.transform.localScale;
         collisionPainter = GetComponent<CollisionPainter>();
         player_color = GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         player_color2 = GetComponent<MeshRenderer>().material.GetColor("_1st_ShadeColor");
+        defaultposition = gameObject.transform.position;
+
         //next = GameObject.FindGameObjectWithTag("Result");
-        
+        ration_change1 = 0;
+        ration_change2 = ration_change1;
+        ration_change3 = ration_change2;
     }
 
-   
+
     // Update is called once per frame
     void Update()
     {
-
+        ink_ratio = (collisionPainter.Ink / collisionPainter.Ink_max);
         PlayerFlick();
-
-        ColorController();
+        PlayerScaleController(ink_ratio);
+        ColorController(ink_ratio);
         //if (defaultscale + 5 < gameObject.transform.localScale.x)
         //{
 
@@ -157,13 +166,13 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void ColorController()
+    void ColorController(float ink_ratio)
     {
-        if ((collisionPainter.Ink / collisionPainter.Ink_max < 0.3))
+        if (ink_ratio < 0.3)
             white = 1.0f;
-        else if ((collisionPainter.Ink / collisionPainter.Ink_max < 0.5))
+        else if (ink_ratio < 0.5)
             white = 0.7f;
-        else if ((collisionPainter.Ink / collisionPainter.Ink_max < 0.7))
+        else if (ink_ratio < 0.7)
             white = 0.4f;
 
 
@@ -171,7 +180,55 @@ public class PlayerController : MonoBehaviour
         GetComponent<MeshRenderer>().material.SetColor("_1st_ShadeColor", player_color2 * (1.0f - white) + Color.white * white);
     }
 
- 
+
+    void PlayerScaleController(float ink_ratio)
+    {
+        
+
+        if (ink_ratio > 0.5f)
+        {
+            gameObject.transform.localScale = defaultscale; 
+        }
+        else if (ink_ratio < 0.5f)
+        {
+            gameObject.transform.localScale = defaultscale * 0.7f;
+            high = defaultscale * 0.35f;
+            ration_change1++;
+        }
+        else if (ink_ratio < 0.3f)
+        {
+            gameObject.transform.localScale = defaultscale * 0.5f;
+            high = defaultscale * 0.25f;
+            ration_change2++;
+        }
+
+        if (ration_change1 != ration_change2)
+        {
+            Vector3 pos;
+            pos.y = defaultposition.y - high.y;
+            pos.x = gameObject.transform.position.x;
+            pos.z = gameObject.transform.position.z;
+
+            gameObject.transform.position = pos;
+
+            ration_change2 = ration_change1;
+        }
+
+        if (ration_change2 != ration_change3)
+        {
+            Vector3 pos;
+            pos.y = defaultposition.y - high.y;
+            pos.x = gameObject.transform.position.x;
+            pos.z = gameObject.transform.position.z;
+
+            gameObject.transform.position = pos;
+
+            ration_change3 = ration_change2;
+        }
+
+    }
+
+
 
     private void OnCollisionEnter(Collision collision)
     {
