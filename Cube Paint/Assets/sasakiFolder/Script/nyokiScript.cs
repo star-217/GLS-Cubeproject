@@ -16,6 +16,10 @@ public class nyokiScript : MonoBehaviour
     [SerializeField]
     RectTransform rectTran;
 
+   
+
+
+
     Button option_button;
 
     private bool switch_option = false;
@@ -55,10 +59,12 @@ public class nyokiScript : MonoBehaviour
         if (switch_option == false)
         {
             rectTran.DOScaleY(4.0f, 0.3f);
+            
             switch_option = true;
         }
         else
         {
+            
             rectTran.DOScaleY(0.0f, 0.3f);
             switch_option = false;
         }

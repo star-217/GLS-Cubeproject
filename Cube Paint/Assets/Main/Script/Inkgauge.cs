@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Inkgauge : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class Inkgauge : MonoBehaviour
     private bool gaugeAnimation_control;
     private CollisionPainter collisionPainter;
     [SerializeField] private GameObject player;
+    float gauge_ink;
+    [SerializeField]
+    RectTransform rect;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,7 @@ public class Inkgauge : MonoBehaviour
         gauge.fillAmount = 1;
         player = GameObject.FindGameObjectWithTag("Player");
         collisionPainter = player.GetComponent<CollisionPainter>();
+       
         
     }
 
@@ -29,9 +34,9 @@ public class Inkgauge : MonoBehaviour
 
 
 
-        gauge.fillAmount = (collisionPainter.Ink / collisionPainter.Ink_max);
-        
-
+        //gauge.fillAmount = (collisionPainter.Ink / collisionPainter.Ink_max);
+        gauge_ink = (collisionPainter.Ink / collisionPainter.Ink_max);
+        rect.DOScaleY(gauge_ink, 0.5f);
 
     }
 }

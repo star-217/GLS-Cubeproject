@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GaugeBOXScript : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GaugeBOXScript : MonoBehaviour
     private float gauge_animation;
     private bool gaugeAnimation_control;
 
+    RectTransform rect;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,26 +24,16 @@ public class GaugeBOXScript : MonoBehaviour
         inkCanvas_obj = GameObject.FindGameObjectWithTag("Floor");
         gaugeAnimation_control = false;
         gauge_animation = 0.01f;
-        cooldown.fillAmount = 0;
+        //cooldown.fillAmount = 0;
         inkCanvas = inkCanvas_obj.GetComponent<InkCanvas>();
+        rect = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (cooldown.fillAmount <= inkCanvas.Per / 100)
-        {
-            gaugeAnimation_control = true;
-        }
+        gauge_animation = inkCanvas.Per / 100;
 
-        if (gaugeAnimation_control)
-        {
-            cooldown.fillAmount += gauge_animation;
-            if (cooldown.fillAmount >= inkCanvas.Per / 100)
-            {
-                cooldown.fillAmount = inkCanvas.Per / 100;
-                gaugeAnimation_control = false;
-            }
-        }
+        rect.DOScaleX(gauge_animation, 1.0f);
     }
 }
