@@ -42,6 +42,13 @@ namespace Es.InkPainter.Sample
 		private PlayerController playerController;
 
 
+		public Brush Brush
+        {
+            get { return brush; }
+
+        }
+
+
 		public float Ink_max
         {
             get { return ink_max; }
@@ -120,6 +127,8 @@ namespace Es.InkPainter.Sample
 			float addScale = this.addScale;
 			for (int i = 0; i < count; i++)
 			{
+
+
 				brush.RotateAngle = UnityEngine.Random.Range(0.0f, 360.0f);
 				brush.Scale += addScale;
 				canvas.Paint(brush, contactPoint);

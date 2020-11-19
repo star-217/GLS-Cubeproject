@@ -24,9 +24,16 @@ public class PlayerController : MonoBehaviour
     Vector3 startPos; //タップした場所を記録
     Vector3 endPos;　//指を離した場所を記録
     private float dir = 0;
+    [SerializeField] float clear_score = 75;
+
     public float Dir
     {
         get { return dir; }
+    }
+
+    public float Clear_Score 
+    {
+        get { return clear_score; }
     }
 
     float time = 0;
@@ -82,7 +89,7 @@ public class PlayerController : MonoBehaviour
     {
         ink_ratio = (collisionPainter.Ink / collisionPainter.Ink_max);
         PlayerFlick();
-        PlayerScaleController(ink_ratio);
+       // PlayerScaleController(ink_ratio);
         ColorController(ink_ratio);
         //if (defaultscale + 5 < gameObject.transform.localScale.x)
         //{
@@ -174,6 +181,8 @@ public class PlayerController : MonoBehaviour
             white = 0.7f;
         else if (ink_ratio < 0.7)
             white = 0.4f;
+        else if (ink_ratio > 0.7)
+            white = 0;
 
 
         GetComponent<MeshRenderer>().material.SetColor("_BaseColor", player_color * (1.0f - white) + Color.white * white);
