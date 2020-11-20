@@ -43,7 +43,7 @@ public class Balloon : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-           // Handheld.Vibrate();
+            Handheld.Vibrate();
             for (int i = 0; i < transform.childCount; i++)
                 particle[i].Play();
            
