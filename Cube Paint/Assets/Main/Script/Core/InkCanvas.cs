@@ -15,7 +15,7 @@ using UnityEditor.SceneManagement;
 namespace Es.InkPainter
 {
 
-	
+
 	/// <summary>
 	/// Texture paint to canvas.
 	/// To set the per-material.
@@ -28,6 +28,7 @@ namespace Es.InkPainter
 		[Serializable]
 		public class PaintSet
 		{
+
 			/// <summary>
 			/// Applying paint materials.
 			/// </summary>
@@ -147,7 +148,7 @@ namespace Es.InkPainter
 			/// <param name="useHeightPaint">Whether to use height map paint.</param>
 			/// <param name="material">Specify when painting a specific material.</param>
 			public PaintSet(string mainTextureName, string normalTextureName, string heightTextureName, bool useMainPaint, bool useNormalPaint, bool useHeightPaint, Material material)
-				:this(mainTextureName, normalTextureName, heightTextureName, useMainPaint, useNormalPaint, useHeightPaint)
+				: this(mainTextureName, normalTextureName, heightTextureName, useMainPaint, useNormalPaint, useHeightPaint)
 			{
 				this.material = material;
 			}
@@ -252,7 +253,7 @@ namespace Es.InkPainter
 		{
 			get
 			{
-				if(meshOperator == null)
+				if (meshOperator == null)
 					Debug.LogError("To take advantage of the features must Mesh filter or Skinned mesh renderer component associated Mesh.");
 
 				return meshOperator;
@@ -270,37 +271,55 @@ namespace Es.InkPainter
 			get { return paintCount; }
 		}
 
+
 		private float per = 0.0f;
 		public float Per
 		{
 			get { return per; }
+			set { per = value; }
 		}
+
+
 		private Texture2D newTex;
 
 		private bool paintSwitching = false;
-		public bool  PaintSwitching
-        {
+		public bool PaintSwitching
+		{
 			get { return paintSwitching; }
-        }
-		
+		}
 
+
+		private GameObject Floor_obj;
+		private GameObject area_obj;
+
+		private Transform Floor_Transform;
+		private Transform Area_Transform;
+
+		private Vector3 Floor_localScale;
+		private Vector3 area_localScale;
+		private float   area_count;
+
+		
 		private void Awake()
 		{
-			if(OnCanvasAttached != null)
+			if (OnCanvasAttached != null)
 				OnCanvasAttached(this);
+
 			InitPropertyID();
 			SetMaterial();
 			SetTexture();
 			MeshDataCache();
 		}
-
+	
 		RenderTexture main_rendertexture;
 		private void Start()
 		{	
 
 			if (OnInitializedStart != null)
 				OnInitializedStart(this);
+
 			SetRenderTexture();
+
 			if(OnInitializedAfter != null)
 				OnInitializedAfter(this);
 
@@ -308,10 +327,22 @@ namespace Es.InkPainter
 			Renderer r = inkCanvas.GetComponent<Renderer>();
 			RenderTexture rt = (RenderTexture)r.sharedMaterial.GetTexture("_MainTex");
 			renderTexture = rt;
+
 			
 			newTex = new Texture2D(Screen.currentResolution.width, Screen.currentResolution.height, TextureFormat.RGBA32, false);
 
+			var area_objs = GameObject.FindGameObjectsWithTag("notPaintTag");
+			Floor_localScale = GameObject.FindGameObjectWithTag("Floor").transform.localScale;
+			area_count = 0.0f;
+			for (int i = 0; i < area_objs.Length; i++)
+            {
+				area_count += rt.width  * (area_objs[i].transform.localScale.x / Floor_localScale.x) * 
+							  rt.height * (area_objs[i].transform.localScale.z / Floor_localScale.z);
+			}
+
+            area_count /= 32.0f * 32.0f;
 		}
+
 		private int fps_count;
 
 		private void Update()
@@ -334,6 +365,8 @@ namespace Es.InkPainter
 					newTex.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
 					newTex.Apply();
 
+					Debug.Log("RenderTexture  width : " + renderTexture.width + ("height : ") + renderTexture.height);
+
 					paintCount = 0;
 
 					for (int y = renderTexture.height / 32 / 2; y < renderTexture.height; y += renderTexture.height / 32)
@@ -351,9 +384,10 @@ namespace Es.InkPainter
 				{
 					fps_count = 0;
 				}
-				per = (paintCount / (32.0f * 32.0f)) * 100;
-
-				//Debug.Log(per);
+				per = (paintCount / (renderTexture.width / 32.0f * renderTexture.height / 32.0f - area_count)) * 100/* / percentageMasterScript.canvas_count*/;
+			
+			
+				Debug.Log(per);
 
 				RenderTexture.active = null;
 			}
@@ -1079,235 +1113,237 @@ namespace Es.InkPainter
 
 		#endregion PublicMethod
 
-		#region CustomEditor
+//		#region CustomEditor
 
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
 
-		[CustomEditor(typeof(InkCanvas))]
-		[CanEditMultipleObjects]
-		private class InkCanvasInspectorExtension : Editor
-		{
-			private Renderer renderer;
-			private Material[] materials;
-			private List<bool> foldOut;
+//		[CustomEditor(typeof(InkCanvas))]
+//		[CanEditMultipleObjects]
+//		private class InkCanvasInspectorExtension : Editor
+//		{
+//			private Renderer renderer;
+//			private Material[] materials;
+//			private List<bool> foldOut;
 
-			public override void OnInspectorGUI()
-			{
-				var instance = target as InkCanvas;
-				if(instance.paintSet == null)
-					instance.paintSet = new List<PaintSet>();
+//			public override void OnInspectorGUI()
+//			{
+//				var instance = target as InkCanvas;
+//				if(instance.paintSet == null)
+//					instance.paintSet = new List<PaintSet>();
 
-				if(renderer == null)
-					renderer = instance.GetComponent<Renderer>();
-				if(materials == null)
-					materials = renderer.sharedMaterials;
-				if(foldOut == null)
-					foldOut = new List<bool>();
+//				if(renderer == null)
+//					renderer = instance.GetComponent<Renderer>();
+//				if(materials == null)
+//					materials = renderer.sharedMaterials;
+//				if(foldOut == null)
+//					foldOut = new List<bool>();
 
-				if(instance.paintSet.Count < materials.Length)
-				{
-					for(int i = instance.paintSet.Count; i < materials.Length; ++i)
-						instance.paintSet.Add(new PaintSet
-						{
-							mainTextureName = "_MainTex",
-							normalTextureName = "_BumpMap",
-							heightTextureName = "_ParallaxMap",
-							useMainPaint = true,
-							useNormalPaint = false,
-							useHeightPaint = false,
-						});
-					foldOut.Clear();
-				}
+//				if(instance.paintSet.Count < materials.Length)
+//				{
+//					for(int i = instance.paintSet.Count; i < materials.Length; ++i)
+//						instance.paintSet.Add(new PaintSet
+//						{
+//							mainTextureName = "_MainTex",
+//							normalTextureName = "_BumpMap",
+//							heightTextureName = "_ParallaxMap",
+//							useMainPaint = true,
+//							useNormalPaint = false,
+//							useHeightPaint = false,
+//							a = null,
+//							b = null,
+//						});
+//					foldOut.Clear();
+//				}
 
-				if(instance.paintSet.Count > materials.Length)
-				{
-					instance.paintSet.RemoveRange(materials.Length, instance.paintSet.Count - materials.Length);
-					foldOut.Clear();
-				}
+//				if(instance.paintSet.Count > materials.Length)
+//				{
+//					instance.paintSet.RemoveRange(materials.Length, instance.paintSet.Count - materials.Length);
+//					foldOut.Clear();
+//				}
 
-				if(foldOut.Count < instance.paintSet.Count)
-					for(int i = foldOut.Count; i < instance.paintSet.Count; ++i)
-						foldOut.Add(true);
+//				if(foldOut.Count < instance.paintSet.Count)
+//					for(int i = foldOut.Count; i < instance.paintSet.Count; ++i)
+//						foldOut.Add(true);
 
-				EditorGUILayout.Space();
+//				EditorGUILayout.Space();
+				
+//				if(EditorApplication.isPlaying)
+//				{
+//					#region PlayModeOperation
 
-				if(EditorApplication.isPlaying)
-				{
-					#region PlayModeOperation
+//					EditorGUILayout.HelpBox("Can not change while playing.\n but you can saved painted texture.", MessageType.Info);
+//					for(int i = 0; i < instance.paintSet.Count; ++i)
+//					{
+//						if(foldOut[i] = Foldout(foldOut[i], string.Format("Material \"{0}\"", materials[i].name)))
+//						{
+//							EditorGUILayout.BeginVertical("ProgressBarBack");
+//							var backColorBuf = GUI.backgroundColor;
+//							GUI.backgroundColor = Color.green;
 
-					EditorGUILayout.HelpBox("Can not change while playing.\n but you can saved painted texture.", MessageType.Info);
-					for(int i = 0; i < instance.paintSet.Count; ++i)
-					{
-						if(foldOut[i] = Foldout(foldOut[i], string.Format("Material \"{0}\"", materials[i].name)))
-						{
-							EditorGUILayout.BeginVertical("ProgressBarBack");
-							var backColorBuf = GUI.backgroundColor;
-							GUI.backgroundColor = Color.green;
+//							var paintSet = instance.paintSet[i];
 
-							var paintSet = instance.paintSet[i];
+//							if(paintSet.paintMainTexture != null && GUILayout.Button("Save main texture"))
+//								SaveRenderTextureToPNG(paintSet.mainTexture != null ? paintSet.mainTexture.name : "main_texture", paintSet.paintMainTexture);
 
-							if(paintSet.paintMainTexture != null && GUILayout.Button("Save main texture"))
-								SaveRenderTextureToPNG(paintSet.mainTexture != null ? paintSet.mainTexture.name : "main_texture", paintSet.paintMainTexture);
+//							if(instance.paintSet[i].paintNormalTexture != null && GUILayout.Button("Save normal texture"))
+//								//TODO:https://github.com/EsProgram/InkPainter/issues/13
+//								SaveRenderTextureToPNG(paintSet.normalTexture != null ? paintSet.normalTexture.name : "normal_texture", paintSet.paintNormalTexture);
 
-							if(instance.paintSet[i].paintNormalTexture != null && GUILayout.Button("Save normal texture"))
-								//TODO:https://github.com/EsProgram/InkPainter/issues/13
-								SaveRenderTextureToPNG(paintSet.normalTexture != null ? paintSet.normalTexture.name : "normal_texture", paintSet.paintNormalTexture);
+//							if(instance.paintSet[i].paintHeightTexture != null && GUILayout.Button("Save height texture"))
+//								SaveRenderTextureToPNG(paintSet.heightTexture != null ? paintSet.heightTexture.name : "height_texture", paintSet.paintHeightTexture);
 
-							if(instance.paintSet[i].paintHeightTexture != null && GUILayout.Button("Save height texture"))
-								SaveRenderTextureToPNG(paintSet.heightTexture != null ? paintSet.heightTexture.name : "height_texture", paintSet.paintHeightTexture);
+//							GUI.backgroundColor = backColorBuf;
+//							EditorGUILayout.EndVertical();
+//						}
+//					}
+//					EditorGUILayout.Space();
+//					instance.eraserDebug = EditorGUILayout.Toggle("Eracer debug option", instance.eraserDebug);
+//					if(instance.eraserDebug)
+//					{
+//						if(GUILayout.Button("Save eracer main texture"))
+//							SaveRenderTextureToPNG("eracer_main", instance.debugEraserMainView);
+//						if(GUILayout.Button("Save eracer normal texture"))
+//							SaveRenderTextureToPNG("eracer_normal", instance.debugEraserNormalView);
+//						if(GUILayout.Button("Save eracer height texture"))
+//							SaveRenderTextureToPNG("eracer_height", instance.debugEraserHeightView);
+//					}
 
-							GUI.backgroundColor = backColorBuf;
-							EditorGUILayout.EndVertical();
-						}
-					}
-					EditorGUILayout.Space();
-					instance.eraserDebug = EditorGUILayout.Toggle("Eracer debug option", instance.eraserDebug);
-					if(instance.eraserDebug)
-					{
-						if(GUILayout.Button("Save eracer main texture"))
-							SaveRenderTextureToPNG("eracer_main", instance.debugEraserMainView);
-						if(GUILayout.Button("Save eracer normal texture"))
-							SaveRenderTextureToPNG("eracer_normal", instance.debugEraserNormalView);
-						if(GUILayout.Button("Save eracer height texture"))
-							SaveRenderTextureToPNG("eracer_height", instance.debugEraserHeightView);
-					}
+//					#endregion PlayModeOperation
+//				}
+//				else
+//				{
+//					#region Property Setting
 
-					#endregion PlayModeOperation
-				}
-				else
-				{
-					#region Property Setting
+//					for(int i = 0; i < instance.paintSet.Count; ++i)
+//					{
+//						if(foldOut[i] = Foldout(foldOut[i], string.Format("Material \"{0}\"", materials[i].name)))
+//						{
+//							EditorGUI.indentLevel = 0;
+//							EditorGUILayout.BeginVertical("ProgressBarBack");
 
-					for(int i = 0; i < instance.paintSet.Count; ++i)
-					{
-						if(foldOut[i] = Foldout(foldOut[i], string.Format("Material \"{0}\"", materials[i].name)))
-						{
-							EditorGUI.indentLevel = 0;
-							EditorGUILayout.BeginVertical("ProgressBarBack");
+//							//MainPaint
+//							EditorGUI.BeginChangeCheck();
+//							instance.paintSet[i].useMainPaint = EditorGUILayout.Toggle("Use Main Paint", instance.paintSet[i].useMainPaint);
+//							if(EditorGUI.EndChangeCheck())
+//								ChangeValue(i, "Use Main Paint", p => p.useMainPaint = instance.paintSet[i].useMainPaint);
+//							if(instance.paintSet[i].useMainPaint)
+//							{
+//								EditorGUI.indentLevel++;
+//								EditorGUI.BeginChangeCheck();
+//								instance.paintSet[i].mainTextureName = EditorGUILayout.TextField("MainTexture Property Name", instance.paintSet[i].mainTextureName);
+//								if(EditorGUI.EndChangeCheck())
+//									ChangeValue(i, "Main Texture Name", p => p.mainTextureName = instance.paintSet[i].mainTextureName);
+//								EditorGUI.indentLevel--;
+//							}
 
-							//MainPaint
-							EditorGUI.BeginChangeCheck();
-							instance.paintSet[i].useMainPaint = EditorGUILayout.Toggle("Use Main Paint", instance.paintSet[i].useMainPaint);
-							if(EditorGUI.EndChangeCheck())
-								ChangeValue(i, "Use Main Paint", p => p.useMainPaint = instance.paintSet[i].useMainPaint);
-							if(instance.paintSet[i].useMainPaint)
-							{
-								EditorGUI.indentLevel++;
-								EditorGUI.BeginChangeCheck();
-								instance.paintSet[i].mainTextureName = EditorGUILayout.TextField("MainTexture Property Name", instance.paintSet[i].mainTextureName);
-								if(EditorGUI.EndChangeCheck())
-									ChangeValue(i, "Main Texture Name", p => p.mainTextureName = instance.paintSet[i].mainTextureName);
-								EditorGUI.indentLevel--;
-							}
+//							//NormalPaint
+//							EditorGUI.BeginChangeCheck();
+//							instance.paintSet[i].useNormalPaint = EditorGUILayout.Toggle("Use NormalMap Paint", instance.paintSet[i].useNormalPaint);
+//							if(EditorGUI.EndChangeCheck())
+//								ChangeValue(i, "Use Normal Paint", p => p.useNormalPaint = instance.paintSet[i].useNormalPaint);
+//							if(instance.paintSet[i].useNormalPaint)
+//							{
+//								EditorGUI.indentLevel++;
+//								EditorGUI.BeginChangeCheck();
+//								instance.paintSet[i].normalTextureName = EditorGUILayout.TextField("NormalMap Property Name", instance.paintSet[i].normalTextureName);
+//								if(EditorGUI.EndChangeCheck())
+//									ChangeValue(i, "Normal Texture Name", p => p.normalTextureName = instance.paintSet[i].normalTextureName);
+//								EditorGUI.indentLevel--;
+//							}
 
-							//NormalPaint
-							EditorGUI.BeginChangeCheck();
-							instance.paintSet[i].useNormalPaint = EditorGUILayout.Toggle("Use NormalMap Paint", instance.paintSet[i].useNormalPaint);
-							if(EditorGUI.EndChangeCheck())
-								ChangeValue(i, "Use Normal Paint", p => p.useNormalPaint = instance.paintSet[i].useNormalPaint);
-							if(instance.paintSet[i].useNormalPaint)
-							{
-								EditorGUI.indentLevel++;
-								EditorGUI.BeginChangeCheck();
-								instance.paintSet[i].normalTextureName = EditorGUILayout.TextField("NormalMap Property Name", instance.paintSet[i].normalTextureName);
-								if(EditorGUI.EndChangeCheck())
-									ChangeValue(i, "Normal Texture Name", p => p.normalTextureName = instance.paintSet[i].normalTextureName);
-								EditorGUI.indentLevel--;
-							}
+//							//HeightPaint
+//							EditorGUI.BeginChangeCheck();
+//							instance.paintSet[i].useHeightPaint = EditorGUILayout.Toggle("Use HeightMap Paint", instance.paintSet[i].useHeightPaint);
+//							if(EditorGUI.EndChangeCheck())
+//								ChangeValue(i, "Use Height Paint", p => p.useHeightPaint = instance.paintSet[i].useHeightPaint);
+//							if(instance.paintSet[i].useHeightPaint)
+//							{
+//								EditorGUI.indentLevel++;
+//								EditorGUI.BeginChangeCheck();
+//								instance.paintSet[i].heightTextureName = EditorGUILayout.TextField("HeightMap Property Name", instance.paintSet[i].heightTextureName);
+//								if(EditorGUI.EndChangeCheck())
+//									ChangeValue(i, "Height Texture Name", p => p.heightTextureName = instance.paintSet[i].heightTextureName);
+//								EditorGUI.indentLevel--;
+//							}
 
-							//HeightPaint
-							EditorGUI.BeginChangeCheck();
-							instance.paintSet[i].useHeightPaint = EditorGUILayout.Toggle("Use HeightMap Paint", instance.paintSet[i].useHeightPaint);
-							if(EditorGUI.EndChangeCheck())
-								ChangeValue(i, "Use Height Paint", p => p.useHeightPaint = instance.paintSet[i].useHeightPaint);
-							if(instance.paintSet[i].useHeightPaint)
-							{
-								EditorGUI.indentLevel++;
-								EditorGUI.BeginChangeCheck();
-								instance.paintSet[i].heightTextureName = EditorGUILayout.TextField("HeightMap Property Name", instance.paintSet[i].heightTextureName);
-								if(EditorGUI.EndChangeCheck())
-									ChangeValue(i, "Height Texture Name", p => p.heightTextureName = instance.paintSet[i].heightTextureName);
-								EditorGUI.indentLevel--;
-							}
+//							EditorGUILayout.EndVertical();
+//							EditorGUI.indentLevel = 0;
+//						}
+//					}
 
-							EditorGUILayout.EndVertical();
-							EditorGUI.indentLevel = 0;
-						}
-					}
+//					#endregion Property Setting
+//				}
+//			}
 
-					#endregion Property Setting
-				}
-			}
+//			private void SaveRenderTextureToPNG(string textureName, RenderTexture renderTexture, Action<TextureImporter> importAction = null)
+//			{
+//				string path = EditorUtility.SaveFilePanel("Save to png", Application.dataPath, textureName + "_painted.png", "png");
+//				if(path.Length != 0)
+//				{
+//					var newTex = new Texture2D(renderTexture.width, renderTexture.height);
+//					RenderTexture.active = renderTexture;
+//					newTex.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
+//					newTex.Apply();
 
-			private void SaveRenderTextureToPNG(string textureName, RenderTexture renderTexture, Action<TextureImporter> importAction = null)
-			{
-				string path = EditorUtility.SaveFilePanel("Save to png", Application.dataPath, textureName + "_painted.png", "png");
-				if(path.Length != 0)
-				{
-					var newTex = new Texture2D(renderTexture.width, renderTexture.height);
-					RenderTexture.active = renderTexture;
-					newTex.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
-					newTex.Apply();
+//					byte[] pngData = newTex.EncodeToPNG();
+//					if(pngData != null)
+//					{
+//						File.WriteAllBytes(path, pngData);
+//						AssetDatabase.Refresh();
+//						var importer = AssetImporter.GetAtPath(path) as TextureImporter;
+//						if(importAction != null)
+//							importAction(importer);
+//					}
 
-					byte[] pngData = newTex.EncodeToPNG();
-					if(pngData != null)
-					{
-						File.WriteAllBytes(path, pngData);
-						AssetDatabase.Refresh();
-						var importer = AssetImporter.GetAtPath(path) as TextureImporter;
-						if(importAction != null)
-							importAction(importer);
-					}
-
-					Debug.Log(path);
-				}
-			}
+//					Debug.Log(path);
+//				}
+//			}
 
 			
 
-				private void ChangeValue(int paintSetIndex, string recordName, Action<PaintSet> assign)
-			{
-				Undo.RecordObjects(targets, "Change " + recordName);
-				foreach(var t in targets.Where(_t => _t is InkCanvas).Select(_t => _t as InkCanvas))
-					if(t.paintSet.Count > paintSetIndex)
-					{
-						assign(t.paintSet[paintSetIndex]);
-						EditorUtility.SetDirty(t);
-					}
-				EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
-			}
+//				private void ChangeValue(int paintSetIndex, string recordName, Action<PaintSet> assign)
+//			{
+//				Undo.RecordObjects(targets, "Change " + recordName);
+//				foreach(var t in targets.Where(_t => _t is InkCanvas).Select(_t => _t as InkCanvas))
+//					if(t.paintSet.Count > paintSetIndex)
+//					{
+//						assign(t.paintSet[paintSetIndex]);
+//						EditorUtility.SetDirty(t);
+//					}
+//				EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+//			}
 
-			public bool Foldout(bool foldout, string content)
-			{
-				var style = new GUIStyle("ShurikenModuleTitle");
-				style.font = new GUIStyle(EditorStyles.label).font;
-				style.border = new RectOffset(1, 7, 4, 4);
-				style.fixedHeight = 28;
-				style.contentOffset = new Vector2(20f, -2f);
+//			public bool Foldout(bool foldout, string content)
+//			{
+//				var style = new GUIStyle("ShurikenModuleTitle");
+//				style.font = new GUIStyle(EditorStyles.label).font;
+//				style.border = new RectOffset(1, 7, 4, 4);
+//				style.fixedHeight = 28;
+//				style.contentOffset = new Vector2(20f, -2f);
 
-				var rect = GUILayoutUtility.GetRect(16f, 22f, style);
-				GUI.Box(rect, content, style);
+//				var rect = GUILayoutUtility.GetRect(16f, 22f, style);
+//				GUI.Box(rect, content, style);
 
-				var e = Event.current;
+//				var e = Event.current;
 
-				var toggleRect = new Rect(rect.x + 4f, rect.y + 5f, 13f, 13f);
-				if(e.type == EventType.Repaint)
-				{
-					EditorStyles.foldout.Draw(toggleRect, false, false, foldout, false);
-				}
+//				var toggleRect = new Rect(rect.x + 4f, rect.y + 5f, 13f, 13f);
+//				if(e.type == EventType.Repaint)
+//				{
+//					EditorStyles.foldout.Draw(toggleRect, false, false, foldout, false);
+//				}
 
-				if(e.type == EventType.MouseDown && rect.Contains(e.mousePosition))
-				{
-					foldout = !foldout;
-					e.Use();
-				}
+//				if(e.type == EventType.MouseDown && rect.Contains(e.mousePosition))
+//				{
+//					foldout = !foldout;
+//					e.Use();
+//				}
 
-				return foldout;
-			}
-		}
+//				return foldout;
+//			}
+//		}
 
-#endif
+//#endif
 
-		#endregion CustomEditor
+//		#endregion CustomEditor
 	}
 }

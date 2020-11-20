@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8104940173694131841}
   - component: {fileID: 8104940173694131840}
   - component: {fileID: 8104940173694131845}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MoveCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
