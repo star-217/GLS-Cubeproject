@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem[] particle;
     private Vector3 force;
 
+    [SerializeField] GameObject Roller;
+
     Vector3 startPos; //タップした場所を記録
     Vector3 endPos;　//指を離した場所を記録
     private float dir = 0;
@@ -55,9 +57,11 @@ public class PlayerController : MonoBehaviour
     Color player_color;
     Color player_color2;
     float white;
-    
+    bool particle_flag = false;
+
 
     [SerializeField] GameObject next;
+    [SerializeField] ParticleSystem particle_clear;
 
 
 
@@ -81,6 +85,8 @@ public class PlayerController : MonoBehaviour
         ration_change1 = 0;
         ration_change2 = ration_change1;
         ration_change3 = ration_change2;
+
+      //  Roller.SetActive(false);
     }
 
 
@@ -164,9 +170,15 @@ public class PlayerController : MonoBehaviour
             //{
             //    gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
             //}
+           
 
+            if (!particle_flag)
+            {
+                particle_flag = true;
+                particle_clear.Play();
+            }
             next.SetActive(true);
-
+           // Roller.SetActive(true);
         }
 
 
