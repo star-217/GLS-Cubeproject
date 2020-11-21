@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adac27dfad50a7a42a2824501efd96b4, type: 3}
   m_Name: App Setting Data
   m_EditorClassIdentifier: 
-  androidGameID: 3354479
-  iOSGameID: 3354478
+  androidGameID: 3908575
+  iOSGameID: ' 3908574'
   testMode: 0
