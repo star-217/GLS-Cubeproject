@@ -35,16 +35,16 @@ public class UIcontrollerScript : MonoBehaviour
     void Update()
     {
 
-#if UNITY_EDITOR
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
-#else 
-         if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
-           return;
-         }   
-#endif
+//#if UNITY_EDITOR
+//        if (EventSystem.current.IsPointerOverGameObject())
+//        {
+//            return;
+//        }
+//#else 
+//         if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
+//           return;
+//         }   
+//#endif
         if (Input.GetMouseButtonDown(0))
         {
             //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
