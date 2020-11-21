@@ -121,22 +121,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &61339113
+--- !u!1001 &16823133
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8104940173694131840, guid: 0c48a5233b5883941859e05c66bdffff,
-        type: 3}
-      propertyPath: speed
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 8104940173694131844, guid: 0c48a5233b5883941859e05c66bdffff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.4
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 8104940173694131844, guid: 0c48a5233b5883941859e05c66bdffff,
         type: 3}
@@ -146,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 8104940173694131844, guid: 0c48a5233b5883941859e05c66bdffff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8104940173694131844, guid: 0c48a5233b5883941859e05c66bdffff,
         type: 3}
@@ -171,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 8104940173694131844, guid: 0c48a5233b5883941859e05c66bdffff,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8104940173694131844, guid: 0c48a5233b5883941859e05c66bdffff,
         type: 3}
@@ -250,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 2211134651776069120, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2211134651776069120, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}

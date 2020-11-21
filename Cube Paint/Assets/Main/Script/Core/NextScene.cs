@@ -34,7 +34,7 @@ public class NextScene : MonoBehaviour
     {
       
         stage += 1;
-        if (stage > 8)
+        if (stage > 10)
         {
             stage = 1;
         }

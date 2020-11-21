@@ -22,12 +22,12 @@ public class bullon_hit_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
     }
 
     private void OnParticleCollision(GameObject other)
     {
-        
-       
         var canvas = other.GetComponent<InkCanvas>();
 
         if (canvas != null)
