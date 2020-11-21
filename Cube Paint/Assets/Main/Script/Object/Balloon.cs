@@ -6,9 +6,6 @@ using UnityEngine.UIElements;
 
 public class Balloon : MonoBehaviour
 {
- 
-
-   
     private ParticleSystem[] particle;
     private ParticleSystem particle2;
 
@@ -32,18 +29,12 @@ public class Balloon : MonoBehaviour
         player_color2 = player_material.GetColor("_1st_ShadeColor");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-  
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Handheld.Vibrate();
+            Vibration.Vibrate(100);
+
             for (int i = 0; i < transform.childCount; i++)
                 particle[i].Play();
            
@@ -59,4 +50,6 @@ public class Balloon : MonoBehaviour
     }
 
    
+
+
 }
