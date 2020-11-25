@@ -77,6 +77,11 @@ namespace Es.InkPainter.Sample
 		public void FixedUpdate()
 		{
 			++waitCount;
+			if (ink < 0)
+				ink = 0;
+			if (ink > ink_max)
+				ink = ink_max;
+
 		}
 
 		public void OnCollisionStay(Collision collision)
@@ -98,18 +103,23 @@ namespace Es.InkPainter.Sample
 
                         if (playerController.Dir >= 200)
                         {
-                            ink -= 1;
+
+							if (rigidbody.velocity.sqrMagnitude < 800)
+								ink -= 1;
+							else
+								ink -= 2;
+
 						}
 			    			//canvas.Paint(brush, p.point);
-			    			if (ink > 0)
-			    			{
+			    			//if (ink > 0)
+			    			//{
 			    				brush.Color = default_color;
 			    				if (rigidbody.velocity.sqrMagnitude > player_speed * player_speed)
 			    					Instantiate(effect, p.point + dir * effect_length, Quaternion.identity);
 			    
 			    
 			    				StartCoroutine(HogePaint(canvas, p.point));
-			    			}
+			    			//}
 			    			//               else
 			    			//               {
 			    			//	brush.Color = new Color(0, 0, 1, 0.01f);
@@ -130,11 +140,19 @@ namespace Es.InkPainter.Sample
 
 
 				brush.RotateAngle = UnityEngine.Random.Range(0.0f, 360.0f);
+				//brush.Color = new Color(UnityEngine.Random.Range(0.0f,1.0f), UnityEngine.Random.Range(0.0f, 1.0f), UnityEngine.Random.Range(0.0f, 1.0f));
+				var colorhsv = UnityEngine.Random.Range(0.0f, 1.0f);
+				brush.Color += Color.HSVToRGB(0, colorhsv, 0);
 				brush.Scale += addScale;
+			//	brush.Color -= new Color(0, 0, 0, 10);
 				canvas.Paint(brush, contactPoint);
 				yield return new WaitForSeconds(intervalSecond);
 				addScale *= attenuation;
-				
+				brush.Color = default_color;
+				brush.Color -= Color.HSVToRGB(0, colorhsv, 0);
+				//brush.Color = Color.HSVToRGB(0, 0, 0);
+
+
 			}
 		}
 

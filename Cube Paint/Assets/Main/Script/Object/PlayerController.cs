@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
         ColorController(ink_ratio);
         //if (defaultscale + 5 < gameObject.transform.localScale.x)
         //{
+      
 
         //    //for (int i = 0; i < transform.childCount; i++)
         //    //    particle[i].Play();
@@ -112,8 +113,8 @@ public class PlayerController : MonoBehaviour
 
     void PlayerFlick()
     {
-        if (inkCanvas.Per < 75)
-        {
+        //if (inkCanvas.Per < 75)
+        //{
             mouseDirection = (Input.mousePosition - this.screenPoint);
             mouseDirection.z = mouseDirection.y;
             mouseDirection.y = 0;
@@ -163,39 +164,40 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-        else
-        {
-            rb.velocity = Vector3.zero;
-            //if (defaultscale + 6 > gameObject.transform.localScale.x)
-            //{
-            //    gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
-            //}
+        //else
+        //{
+        //    rb.velocity = Vector3.zero;
+        //    //if (defaultscale + 6 > gameObject.transform.localScale.x)
+        //    //{
+        //    //    gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+        //    //}
            
 
-            if (!particle_flag)
-            {
-                particle_flag = true;
-                particle_clear.Play();
-            }
-            next.SetActive(true);
-           // Roller.SetActive(true);
-        }
+        //    if (!particle_flag)
+        //    {
+        //        particle_flag = true;
+        //        particle_clear.Play();
+        //    }
+        //    //next.SetActive(true);
+        //   // Roller.SetActive(true);
+        //}
 
 
-    }
+    //}
 
 
     void ColorController(float ink_ratio)
     {
         if (ink_ratio < 0.3)
             white = 1.0f;
-        else if (ink_ratio < 0.5)
+        else if (ink_ratio < 0.5f)
             white = 0.7f;
-        else if (ink_ratio < 0.7)
+        else if (ink_ratio < 0.7f)
             white = 0.4f;
-        else if (ink_ratio > 0.7)
+        else if (ink_ratio < 0.9f)
+            white = 0.2f;
+        else if (ink_ratio > 0.9f)
             white = 0;
-
 
         GetComponent<MeshRenderer>().material.SetColor("_BaseColor", player_color * (1.0f - white) + Color.white * white);
         GetComponent<MeshRenderer>().material.SetColor("_1st_ShadeColor", player_color2 * (1.0f - white) + Color.white * white);
