@@ -22,7 +22,6 @@ public class UIcontrollerScript : MonoBehaviour
 
     [SerializeField] private GameObject result;
 
-   
     // Start is called before the first frame update
     void Start()
     {
@@ -34,24 +33,16 @@ public class UIcontrollerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
 
-//#if UNITY_EDITOR
-//        if (EventSystem.current.IsPointerOverGameObject())
-//        {
-//            return;
-//        }
-//#else 
-//         if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
-//           return;
-//         }   
-//#endif
         if (Input.GetMouseButtonDown(0))
         {
-            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //RaycastHit2D hit2d = Physics2D.Raycast((Vector2)Input.mousePosition, (Vector2)ray.direction);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit2d = Physics2D.Raycast((Vector2)Input.mousePosition, (Vector2)ray.direction);
 
-            //if (!hit2d)
-            //{
+            if (!hit2d)
+            {
                 
                 Shop_Object.SetActive(false);
 
@@ -61,7 +52,7 @@ public class UIcontrollerScript : MonoBehaviour
                 PercentageGauge_Object.SetActive(true);
                 InkRemnantGauge_Object.SetActive(true);
 
-          //  }
+            }
         }
     }
 }

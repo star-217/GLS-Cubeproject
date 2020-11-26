@@ -16,8 +16,6 @@ public class nyokiScript : MonoBehaviour
     [SerializeField]
     RectTransform rectTran;
 
-   
-
 
 
     Button option_button;
@@ -68,7 +66,6 @@ public class nyokiScript : MonoBehaviour
             rectTran.DOScaleY(0.0f, 0.3f);
             switch_option = false;
         }
-
     }
 
     //IEnumerator Option()
