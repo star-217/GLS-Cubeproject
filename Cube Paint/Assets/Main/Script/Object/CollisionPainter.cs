@@ -41,6 +41,8 @@ namespace Es.InkPainter.Sample
 		public GameObject playerController_obj;
 		private PlayerController playerController;
 
+		float h, s, v; 
+
 
 		public Brush Brush
         {
@@ -141,15 +143,16 @@ namespace Es.InkPainter.Sample
 
 				brush.RotateAngle = UnityEngine.Random.Range(0.0f, 360.0f);
 				//brush.Color = new Color(UnityEngine.Random.Range(0.0f,1.0f), UnityEngine.Random.Range(0.0f, 1.0f), UnityEngine.Random.Range(0.0f, 1.0f));
-				var colorhsv = UnityEngine.Random.Range(0.0f, 1.0f);
-				brush.Color += Color.HSVToRGB(0, colorhsv, 0);
+			    Color.RGBToHSV(default_color,out h,out s,out v);
+				//var colorhsv = UnityEngine.Random.Range(0.0f, 1.0f);
+				//brush.Color = Color.HSVToRGB(h, colorhsv, v);
 				brush.Scale += addScale;
 			//	brush.Color -= new Color(0, 0, 0, 10);
 				canvas.Paint(brush, contactPoint);
 				yield return new WaitForSeconds(intervalSecond);
 				addScale *= attenuation;
-				brush.Color = default_color;
-				brush.Color -= Color.HSVToRGB(0, colorhsv, 0);
+				//brush.Color = default_color;
+				
 				//brush.Color = Color.HSVToRGB(0, 0, 0);
 
 
