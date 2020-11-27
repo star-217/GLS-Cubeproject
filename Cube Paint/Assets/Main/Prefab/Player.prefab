@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3128935329725473751}
   - component: {fileID: 3009802903957059958}
   - component: {fileID: 7433266115855110385}
+  - component: {fileID: 7820201998438093811}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -135,7 +136,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 1
 --- !u!114 &3128935329725473751
 MonoBehaviour:
@@ -282,3 +283,15 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &7820201998438093811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3128935329725473750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee641e7dcbbc6b43b596967f0c43fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
