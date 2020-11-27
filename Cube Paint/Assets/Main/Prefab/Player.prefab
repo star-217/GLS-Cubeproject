@@ -135,7 +135,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &3128935329725473751
 MonoBehaviour:
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Roller: {fileID: 0}
   clear_score: 75
-  speed_up: 2
+  speed_up: 1
   next: {fileID: 0}
   particle_clear: {fileID: 0}
 --- !u!135 &3009802903957059958
@@ -186,7 +186,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3e815d818f423c74d98e2a377106aeac, type: 2}
+  - {fileID: 2100000, guid: c407baeff39a1a34e8fa4f952e6f8384, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -224,8 +224,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.4377763
-        value: 1
+        time: 0.3646104
+        value: 0
         inSlope: -0.16788791
         outSlope: -0.16788791
         tangentMode: 0
@@ -246,7 +246,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0, g: 0.61144805, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
