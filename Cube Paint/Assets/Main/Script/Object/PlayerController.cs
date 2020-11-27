@@ -113,8 +113,8 @@ public class PlayerController : MonoBehaviour
 
     void PlayerFlick()
     {
-        //if (inkCanvas.Per < 75)
-        //{
+        if (inkCanvas.Per < 99)
+        {
             mouseDirection = (Input.mousePosition - this.screenPoint);
             mouseDirection.z = mouseDirection.y;
             mouseDirection.y = 0;
@@ -163,27 +163,27 @@ public class PlayerController : MonoBehaviour
                 }
 
             }
-        }
-        //else
-        //{
-        //    rb.velocity = Vector3.zero;
-        //    //if (defaultscale + 6 > gameObject.transform.localScale.x)
-        //    //{
-        //    //    gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
-        //    //}
+    }
+        else
+        {
+            rb.velocity = Vector3.zero;
+            //if (defaultscale + 6 > gameObject.transform.localScale.x)
+            //{
+            //    gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+            //}
            
 
-        //    if (!particle_flag)
-        //    {
-        //        particle_flag = true;
-        //        particle_clear.Play();
-        //    }
-        //    //next.SetActive(true);
-        //   // Roller.SetActive(true);
-        //}
+            if (!particle_flag)
+            {
+                particle_flag = true;
+                particle_clear.Play();
+            }
+                next.SetActive(true);
+           // Roller.SetActive(true);
+        }
 
 
-    //}
+    }
 
 
     void ColorController(float ink_ratio)
