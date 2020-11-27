@@ -33,8 +33,8 @@ public class UIcontrollerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (EventSystem.current.IsPointerOverGameObject())
-        //    return;
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
 
         if (Input.GetMouseButtonDown(0))
         {

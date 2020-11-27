@@ -11,7 +11,7 @@ public class NextScene : MonoBehaviour
     //public int Stage
     //{
     //    get { return stage; }
-       
+    //    set { stage = value; }
     //}
 
     // Start is called before the first frame update
@@ -34,7 +34,7 @@ public class NextScene : MonoBehaviour
     {
       
         stage += 1;
-        if (stage > 5)
+        if (stage > 10)
         {
             stage = 1;
         }
