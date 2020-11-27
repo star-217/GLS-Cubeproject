@@ -11,8 +11,6 @@ public class UIcontrollerScript : MonoBehaviour
     [Header("残りのインク量のゲージを入れる")]
     public GameObject InkRemnantGauge_Object;
 
-    [Header("Titleを入れる")]
-    public GameObject Title_Object;
 
     [Header("TapToStartを入れる")]
     public GameObject TapToStart_Object;
@@ -46,7 +44,7 @@ public class UIcontrollerScript : MonoBehaviour
                 
                 Shop_Object.SetActive(false);
 
-                Title_Object.SetActive(false);
+             
                 TapToStart_Object.SetActive(false);
 
                 PercentageGauge_Object.SetActive(true);
