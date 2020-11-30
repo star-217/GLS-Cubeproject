@@ -24,8 +24,8 @@ public class PlayerAnimetion : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            gameObject.transform.Rotate(0, 0, 0);
-            transform.DOScale(new Vector3(2.0f,0.5f,2.0f),0.3f);
+            gameObject.transform.rotation = Quaternion.identity;
+            transform.DOScale(new Vector3(1.5f,0.5f,1.5f),0.3f);
 
             //if(gameObject.transform.localScale.x < 1.5 )
             //gameObject.transform.localScale += new Vector3(0.05f, 0, 0.05f);

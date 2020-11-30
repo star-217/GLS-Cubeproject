@@ -410,7 +410,7 @@ PrefabInstance:
     - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
-      value: 0.2682927
+      value: 0.07665375
       objectReference: {fileID: 0}
     - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
@@ -431,6 +431,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outWeight
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outWeight
+      value: 0.33333334
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed386ba92b397d14893cf375eb96237f, type: 3}
