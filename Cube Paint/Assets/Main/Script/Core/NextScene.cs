@@ -26,19 +26,19 @@ public class NextScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
 
     void OnclickScene()
     {
       
-        stage += 1;
         if (stage > 20)
         {
             stage = 1;
         }
 
         SceneManager.LoadScene("stage"+ stage);
+
     }
 }
