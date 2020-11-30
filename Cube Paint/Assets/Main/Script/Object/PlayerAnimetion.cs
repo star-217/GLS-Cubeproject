@@ -10,18 +10,25 @@ public class PlayerAnimetion : MonoBehaviour
 
     Vector3 defaultscale;
     Transform transform;
+    Rigidbody rigidbody;
+
+    Vector3 slide;
     // Start is called before the first frame update
     void Start()
     {
 
         defaultscale = gameObject.transform.localScale;
         transform = GetComponent<Transform>();
+        rigidbody = GetComponent<Rigidbody>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        //slide = rigidbody.velocity.sqrMagnitude;
+        //transform.DOScale(defaultscale + (-slide) * 2, 0.01f);
+
         if (Input.GetMouseButton(0))
         {
             gameObject.transform.rotation = Quaternion.identity;

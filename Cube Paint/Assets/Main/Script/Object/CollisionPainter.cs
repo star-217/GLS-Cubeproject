@@ -41,8 +41,8 @@ namespace Es.InkPainter.Sample
 		public GameObject playerController_obj;
 		private PlayerController playerController;
 
-		float h, s, v; 
-
+		float h, s, v;
+		float color;  
 
 		public Brush Brush
         {
@@ -67,6 +67,7 @@ namespace Es.InkPainter.Sample
 		{
 			inkCanvas = inkCanvas_obj.GetComponent<InkCanvas>();
 			playerController = playerController_obj.GetComponent<PlayerController>();
+			Color.RGBToHSV(default_color, out h, out s, out v);
 		}
 
 		public void Awake()
@@ -118,9 +119,19 @@ namespace Es.InkPainter.Sample
 			    				brush.Color = default_color;
 			    				if (rigidbody.velocity.sqrMagnitude > player_speed * player_speed)
 			    					Instantiate(effect, p.point + dir * effect_length, Quaternion.identity);
-			    
-			    
-			    				StartCoroutine(HogePaint(canvas, p.point));
+
+						
+						var colorhsv = UnityEngine.Random.Range(1, 3);
+						switch (colorhsv)
+						{
+							case 1: color = 0.5f; break;
+							case 2: color = 0.6f; break;
+							case 3: color = 1.0f; break;
+
+						}
+						brush.Color = Color.HSVToRGB(h, color, v);
+
+						StartCoroutine(HogePaint(canvas, p.point));
 			    			//}
 			    			//               else
 			    			//               {
@@ -143,9 +154,8 @@ namespace Es.InkPainter.Sample
 
 				brush.RotateAngle = UnityEngine.Random.Range(0.0f, 360.0f);
 				//brush.Color = new Color(UnityEngine.Random.Range(0.0f,1.0f), UnityEngine.Random.Range(0.0f, 1.0f), UnityEngine.Random.Range(0.0f, 1.0f));
-			    Color.RGBToHSV(default_color,out h,out s,out v);
-				//var colorhsv = UnityEngine.Random.Range(0.0f, 1.0f);
-				//brush.Color = Color.HSVToRGB(h, colorhsv, v);
+			   			
+				
 				brush.Scale += addScale;
 			//	brush.Color -= new Color(0, 0, 0, 10);
 				canvas.Paint(brush, contactPoint);
