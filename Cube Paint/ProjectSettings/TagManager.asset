@@ -12,6 +12,7 @@ TagManager:
   - PercentageTag
   - stage2_notPaintTag
   - notPaintTag
+  - Block
   layers:
   - Default
   - TransparentFX

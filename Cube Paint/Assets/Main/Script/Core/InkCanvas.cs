@@ -288,18 +288,28 @@ namespace Es.InkPainter
 			get { return paintSwitching; }
 		}
 
-
-		private GameObject Floor_obj;
-		private GameObject area_obj;
-
-		private Transform Floor_Transform;
-		private Transform Area_Transform;
-
 		private Vector3 Floor_localScale;
 		private Vector3 area_localScale;
 		private float   area_count;
 
-		
+		private RaycastHit hit;
+		private int distance = 100;
+		private Ray ray;
+		private Vector3 Floor_worldPos;
+		private Vector3 floor_upperLeft;
+		private Vector3 floor_LowerRight;
+
+
+		//テスト
+		private float floor_width;
+		private float floor_height;
+		private GameObject Floor_obj;
+
+
+		bool[,] countArea;
+		int countWidth;
+		int countHeight;
+
 		private void Awake()
 		{
 			if (OnCanvasAttached != null)
@@ -333,6 +343,17 @@ namespace Es.InkPainter
 
 			var area_objs = GameObject.FindGameObjectsWithTag("notPaintTag");
 			Floor_localScale = GameObject.FindGameObjectWithTag("Floor").transform.localScale;
+			Floor_worldPos = GameObject.FindGameObjectWithTag("Floor").transform.position;
+			Floor_obj = GameObject.FindGameObjectWithTag("Floor");
+
+			// 幅
+			floor_width = Floor_obj.GetComponent<Renderer>().bounds.size.x;
+			print("width: " + floor_width);
+
+			// 高さ
+			floor_height = Floor_obj.GetComponent<Renderer>().bounds.size.z;
+			print("height: " + floor_height);
+
 			area_count = 0.0f;
 			for (int i = 0; i < area_objs.Length; i++)
             {
@@ -341,6 +362,40 @@ namespace Es.InkPainter
 			}
 
             area_count /= 32.0f * 32.0f;
+
+			countHeight = (int)(renderTexture.height / 32.0f + 0.5f);
+			countWidth =  (int)(renderTexture.width  / 32.0f + 0.5f);
+			countArea = new bool[countHeight, countWidth];
+
+			
+			floor_upperLeft.x = Floor_worldPos.x - floor_width * 0.5f;
+			floor_upperLeft.z = Floor_worldPos.z - floor_height * 0.5f;
+
+			
+			Vector3 fuck = Floor_worldPos;
+			fuck.y += 50.0f;
+			for (int y = 0; y < countHeight; ++y)
+            {
+				fuck.z = floor_upperLeft.z + (floor_height / countHeight * 0.5f) + (floor_height / countHeight) * y;
+				for (int x = 0; x < countWidth; ++x)
+                {
+					fuck.x = floor_upperLeft.x + (floor_width / countWidth * 0.5f) + (floor_width / countWidth) * x;
+					ray = new Ray(fuck, Vector3.down);
+//					Debug.DrawLine(ray.origin, ray.direction * distance, Color.red);
+
+					if (Physics.Raycast(ray, out hit, distance))
+					{
+						if (hit.collider.CompareTag("Block"))
+						{
+							countArea[y, x] = false;
+                        }
+                        else
+                        {
+							countArea[y, x] = true;
+						}
+					}
+				}
+			}
 		}
 
 		private int fps_count;
@@ -368,15 +423,22 @@ namespace Es.InkPainter
 					Debug.Log("RenderTexture  width : " + renderTexture.width + ("height : ") + renderTexture.height);
 
 					paintCount = 0;
-
-					for (int y = renderTexture.height / 32 / 2; y < renderTexture.height; y += renderTexture.height / 32)
+					int ca_y, ca_x;
+					ca_y = 0;
+					for (int y = renderTexture.height / 32 / 2; y < renderTexture.height; y += 32)
 					{
-						for (int x = renderTexture.width / 32 / 2; x < renderTexture.width; x += renderTexture.width / 32)
+						ca_x = 0;
+						for (int x = renderTexture.width / 32 / 2; x < renderTexture.width; x += 32)
 						{
-							var color = newTex.GetPixel(x, y);
-							if (color != new Color(1, 1, 1, 1))
-								++paintCount;
+							if (countArea[ca_y, ca_x])
+							{
+								var color = newTex.GetPixel(x, y);
+								if (color != new Color(1, 1, 1, 1))
+									++paintCount;
+							}
+							++ca_x;
 						}
+						++ca_y;
 					}
 				}
 
@@ -384,10 +446,9 @@ namespace Es.InkPainter
 				{
 					fps_count = 0;
 				}
-				per = (paintCount / (renderTexture.width / 32.0f * renderTexture.height / 32.0f - area_count)) * 100/* / percentageMasterScript.canvas_count*/;
-			
-			
-				Debug.Log(per);
+				int fuck = (int)(renderTexture.width / 32.0f + 0.5f) * (int)(renderTexture.height / 32.0f + 0.5f) - (int)area_count;
+				per = (paintCount / ((int)(renderTexture.width / 32.0f + 0.5f) * (int)(renderTexture.height / 32.0f + 0.5f) - area_count)) * 100.0f;
+				Debug.Log("塗った数:" + paintCount + " 塗らないといけない数:" + fuck);
 
 				RenderTexture.active = null;
 			}
