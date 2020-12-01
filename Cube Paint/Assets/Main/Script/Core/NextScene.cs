@@ -8,6 +8,7 @@ public class NextScene : MonoBehaviour
 {
     Button testButton;
     public static int stage = 1;
+    float time;
     //public int Stage
     //{
     //    get { return stage; }
@@ -26,19 +27,24 @@ public class NextScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //time += Time.deltaTime;
     }
 
 
     void OnclickScene()
     {
-      
+        if (stage % 2 == 0)
+            GLS.Ad.ShowInterstitial(0);
+        GLS.GLSAnalyticsUtility.TrackEvent("StageClear", "Stage" + stage, stage);
         stage += 1;
         if (stage > 20)
         {
             stage = 1;
         }
+        
 
         SceneManager.LoadScene("stage"+ stage);
+
+
     }
 }

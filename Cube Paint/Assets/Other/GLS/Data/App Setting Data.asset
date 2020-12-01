@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: App Setting Data
   m_EditorClassIdentifier: 
   androidGameID: 3908575
-  iOSGameID: ' 3908574'
+  iOSGameID: 3908574
   testMode: 0

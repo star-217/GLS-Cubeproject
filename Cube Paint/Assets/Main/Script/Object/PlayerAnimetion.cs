@@ -26,7 +26,7 @@ public class PlayerAnimetion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //slide = rigidbody.velocity.sqrMagnitude;
+        //slide = rigidbody.velocity;
         //transform.DOScale(defaultscale + (-slide) * 2, 0.01f);
 
         if (Input.GetMouseButton(0))

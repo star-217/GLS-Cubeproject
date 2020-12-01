@@ -10,11 +10,12 @@ public class GaugeBOXScript : MonoBehaviour
     private GameObject inkCanvas_obj;
     private InkCanvas inkCanvas;
 
-    [Header("ImageGaugeを入れる")]
-    public Image cooldown;
+    //[Header("ImageGaugeを入れる")]
+    //public Image cooldown;
     private float gauge_animation;
     private bool gaugeAnimation_control;
 
+    [SerializeField]
     RectTransform rect;
 
 

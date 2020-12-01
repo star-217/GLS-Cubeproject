@@ -85,15 +85,15 @@ namespace Es.InkPainter.Sample
 			if (ink > ink_max)
 				ink = ink_max;
 
-			var colorhsv = UnityEngine.Random.Range(1, 3);
-			switch (colorhsv)
-			{
-				case 1: color = 0.5f; break;
-				case 2: color = 0.6f; break;
-				case 3: color = 1.0f; break;
+			//var colorhsv = UnityEngine.Random.Range(1, 3);
+			//switch (colorhsv)
+			//{
+			//	case 1: color = 0.5f; break;
+			//	case 2: color = 0.6f; break;
+			//	case 3: color = 1.0f; break;
 
-			}
-			brush.Color = Color.HSVToRGB(h, color, v);
+			//}
+			//brush.Color = Color.HSVToRGB(h, color, v);
 
 		}
 
