@@ -1891,6 +1891,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -2.12
       objectReference: {fileID: 0}
+    - target: {fileID: 3437765088282303709, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3437765088282303709, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3437765088282303709, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.19
+      objectReference: {fileID: 0}
     - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
