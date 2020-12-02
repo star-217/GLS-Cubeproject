@@ -88,7 +88,7 @@ public class ChangeColorScript : MonoBehaviour
             material.SetColor("_BaseColor", new Color32(48,225,227,255));
         }
 
-        
+
 
     }
 }
