@@ -7,6 +7,7 @@ public class UIcontrollerScript : MonoBehaviour
 {
     [Header("割合のゲージを入れる")]
     public GameObject PercentageGauge_Object;
+    public GameObject Gauge_Outline;
 
     [Header("残りのインク量のゲージを入れる")]
     public GameObject InkRemnantGauge_Object;
@@ -23,6 +24,7 @@ public class UIcontrollerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Gauge_Outline.SetActive(false);
         result.SetActive(false);
         PercentageGauge_Object.SetActive(false);
         InkRemnantGauge_Object.SetActive(false);
@@ -43,12 +45,14 @@ public class UIcontrollerScript : MonoBehaviour
             {
                 
                 Shop_Object.SetActive(false);
+               
 
-             
+
                 TapToStart_Object.SetActive(false);
 
                 PercentageGauge_Object.SetActive(true);
                 InkRemnantGauge_Object.SetActive(true);
+                Gauge_Outline.SetActive(true);
 
             }
         }

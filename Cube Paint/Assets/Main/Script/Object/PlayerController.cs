@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerFlick()
     {
-        if (inkCanvas.Per < 99)
+        if (inkCanvas.Per < 90)
         {
             mouseDirection = (Input.mousePosition - this.screenPoint);
             mouseDirection.z = mouseDirection.y;
