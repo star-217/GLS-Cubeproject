@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         ink_ratio = (collisionPainter.Ink / collisionPainter.Ink_max);
         PlayerFlick();
        // PlayerScaleController(ink_ratio);
-        ColorController(ink_ratio);
+        //ColorController(ink_ratio);
         //if (defaultscale + 5 < gameObject.transform.localScale.x)
         //{
       
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerFlick()
     {
-        if (inkCanvas.Per < 90)
+        if (inkCanvas.Per < 99)
         {
             mouseDirection = (Input.mousePosition - this.screenPoint);
             mouseDirection.z = mouseDirection.y;

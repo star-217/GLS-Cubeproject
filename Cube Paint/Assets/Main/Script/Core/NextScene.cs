@@ -33,8 +33,11 @@ public class NextScene : MonoBehaviour
 
     void OnclickScene()
     {
-        if (stage % 2 == 0)
+        if (stage >= 5)
+        {
+            if(stage % 2 ==0)
             GLS.Ad.ShowInterstitial(0);
+        }
         GLS.GLSAnalyticsUtility.TrackEvent("StageClear", "Stage" + stage, stage);
         stage += 1;
         if (stage > 20)
