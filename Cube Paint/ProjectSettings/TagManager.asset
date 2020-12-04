@@ -13,6 +13,7 @@ TagManager:
   - stage2_notPaintTag
   - notPaintTag
   - Block
+  - BuckHomeButtontag
   layers:
   - Default
   - TransparentFX

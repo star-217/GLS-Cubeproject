@@ -22,6 +22,21 @@ public class BottonBackScript : MonoBehaviour
     }
     void Onclick()
     {
-        SceneManager.LoadScene("stage1");
+        // イベントに登録
+        SceneManager.sceneLoaded += GameSceneLoaded;
+
+        SceneManager.LoadScene("LoadScene");
+    }
+
+    private void GameSceneLoaded(Scene next, LoadSceneMode mode)
+    {
+        // シーン切り替え後のスクリプトを取得
+        var gameManager = GameObject.FindWithTag("").GetComponent<MiddleForgivenessScript>();
+
+        // データを渡す処理
+       //gameManager.Clor;
+
+        // イベントから削除
+        SceneManager.sceneLoaded -= GameSceneLoaded;
     }
 }
