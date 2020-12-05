@@ -85,8 +85,8 @@ public class PlayerController : MonoBehaviour
         ration_change1 = 0;
         ration_change2 = ration_change1;
         ration_change3 = ration_change2;
-
-      //  Roller.SetActive(false);
+ 
+        //  Roller.SetActive(false);
     }
 
 

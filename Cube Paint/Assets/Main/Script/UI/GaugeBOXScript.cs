@@ -11,17 +11,20 @@ public class GaugeBOXScript : MonoBehaviour
     private InkCanvas inkCanvas;
 
     //[Header("ImageGaugeを入れる")]
-    //public Image cooldown;
+    public Image cooldown;
     private float gauge_animation;
     private bool gaugeAnimation_control;
 
     [SerializeField]
     RectTransform rect;
 
+   
+
 
     // Start is called before the first frame update
     void Start()
     {
+       
         inkCanvas_obj = GameObject.FindGameObjectWithTag("Floor");
         gaugeAnimation_control = false;
         gauge_animation = 0.01f;
@@ -33,8 +36,15 @@ public class GaugeBOXScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gauge_animation = inkCanvas.Per / 100;
+        //if(cooldown.fillAmount <= (inkCanvas.Per / 100)) var targetAmount
+        //    cooldown.fillAmount += 0.002f;
+        cooldown.fillAmount = Mathf.Lerp(cooldown.fillAmount, (inkCanvas.Per / 100), 0.01f);
 
-        rect.DOScaleX(gauge_animation, 1.0f);
+
+
+
+        //gauge_animation = inkCanvas.Per / 100;
+
+        //rect.DOScaleX(gauge_animation, 1.0f);
     }
 }
