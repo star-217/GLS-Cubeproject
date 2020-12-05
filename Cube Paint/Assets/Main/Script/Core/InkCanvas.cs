@@ -15,7 +15,6 @@ using UnityEditor.SceneManagement;
 namespace Es.InkPainter
 {
 
-
 	/// <summary>
 	/// Texture paint to canvas.
 	/// To set the per-material.
@@ -420,7 +419,7 @@ namespace Es.InkPainter
 					newTex.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
 					newTex.Apply();
 
-					Debug.Log("RenderTexture  width : " + renderTexture.width + ("height : ") + renderTexture.height);
+					//Debug.Log("RenderTexture  width : " + renderTexture.width + ("height : ") + renderTexture.height);
 
 					paintCount = 0;
 					int ca_y, ca_x;
@@ -448,7 +447,7 @@ namespace Es.InkPainter
 				}
 				int fuck = (int)(renderTexture.width / 32.0f + 0.5f) * (int)(renderTexture.height / 32.0f + 0.5f) - (int)area_count;
 				per = (paintCount / ((int)(renderTexture.width / 32.0f + 0.5f) * (int)(renderTexture.height / 32.0f + 0.5f) - area_count)) * 100.0f;
-				Debug.Log("塗った数:" + paintCount + " 塗らないといけない数:" + fuck);
+				//Debug.Log("塗った数:" + paintCount + " 塗らないといけない数:" + fuck);
 
 				RenderTexture.active = null;
 			}
