@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class NextScene : MonoBehaviour
 {
     Button testButton;
-    public static int stage = 1;
+    [SerializeField] public static int stage = 1;
     float time;
     //public int Stage
     //{
@@ -20,8 +20,9 @@ public class NextScene : MonoBehaviour
     {
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(OnclickScene);
-        PlayerPrefs.SetInt("stage", stage);
-        //stage = PlayerPrefs.GetInt("stage", stage);
+        stage = PlayerPrefs.GetInt("stage", stage);
+        
+        
     }
 
     // Update is called once per frame
@@ -44,7 +45,7 @@ public class NextScene : MonoBehaviour
         {
             stage = 1;
         }
-        
+        PlayerPrefs.SetInt("stage", stage);
 
         SceneManager.LoadScene("stage"+ stage);
 

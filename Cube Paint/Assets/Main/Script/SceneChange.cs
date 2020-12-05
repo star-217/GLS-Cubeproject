@@ -17,7 +17,7 @@ public class SceneChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        stage = LoadStage.stage;
+        //stage = LoadStage.stage;
         time++;
 
         if(time >= 3)

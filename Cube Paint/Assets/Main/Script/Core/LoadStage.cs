@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadStage : MonoBehaviour
 {
-    static public int stage = 1;
+    private int stage = 1;
 
     // Start is called before the first frame update
     void Start()

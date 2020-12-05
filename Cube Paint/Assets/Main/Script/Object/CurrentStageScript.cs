@@ -5,6 +5,7 @@ using TMPro;
 
 public class CurrentStageScript : MonoBehaviour
 {
+    private int stage;
 
     private TextMeshProUGUI textMeshPro;
     public GameObject CurrentStage_obj;
@@ -12,11 +13,12 @@ public class CurrentStageScript : MonoBehaviour
     void Start()
     {
         textMeshPro = CurrentStage_obj.GetComponent<TextMeshProUGUI>();
+        stage = PlayerPrefs.GetInt("stage");
     }
 
     // Update is called once per frame
     void Update()
     {
-        textMeshPro.text = "Level " + NextScene.stage;
+        textMeshPro.text = "Level " + stage;
     }
 }
