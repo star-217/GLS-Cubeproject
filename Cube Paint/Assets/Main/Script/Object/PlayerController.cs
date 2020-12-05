@@ -104,11 +104,6 @@ public class PlayerController : MonoBehaviour
         //    //for (int i = 0; i < transform.childCount; i++)
         //    //    particle[i].Play();
         //}
-
-
-
-
-
     }
 
     void PlayerFlick()

@@ -3,7 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using DG.Tweening;
+using Es.InkPainter;
+
+public class ClearEvent : UnityEvent<float> { }
 
 public class Inkgauge : MonoBehaviour
 {
@@ -12,8 +16,16 @@ public class Inkgauge : MonoBehaviour
     private float gauge_animation;
     private bool gaugeAnimation_control;
     private CollisionPainter collisionPainter;
-    [SerializeField] private GameObject player;
-    float gauge_ink;
+    private GameObject player;
+    private crystalScript crystalScript;
+    private InkCanvas inkCanvas;
+ 
+    public ClearEvent ClearEvent => clearEvent;
+
+    private bool isClear = false;
+    private ClearEvent clearEvent = new ClearEvent();
+
+    float gauge_ink = 0.0f;
     [SerializeField]
     RectTransform rect;
     // Start is called before the first frame update
@@ -24,19 +36,31 @@ public class Inkgauge : MonoBehaviour
         gauge.fillAmount = 1;
         player = GameObject.FindGameObjectWithTag("Player");
         collisionPainter = player.GetComponent<CollisionPainter>();
-       
-        
+
+        inkCanvas = GameObject.FindGameObjectWithTag("Floor").GetComponent<InkCanvas>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-
         //gauge.fillAmount = (collisionPainter.Ink / collisionPainter.Ink_max);
-        gauge_ink = (collisionPainter.Ink / collisionPainter.Ink_max);
-        rect.DOScaleY(gauge_ink, 0.5f);
+        if (inkCanvas.Per < 90)
+        {
+            gauge_ink = (collisionPainter.Ink / collisionPainter.Ink_max);
+            rect.DOScaleY(gauge_ink, 0.5f);
+        }
+        else
+        {
+            if (!isClear)
+            {
+                var score = gauge_ink * 100.0f;
 
+                clearEvent.Invoke(score);
+
+                //PlayerPrefs.SetFloat("crystal", crystal);
+                isClear = true;
+            }
+        }
     }
 }
+
