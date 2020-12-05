@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
     Vector3 defaultposition;
     float ink_ratio;
     int ration_change1, ration_change2, ration_change3;
-    Vector3 high;
+    float high;
 
     //プレイヤーのインク
     CollisionPainter collisionPainter;
@@ -95,8 +95,8 @@ public class PlayerController : MonoBehaviour
     {
         ink_ratio = (collisionPainter.Ink / collisionPainter.Ink_max);
         PlayerFlick();
-       // PlayerScaleController(ink_ratio);
-        //ColorController(ink_ratio);
+        PlayerScaleController(ink_ratio);
+        ColorController(ink_ratio);
         //if (defaultscale + 5 < gameObject.transform.localScale.x)
         //{
       
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerFlick()
     {
-        if (inkCanvas.Per < 95)
+        if (inkCanvas.Per < 90)
         {
             mouseDirection = (Input.mousePosition - this.screenPoint);
             mouseDirection.z = mouseDirection.y;
@@ -206,29 +206,40 @@ public class PlayerController : MonoBehaviour
 
     void PlayerScaleController(float ink_ratio)
     {
-        
+        //position.y = (ボールの初期Scale.y / 2) * 現在のボールのscale.y
+       
 
         if (ink_ratio > 0.5f)
         {
-            gameObject.transform.localScale = defaultscale; 
+            gameObject.transform.localScale = defaultscale;
+            
         }
         else if (ink_ratio < 0.5f)
         {
-            gameObject.transform.localScale = defaultscale * 0.7f;
-            high = defaultscale * 0.35f;
-            ration_change1++;
+           
+            if (ink_ratio < 0.3f)
+            {
+                gameObject.transform.localScale = defaultscale * 0.5f;
+                high = (defaultscale.y / 2.0f) * gameObject.transform.localScale.y;
+                ration_change2++;
+            }
+
+        else
+            {
+                gameObject.transform.localScale = defaultscale * 0.7f;
+                high = (defaultscale.y / 2.0f) * gameObject.transform.localScale.y;/*defaultscale * 0.35f;*/
+                ration_change1++;
+            }
+
         }
-        else if (ink_ratio < 0.3f)
-        {
-            gameObject.transform.localScale = defaultscale * 0.5f;
-            high = defaultscale * 0.25f;
-            ration_change2++;
-        }
+      
+
+        high = (defaultscale.y / 2.0f) * gameObject.transform.localScale.y;
 
         if (ration_change1 != ration_change2)
         {
             Vector3 pos;
-            pos.y = defaultposition.y - high.y;
+            pos.y = /*defaultposition.y -*/ high;
             pos.x = gameObject.transform.position.x;
             pos.z = gameObject.transform.position.z;
 
@@ -240,7 +251,7 @@ public class PlayerController : MonoBehaviour
         if (ration_change2 != ration_change3)
         {
             Vector3 pos;
-            pos.y = defaultposition.y - high.y;
+            pos.y =  high;
             pos.x = gameObject.transform.position.x;
             pos.z = gameObject.transform.position.z;
 
