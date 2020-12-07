@@ -152,9 +152,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Roller: {fileID: 0}
   clear_score: 75
+  end: {fileID: 78697878519688468, guid: 5dae09e7442fd8047925e628802dce99, type: 3}
   speed_up: 1
   next: {fileID: 0}
   particle_clear: {fileID: 0}
+  Gameover: {fileID: 0}
 --- !u!135 &3009802903957059958
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -239,8 +241,8 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0, g: 0.61144805, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key1: {r: 0, g: 0.61144805, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -254,17 +256,17 @@ TrailRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 0
+      atime0: 42983
+      atime1: 58211
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 1
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0

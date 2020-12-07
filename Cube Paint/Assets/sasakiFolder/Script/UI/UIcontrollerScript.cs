@@ -51,7 +51,7 @@ public class UIcontrollerScript : MonoBehaviour
                 TapToStart_Object.SetActive(false);
 
                 PercentageGauge_Object.SetActive(true);
-                InkRemnantGauge_Object.SetActive(true);
+                //InkRemnantGauge_Object.SetActive(true);
                 Gauge_Outline.SetActive(true);
 
             }

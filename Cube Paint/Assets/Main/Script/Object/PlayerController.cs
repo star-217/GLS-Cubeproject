@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
     Vector3 endPos;　//指を離した場所を記録
     private float dir = 0;
     [SerializeField] float clear_score = 75;
+    [SerializeField] ParticleSystem end;
+    bool end_b = false;
 
     public float Dir
     {
@@ -38,6 +40,10 @@ public class PlayerController : MonoBehaviour
         get { return clear_score; }
     }
 
+    public float InkRasio
+    {
+        get { return ink_ratio; }
+    }
     float time = 0;
     float speed = 0;
     [SerializeField] private float speed_up = 1;
@@ -63,6 +69,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject next;
     [SerializeField] ParticleSystem particle_clear;
 
+    [SerializeField] GameObject Gameover;
+
 
 
 
@@ -85,7 +93,9 @@ public class PlayerController : MonoBehaviour
         ration_change1 = 0;
         ration_change2 = ration_change1;
         ration_change3 = ration_change2;
- 
+        
+        
+
         //  Roller.SetActive(false);
     }
 
@@ -93,8 +103,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ink_ratio = (collisionPainter.Ink / collisionPainter.Ink_max);
-        PlayerFlick();
+        ink_ratio = 1.0f/*(collisionPainter.Ink / collisionPainter.Ink_max)*/;
+        if (ink_ratio > 0.1f)
+        {
+            PlayerFlick();
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
         PlayerScaleController(ink_ratio);
         ColorController(ink_ratio);
         //if (defaultscale + 5 < gameObject.transform.localScale.x)
@@ -108,7 +125,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerFlick()
     {
-        if (inkCanvas.Per < 90)
+        if (inkCanvas.Per < 95)
         {
             mouseDirection = (Input.mousePosition - this.screenPoint);
             mouseDirection.z = mouseDirection.y;
@@ -214,9 +231,29 @@ public class PlayerController : MonoBehaviour
            
             if (ink_ratio < 0.3f)
             {
-                gameObject.transform.localScale = defaultscale * 0.5f;
-                high = (defaultscale.y / 2.0f) * gameObject.transform.localScale.y;
-                ration_change2++;
+                if (ink_ratio < 0.1f)
+                {
+                    if (!end_b)
+                    {
+                        Instantiate(end);
+                        GetComponent<MeshRenderer>().enabled = false;
+                        Gameover.SetActive(true);
+                        end_b = true;
+                    }
+                }
+                else
+                {
+                    gameObject.transform.localScale = defaultscale * (ink_ratio + 0.2f);
+                   
+                    high = (defaultscale.y / 2.0f) * gameObject.transform.localScale.y;
+                    Vector3 pos;
+                    pos.y = high;
+                    pos.x = gameObject.transform.position.x;
+                    pos.z = gameObject.transform.position.z;
+
+                    gameObject.transform.position = pos;
+                    //ration_change2++;
+                }
             }
 
         else
@@ -227,8 +264,8 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-      
 
+        GetComponent<TrailRenderer>().startWidth = gameObject.transform.localScale.x;
         high = (defaultscale.y / 2.0f) * gameObject.transform.localScale.y;
 
         if (ration_change1 != ration_change2)

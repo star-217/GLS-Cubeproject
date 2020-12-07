@@ -116,11 +116,13 @@ namespace Es.InkPainter.Sample
 
                         if (playerController.Dir >= 200)
                         {
-
-							if (rigidbody.velocity.sqrMagnitude < 800)
-								ink -= 1;
-							else
-								ink -= 2;
+							if (inkCanvas.Per < 90)
+							{ 
+								if (rigidbody.velocity.sqrMagnitude < 800)
+									ink -= 1;
+								else
+									ink -= 2;
+							}
 
 						}
 			    			//canvas.Paint(brush, p.point);

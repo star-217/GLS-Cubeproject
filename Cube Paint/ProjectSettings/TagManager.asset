@@ -15,6 +15,7 @@ TagManager:
   - Block
   - BuckHomeButtontag
   - InkGaugeTag
+  - GameOver
   layers:
   - Default
   - TransparentFX
