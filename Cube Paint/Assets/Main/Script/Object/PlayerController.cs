@@ -66,8 +66,8 @@ public class PlayerController : MonoBehaviour
     bool particle_flag = false;
 
 
-    [SerializeField] static public  GameObject next;
-    [SerializeField] static public ParticleSystem particle_clear;
+    [SerializeField] private  GameObject next;
+    [SerializeField] private ParticleSystem particle_clear;
 
     [SerializeField] GameObject Gameover;
 
