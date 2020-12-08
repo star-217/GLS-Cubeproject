@@ -51,14 +51,14 @@ using UnityEngine.UI;
             if (texture_change == TextureChange.Blue)
             {
             //material.SetColor("_BaseColor", Color.blue);
-            colorNumber = 1;
+            colorNumber = 0;
             PlayerPrefs.SetInt("ColorNumber", colorNumber);
             }
 
             if (texture_change == TextureChange.Red)
             {
             //material.SetColor("_BaseColor", Color.red);
-            colorNumber = 2;
+            colorNumber = 1;
             PlayerPrefs.SetInt("ColorNumber", colorNumber);
 
         }
@@ -66,7 +66,7 @@ using UnityEngine.UI;
         if (texture_change == TextureChange.Green)
             {
             //material.SetColor("_BaseColor", Color.green);
-            colorNumber = 3;
+            colorNumber = 2;
             PlayerPrefs.SetInt("ColorNumber", colorNumber);
 
         }
@@ -74,7 +74,7 @@ using UnityEngine.UI;
         if (texture_change == TextureChange.Yellow)
             {
             //material.SetColor("_BaseColor", new Color32(255, 255, 0, 255));
-            colorNumber = 4;
+            colorNumber = 3;
             PlayerPrefs.SetInt("ColorNumber", colorNumber);
 
         }
@@ -82,7 +82,7 @@ using UnityEngine.UI;
         if (texture_change == TextureChange.Purple)
             {
             //material.SetColor("_BaseColor", new Color32(222, 41, 202, 0));
-            colorNumber = 5;
+            colorNumber = 4;
             PlayerPrefs.SetInt("ColorNumber", colorNumber);
 
         }
@@ -90,7 +90,7 @@ using UnityEngine.UI;
         if (texture_change == TextureChange.YellowGreen)
             {
             //material.SetColor("_BaseColor", new Color32(138, 229, 34, 255));
-            colorNumber = 6;
+            colorNumber = 5;
             PlayerPrefs.SetInt("ColorNumber", colorNumber);
 
         }
@@ -98,7 +98,7 @@ using UnityEngine.UI;
         if (texture_change == TextureChange.Black)
             {
             //material.SetColor("_BaseColor", Color.black);
-            colorNumber = 7;
+            colorNumber = 6;
             PlayerPrefs.SetInt("ColorNumber", colorNumber);
 
         }
@@ -106,7 +106,7 @@ using UnityEngine.UI;
         if (texture_change == TextureChange.Brown)
             {
             //material.SetColor("_BaseColor", new Color32(154, 91, 19, 255));
-            colorNumber = 8;
+            colorNumber = 7;
             PlayerPrefs.SetInt("ColorNumber", colorNumber);
 
         }
@@ -115,7 +115,7 @@ using UnityEngine.UI;
         if (texture_change == TextureChange.LightBlue)
             {
             //material.SetColor("_BaseColor", new Color32(48, 225, 227, 255));
-            colorNumber = 9;
+            colorNumber = 8;
             PlayerPrefs.SetInt("ColorNumber", colorNumber);
 
         }

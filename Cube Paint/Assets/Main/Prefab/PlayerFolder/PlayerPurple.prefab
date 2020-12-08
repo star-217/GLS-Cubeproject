@@ -152,9 +152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Roller: {fileID: 0}
   clear_score: 75
+  end: {fileID: 0}
   speed_up: 1
-  next: {fileID: 0}
-  particle_clear: {fileID: 0}
+  Gameover: {fileID: 0}
 --- !u!135 &8901511794691083767
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -66,8 +66,8 @@ public class PlayerController : MonoBehaviour
     bool particle_flag = false;
 
 
-    [SerializeField] GameObject next;
-    [SerializeField] ParticleSystem particle_clear;
+    [SerializeField] static public  GameObject next;
+    [SerializeField] static public ParticleSystem particle_clear;
 
     [SerializeField] GameObject Gameover;
 
@@ -91,8 +91,8 @@ public class PlayerController : MonoBehaviour
         player_color = GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
         player_color2 = GetComponent<MeshRenderer>().material.GetColor("_1st_ShadeColor");
         defaultposition = gameObject.transform.position;
-
-        //next = GameObject.FindGameObjectWithTag("Result");
+        //ext = Saveprefab.next;
+        //particle_clear = Saveprefab.particle;
         ration_change1 = 0;
         ration_change2 = ration_change1;
         ration_change3 = ration_change2;
