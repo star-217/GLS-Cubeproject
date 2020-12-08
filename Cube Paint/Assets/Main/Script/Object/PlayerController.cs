@@ -71,6 +71,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameObject Gameover;
 
+    float trail_balance;
+    TrailRenderer trailRenderer;
+
 
 
 
@@ -93,9 +96,9 @@ public class PlayerController : MonoBehaviour
         ration_change1 = 0;
         ration_change2 = ration_change1;
         ration_change3 = ration_change2;
+        trailRenderer = GetComponent<TrailRenderer>();
+        trail_balance = trailRenderer.startWidth - trailRenderer.endWidth;
         
-        
-
         //  Roller.SetActive(false);
     }
 
@@ -103,7 +106,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ink_ratio = 1.0f/*(collisionPainter.Ink / collisionPainter.Ink_max)*/;
+        ink_ratio =(collisionPainter.Ink / collisionPainter.Ink_max);
         if (ink_ratio > 0.1f)
         {
             PlayerFlick();
@@ -265,7 +268,8 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        GetComponent<TrailRenderer>().startWidth = gameObject.transform.localScale.x;
+        trailRenderer.startWidth = gameObject.transform.localScale.x;
+        trailRenderer.endWidth = gameObject.transform.localScale.x - trail_balance;
         high = (defaultscale.y / 2.0f) * gameObject.transform.localScale.y;
 
         if (ration_change1 != ration_change2)
