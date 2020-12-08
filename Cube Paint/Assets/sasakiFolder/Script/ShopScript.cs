@@ -3,25 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class ShopScript : MonoBehaviour
 {
-    Button testButton;
+    private Button testButton;
 
     // Start is called before the first frame update
     void Start()
     {
         testButton = GetComponent<Button>();
-        testButton.onClick.AddListener(Onclick);
+        testButton.onClick.AddListener(ShopOnclick);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    void Onclick()
+    void ShopOnclick()
     {
+        Debug.Log("ボタンが押されたよ");
         SceneManager.LoadScene("ShopScene");
     }
 }
