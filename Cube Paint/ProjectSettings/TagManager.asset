@@ -15,7 +15,7 @@ TagManager:
   - Block
   - BuckHomeButtontag
   - InkGaugeTag
-  - GameOver
+  - ShopTag
   layers:
   - Default
   - TransparentFX
@@ -28,7 +28,7 @@ TagManager:
   - MuveCubeLayer
   - RollerLayer
   - FloorLayer
-  - 
+  - PlayerLayer
   - 
   - 
   - 

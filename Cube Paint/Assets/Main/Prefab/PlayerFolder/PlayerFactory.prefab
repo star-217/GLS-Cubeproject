@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4771454684053779548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6949426728388131978}
+  - component: {fileID: 4693711079481016450}
+  m_Layer: 0
+  m_Name: PlayerFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6949426728388131978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4771454684053779548}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.4981515, y: -0.03450589, z: -1.0056022}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4693711079481016450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4771454684053779548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fe95a3318389841b8ebd5d3d398208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_Blue: {fileID: 3815211394299160449, guid: f1717c2b1a6653443a7e0d45bdc5e2c3,
+    type: 3}
+  Player_Red: {fileID: 4103903315379805521, guid: 49ee6278b934c88409bcd85981bf4619,
+    type: 3}
+  Player_Green: {fileID: 2678104724311091918, guid: a75be1a1e75d7524794388525460c6b9,
+    type: 3}
+  Player_Yellow: {fileID: 1539260503168489657, guid: e0fb7cb94eebd704b9ad15760695a874,
+    type: 3}
+  Player_Purple: {fileID: 8728050849025840983, guid: f4af20caca701da4c895136c8941c6ba,
+    type: 3}
+  Player_YellowGreen: {fileID: 2436499430538684598, guid: e74b1c542480d884c88b3587ff2ab1ec,
+    type: 3}
+  Player_Black: {fileID: 175171495483350003, guid: cdfea1a36ee353c4287aaa486f1fa30f,
+    type: 3}
+  Player_Brown: {fileID: 3045661990922629851, guid: 534d7261486d0924c94f10c0c6b75b92,
+    type: 3}
+  Player_LightBlue: {fileID: 8242767047916823331, guid: d8df2b624a95af342a1b88b69d1a8257,
+    type: 3}
+  Player_position_obj: {fileID: 0}

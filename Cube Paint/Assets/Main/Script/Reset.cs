@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Reset : MonoBehaviour
 {
-    Button testButton;
+    private Button testButton;
     
     // Start is called before the first frame update
     void Start()
     {
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(Onclick);
-        
     }
 
     // Update is called once per frame
@@ -24,7 +23,6 @@ public class Reset : MonoBehaviour
 
     void Onclick()
     {
-        
         int stage = PlayerPrefs.GetInt("stage");
         SceneManager.LoadScene("stage" +stage);
     }

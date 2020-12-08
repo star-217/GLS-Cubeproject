@@ -65,6 +65,7 @@ namespace Es.InkPainter.Sample
 
 		void Start()
 		{
+			inkCanvas_obj = GameObject.FindGameObjectWithTag("Floor");
 			inkCanvas = inkCanvas_obj.GetComponent<InkCanvas>();
 			playerController = playerController_obj.GetComponent<PlayerController>();
 			Color.RGBToHSV(default_color, out h, out s, out v);
