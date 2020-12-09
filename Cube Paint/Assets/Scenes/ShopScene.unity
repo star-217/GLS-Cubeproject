@@ -2879,6 +2879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496570c921ddd39428d7ee2afdf07772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseball: {fileID: 2800000, guid: 3dc90d06ff86c7f448e1ef6d4b65bd8c, type: 3}
 --- !u!135 &1777799929
 SphereCollider:
   m_ObjectHideFlags: 0

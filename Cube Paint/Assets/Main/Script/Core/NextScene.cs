@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
+    
     Button testButton;
     [SerializeField] public static int stage = 1;
     float time;

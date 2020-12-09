@@ -8,11 +8,13 @@ public class ShopMaterial : MonoBehaviour
     Color color_shader;
     int color_mode;
     Material player_material;
+    public Texture baseball;
 
     // Start is called before the first frame update
     void Start()
     {
         player_material = GetComponent<MeshRenderer>().material;
+       
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class ShopMaterial : MonoBehaviour
         {
             ColorUtility.TryParseHtmlString("#553CCF", out color);
             ColorUtility.TryParseHtmlString("#432880", out color_shader);
+           // player_material.SetTexture("_MainTex", null);
 
         }
 
@@ -31,6 +34,8 @@ public class ShopMaterial : MonoBehaviour
         {
             ColorUtility.TryParseHtmlString("#CA2124", out color);
             ColorUtility.TryParseHtmlString("#B01616", out color_shader);
+            //player_material.SetTexture("_MainTex", baseball); 
+            //player_material.SetTexture("_1st_ShadeMap", baseball);
 
         }
 
