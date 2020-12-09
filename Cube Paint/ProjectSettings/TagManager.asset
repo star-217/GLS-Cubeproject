@@ -29,7 +29,7 @@ TagManager:
   - RollerLayer
   - FloorLayer
   - PlayerLayer
-  - 
+  - MoveCubeAdjustmentLayer
   - 
   - 
   - 

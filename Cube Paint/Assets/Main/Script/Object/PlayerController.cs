@@ -297,9 +297,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
-
-
     private void OnCollisionEnter(Collision collision)
     {
         //バンパーの動作
@@ -313,14 +310,6 @@ public class PlayerController : MonoBehaviour
             //バンパーの跳ね返し 
             rb.AddForce(explosion.normalized * 300, ForceMode.Impulse);
         }
-
-
        
     }
-
-  
-
-
-
-
 }

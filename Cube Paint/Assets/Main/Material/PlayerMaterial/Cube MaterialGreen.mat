@@ -153,7 +153,7 @@ Material:
     - _utsTechnique: 0
     - _utsVersion: 2.075
     m_Colors:
-    - _1st_ShadeColor: {r: 0, g: 0.5188679, b: 0.075965464, a: 1}
+    - _1st_ShadeColor: {r: 0.20447601, g: 0.5176471, b: 0, a: 1}
     - _2nd_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 0, g: 0.6037736, b: 0.05344621, a: 1}
