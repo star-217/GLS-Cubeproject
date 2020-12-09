@@ -42,10 +42,7 @@ namespace Es.InkPainter.Sample
 		public GameObject playerController_obj;
 		private PlayerController playerController;
 
-		public ClearEvent ClearEvent => clearEvent;
-
-		private bool isClear = false;
-		private ClearEvent clearEvent = new ClearEvent();
+		
 
 
 		float h, s, v;
@@ -132,12 +129,10 @@ namespace Es.InkPainter.Sample
 									ink -= 2;
 							}else
                             {
-								if (!isClear)
-								{
+								
 									save_ink = ink;
-									clearEvent.Invoke(save_ink);
-									isClear = true;
-								}
+									
+								
 							}
 
 						}
