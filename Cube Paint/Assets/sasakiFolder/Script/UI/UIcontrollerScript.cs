@@ -34,7 +34,7 @@ public class UIcontrollerScript : MonoBehaviour
         Gauge_Outline.SetActive(false);
         result.SetActive(false);
         PercentageGauge_Object.SetActive(false);
-        InkRemnantGauge_Object.SetActive(false);
+        //InkRemnantGauge_Object.SetActive(false);
 
         testButton = Shop_Object.GetComponent<Button>();
         testButton.onClick.AddListener(ShopOnclick);
@@ -70,7 +70,7 @@ public class UIcontrollerScript : MonoBehaviour
     {
         TapToStart_Object.SetActive(false);
         PercentageGauge_Object.SetActive(true);
-        InkRemnantGauge_Object.SetActive(true);
+       // InkRemnantGauge_Object.SetActive(true);
         Gauge_Outline.SetActive(true);
         Shop_Object.SetActive(false);
     }

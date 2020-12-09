@@ -12,7 +12,7 @@ public class PlayerMaterialSet : MonoBehaviour
     Color color_shader;
 
 
-    void Start()
+    void Awake()
     {
         
         player_material = GetComponent<MeshRenderer>().material;
