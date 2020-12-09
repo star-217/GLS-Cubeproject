@@ -58,7 +58,7 @@ public class NextScene : MonoBehaviour
 
         GLS.GLSAnalyticsUtility.TrackEvent("StageClear", "Stage" + stage, stage);
         stage += 1;
-        if (stage > 20)
+        if (stage > 50)
         {
             stage = 1;
         }

@@ -523,6 +523,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1846125924733791720}
     m_Modifications:
+    - target: {fileID: 200142062893904180, guid: 2b2a83d121a92cf42b399e2ae4248037,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 691176696237179355, guid: 2b2a83d121a92cf42b399e2ae4248037,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 951293787206880240, guid: 2b2a83d121a92cf42b399e2ae4248037,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -582,6 +592,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428577959110548063, guid: 2b2a83d121a92cf42b399e2ae4248037,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8827950140321300745, guid: 2b2a83d121a92cf42b399e2ae4248037,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b2a83d121a92cf42b399e2ae4248037, type: 3}
