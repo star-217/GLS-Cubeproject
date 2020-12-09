@@ -26,6 +26,7 @@ namespace Es.InkPainter.Sample
 
 		[SerializeField] private float ink_max = 100;
 		[SerializeField] private float ink = 100;
+		public  float save_ink;
 		private Color default_color;
 		
 		public int count = 15;// 塗りを行う回数
@@ -40,6 +41,12 @@ namespace Es.InkPainter.Sample
 
 		public GameObject playerController_obj;
 		private PlayerController playerController;
+
+		public ClearEvent ClearEvent => clearEvent;
+
+		private bool isClear = false;
+		private ClearEvent clearEvent = new ClearEvent();
+
 
 		float h, s, v;
 		float color;  
@@ -123,6 +130,14 @@ namespace Es.InkPainter.Sample
 									ink -= 1;
 								else
 									ink -= 2;
+							}else
+                            {
+								if (!isClear)
+								{
+									save_ink = ink;
+									clearEvent.Invoke(save_ink);
+									isClear = true;
+								}
 							}
 
 						}

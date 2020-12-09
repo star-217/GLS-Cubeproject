@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 using Es.InkPainter;
+using Es.InkPainter.Sample;
 
 
 
@@ -11,29 +12,33 @@ public class crystalScript : MonoBehaviour
 {
 
     private TextMeshProUGUI textMeshPro;
-    public GameObject crystalTXT_obj;
     public Inkgauge inkgauge;
     private InkCanvas inkCanvas;
+    [SerializeField] private GameObject next;
+    private NextScene nextScene;
     //private float score;
     private float score_save = 0;
+    bool scoreFlag = false;
+    float score;
 
     // Start is called before the first frame update
     void Start()
     {
-        textMeshPro = crystalTXT_obj.GetComponent<TextMeshProUGUI>();
+        textMeshPro =GetComponent<TextMeshProUGUI>();
         //inkgauge = GameObject.FindGameObjectWithTag("InkGaugeTag").GetComponent<Inkgauge>();
         inkCanvas = GameObject.FindGameObjectWithTag("Floor").GetComponent<InkCanvas>();
-
-        inkgauge.ClearEvent.AddListener(StageClear);
+        //player = GameObject.FindGameObjectWithTag("Player");
+        nextScene = next.GetComponent<NextScene>();
+        nextScene.ClearEvent.AddListener(StageClear);
 
         score_save = PlayerPrefs.GetFloat("score_save");
         //textMeshPro.text = "" + (int)score_save;
-
+        textMeshPro.text = "" + (int)score_save;
     }
     // Update is called once per frame
     void Update()
     {
-        textMeshPro.text = "" + (int)score_save;
+        
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -41,6 +46,11 @@ public class crystalScript : MonoBehaviour
             //score_save = 0.0f;
             
         }
+
+      
+
+
+
     }
 
     private void StageClear(float score)

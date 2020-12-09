@@ -689,6 +689,16 @@ PrefabInstance:
       propertyPath: isMatchWidth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5093662651620846012, guid: fd12750030232b648b5af8b5707f15c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Next
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025877991311173082, guid: fd12750030232b648b5af8b5707f15c2,
+        type: 3}
+      propertyPath: next
+      value: 
+      objectReference: {fileID: 7979486143193860716}
     - target: {fileID: 7326617638059416717, guid: fd12750030232b648b5af8b5707f15c2,
         type: 3}
       propertyPath: m_RaycastTarget
@@ -770,6 +780,12 @@ Transform:
 --- !u!1 &8306734868139956174 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6578620189282497566, guid: fd12750030232b648b5af8b5707f15c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2885830372127417296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7979486143193860716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5093662651620846012, guid: fd12750030232b648b5af8b5707f15c2,
     type: 3}
   m_PrefabInstance: {fileID: 2885830372127417296}
   m_PrefabAsset: {fileID: 0}

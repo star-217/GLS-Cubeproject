@@ -20,10 +20,7 @@ public class Inkgauge : MonoBehaviour
     private crystalScript crystalScript;
     private InkCanvas inkCanvas;
  
-    public ClearEvent ClearEvent => clearEvent;
-
-    private bool isClear = false;
-    private ClearEvent clearEvent = new ClearEvent();
+   
 
     float gauge_ink = 0.0f;
     [SerializeField]
@@ -51,15 +48,15 @@ public class Inkgauge : MonoBehaviour
         }
         else
         {
-            if (!isClear)
-            {
-                var score = gauge_ink * 100.0f;
+            //if (!isClear)
+            //{
+            //    var score = gauge_ink * 100.0f;
 
-                clearEvent.Invoke(score);
+            //    clearEvent.Invoke(score);
 
-                //PlayerPrefs.SetFloat("crystal", crystal);
-                isClear = true;
-            }
+            //    //PlayerPrefs.SetFloat("crystal", crystal);
+            //    isClear = true;
+            //}
         }
     }
 }
