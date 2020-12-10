@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         get { return ink_ratio; }
     }
-    float time = 0;
+    //float time = 0;
     float speed = 0;
     [SerializeField] private float speed_up = 1;
    
@@ -75,6 +75,12 @@ public class PlayerController : MonoBehaviour
     TrailRenderer trailRenderer;
 
 
+    //プレイヤーのスピードを増やす変数（12/10）
+    [Header("短いときの速度")]
+    [SerializeField] private float minimum_speed = 0.0f;
+
+    [Header("長いときの速度")]
+    [SerializeField] private float max_speed = 0.0f;
 
 
 
@@ -121,8 +127,6 @@ public class PlayerController : MonoBehaviour
         ColorController(ink_ratio);
         //if (defaultscale + 5 < gameObject.transform.localScale.x)
         //{
-      
-
         //    //for (int i = 0; i < transform.childCount; i++)
         //    //    particle[i].Play();
         //}
@@ -139,45 +143,56 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                rb.velocity = Vector3.zero;
+
                 this.screenPoint = Input.mousePosition;
                 this.startPos = Input.mousePosition;
-                this.time = 0;
+                //this.time = 0;
 
             }
 
-            //スワイプ中の時間を取得する
-            if (Input.GetMouseButton(0))
-            {
-                this.time += Time.deltaTime;
-            }
+            ////スワイプ中の時間を取得する
+            //if (Input.GetMouseButton(0))
+            //{
+            //    this.time += Time.deltaTime;
+            //}
 
             if (Input.GetMouseButtonUp(0))
             {
                 rb.velocity = Vector3.zero;
                 force = new Vector3(mouseDirection.x, mouseDirection.y, mouseDirection.z);
 
-
                 this.endPos = Input.mousePosition;
                 endPos.z = 0;
 
                 //スワイプした距離を取得する
                 this.dir = Mathf.Abs(Vector3.Distance(this.startPos, this.endPos));
-                Debug.Log(dir);
+                Debug.Log("スワイプ距離" + dir);
+
 
                 //速度を計算する
-                this.speed = (this.dir / this.time);
+                //（スワイプした速度で速さが変わる）
+                //this.speed = (this.dir / this.time);
+
+                //if (dir >= 200.0f)
+                //{
+                //    //rb.AddForce(force);  // 力を加える
+                //    rb.AddForce(mouseDirection.x * speed, 0, mouseDirection.z * speed);
+                //    //parentPower.shock(mouseDirection, speed);
+                //   // rb.AddForceAtPosition(new Vector3(mouseDirection.x * speed * speed_up, 0, mouseDirection.z * speed * speed_up), transform.position + new Vector3(0.0f, 0.2f, 0.0f));
+                //}
 
 
-                //if(speed > 2000)
-                //    speed = 2000;
-
-                if (dir >= 200.0f)
+                if (dir <= 100.0f)
                 {
-                    //rb.AddForce(force);  // 力を加える
-                    rb.AddForce(mouseDirection.x * speed, 0, mouseDirection.z * speed);
-                    //parentPower.shock(mouseDirection, speed);
-                   // rb.AddForceAtPosition(new Vector3(mouseDirection.x * speed * speed_up, 0, mouseDirection.z * speed * speed_up), transform.position + new Vector3(0.0f, 0.2f, 0.0f));
+                    rb.AddForce(mouseDirection.x * minimum_speed, 0, mouseDirection.z * minimum_speed);
                 }
+                else if(dir > 100.0f)
+                {
+                    rb.AddForce(mouseDirection.x * max_speed, 0, mouseDirection.z * max_speed);
+                }
+
+
 
             }
     }
