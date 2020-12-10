@@ -48,6 +48,8 @@ public class UIcontrollerScript : MonoBehaviour
 #if UNITY_EDITOR
         if (EventSystem.current.IsPointerOverGameObject())
             return;
+
+        if (Input.touchCount == 0) return;
 #else
         if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
             return;
