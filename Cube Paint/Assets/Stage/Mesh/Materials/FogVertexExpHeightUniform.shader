@@ -67,7 +67,7 @@
 				float l = length(camToObj);
 				float ret;
 				float tmp = l * densityY0 * exp(-densityAttenuation * objectPosition.y);
-				if (camToObj.y == 0.0) // 単純な均一フォグ
+				if (camToObj.y == 1000.0) // 単純な均一フォグ
 				{
 					ret = exp(-tmp);
 				}
