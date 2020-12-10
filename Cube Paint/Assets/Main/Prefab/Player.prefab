@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3009802903957059958}
   - component: {fileID: 7433266115855110385}
   - component: {fileID: 7820201998438093811}
-  - component: {fileID: 5611845129862388496}
+  - component: {fileID: 1939398970013688349}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -120,7 +120,7 @@ MonoBehaviour:
   save_ink: 0
   count: 15
   intervalSecond: 0.1
-  addScale: 0.06
+  addScale: 0.07
   attenuation: 0.85
   inkCanvas_obj: {fileID: 0}
   playerController_obj: {fileID: 0}
@@ -159,6 +159,8 @@ MonoBehaviour:
   next: {fileID: 0}
   particle_clear: {fileID: 0}
   Gameover: {fileID: 0}
+  minimum_speed: 1000
+  max_speed: 6000
 --- !u!135 &3009802903957059958
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -290,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee641e7dcbbc6b43b596967f0c43fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5611845129862388496
+--- !u!114 &1939398970013688349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
