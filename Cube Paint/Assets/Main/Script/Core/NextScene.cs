@@ -43,13 +43,13 @@ public class NextScene : MonoBehaviour
     void Update()
     {
         //time += Time.deltaTime;
-        save_ink = collisionPainter.save_ink;
+        
     }
 
 
     void OnclickScene()
     {
-       
+        save_ink = collisionPainter.save_ink;
 
         GLS.Ad.ShowInterstitial(0);
 
