@@ -82,8 +82,6 @@ public class PlayerController : MonoBehaviour
     [Header("長いときの速度")]
     [SerializeField] private float max_speed = 0.0f;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -143,12 +141,12 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                
                 rb.velocity = Vector3.zero;
 
                 this.screenPoint = Input.mousePosition;
                 this.startPos = Input.mousePosition;
                 //this.time = 0;
-
             }
 
             ////スワイプ中の時間を取得する
@@ -167,7 +165,7 @@ public class PlayerController : MonoBehaviour
 
                 //スワイプした距離を取得する
                 this.dir = Mathf.Abs(Vector3.Distance(this.startPos, this.endPos));
-                Debug.Log("スワイプ距離" + dir);
+                //Debug.Log("スワイプ距離" + dir);
 
 
                 //速度を計算する
@@ -191,11 +189,11 @@ public class PlayerController : MonoBehaviour
                 {
                     rb.AddForce(mouseDirection.x * max_speed, 0, mouseDirection.z * max_speed);
                 }
-
-
-
             }
-    }
+
+                if(rb.velocity.magnitude <= 2.0f)
+                    rb.velocity = Vector3.zero;
+        }
         else
         {
             rb.velocity = Vector3.zero;
