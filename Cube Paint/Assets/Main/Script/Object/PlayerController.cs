@@ -92,8 +92,7 @@ public class PlayerController : MonoBehaviour
         inkCanvas = floor.GetComponent<InkCanvas>();
         defaultscale = gameObject.transform.localScale;
         collisionPainter = GetComponent<CollisionPainter>();
-        player_color = GetComponent<MeshRenderer>().material.GetColor("_BaseColor");
-        player_color2 = GetComponent<MeshRenderer>().material.GetColor("_1st_ShadeColor");
+        player_color = GetComponent<MeshRenderer>().material.GetColor("_Color");
         defaultposition = gameObject.transform.position;
         //ext = Saveprefab.next;
         //particle_clear = Saveprefab.particle;
@@ -183,11 +182,11 @@ public class PlayerController : MonoBehaviour
 
                 if (dir <= 100.0f)
                 {
-                    rb.AddForce(mouseDirection.x * minimum_speed, 0, mouseDirection.z * minimum_speed);
+                    rb.AddForce(-mouseDirection.x * minimum_speed, 0, -mouseDirection.z * minimum_speed);
                 }
                 else if(dir > 100.0f)
                 {
-                    rb.AddForce(mouseDirection.x * max_speed, 0, mouseDirection.z * max_speed);
+                    rb.AddForce(-mouseDirection.x * max_speed, 0, -mouseDirection.z * max_speed);
                 }
             }
 
@@ -229,8 +228,8 @@ public class PlayerController : MonoBehaviour
         else if (ink_ratio > 0.9f)
             white = 0;
 
-        GetComponent<MeshRenderer>().material.SetColor("_BaseColor", player_color * (1.0f - white) + Color.white * white);
-        GetComponent<MeshRenderer>().material.SetColor("_1st_ShadeColor", player_color2 * (1.0f - white) + Color.white * white);
+        GetComponent<MeshRenderer>().material.SetColor("_Color", player_color * (1.0f - white) + Color.white * white);
+
     }
 
 
