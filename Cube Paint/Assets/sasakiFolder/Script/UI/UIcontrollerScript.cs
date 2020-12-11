@@ -48,12 +48,13 @@ public class UIcontrollerScript : MonoBehaviour
 #if UNITY_EDITOR
         if (EventSystem.current.IsPointerOverGameObject())
             return;
-
+#elif UNITY_ANDROID || UNITY_IOS
         if (Input.touchCount == 0) return;
+            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
+               return;
+            }  
 #else
-        if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
-            return;
-        }
+        return;
 #endif
         if (Input.GetMouseButtonDown(0))
         {
