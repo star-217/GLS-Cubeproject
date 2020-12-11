@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Es.InkPainter.Effective;
+using UnityEngine.Rendering;
 
 #if UNITY_EDITOR
 
@@ -412,9 +413,9 @@ namespace Es.InkPainter
 			if (paintSwitching)
 			{
 				fps_count++;
-				if (fps_count >= 30)
+				if (fps_count >= 60)
 				{
-
+					
 					RenderTexture.active = renderTexture;
 					newTex.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
 					newTex.Apply();
@@ -439,14 +440,12 @@ namespace Es.InkPainter
 						}
 						++ca_y;
 					}
-				}
-
-				if (fps_count >= 30)
-				{
 					fps_count = 0;
 				}
+
 				int fuck = (int)(renderTexture.width / 32.0f + 0.5f) * (int)(renderTexture.height / 32.0f + 0.5f) - (int)area_count;
 				per = (paintCount / ((int)(renderTexture.width / 32.0f + 0.5f) * (int)(renderTexture.height / 32.0f + 0.5f) - area_count)) * 100.0f;
+				Debug.Log(per);
 				//Debug.Log("塗った数:" + paintCount + " 塗らないといけない数:" + fuck);
 
 				RenderTexture.active = null;
