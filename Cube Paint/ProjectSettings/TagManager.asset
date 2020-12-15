@@ -16,6 +16,7 @@ TagManager:
   - BuckHomeButtontag
   - InkGaugeTag
   - ShopTag
+  - Hole
   layers:
   - Default
   - TransparentFX
