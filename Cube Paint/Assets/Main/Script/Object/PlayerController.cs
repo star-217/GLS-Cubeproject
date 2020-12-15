@@ -30,6 +30,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ParticleSystem end;
     bool end_b = false;
 
+    [SerializeField]LineRenderer line;
+    Vector3 player_pos;
+    Vector3 end_pos;
+
+    public ParticleSystem balloonparticle;
+
     public float Dir
     {
         get { return dir; }
@@ -91,16 +97,18 @@ public class PlayerController : MonoBehaviour
         floor = GameObject.FindGameObjectWithTag("Floor");
         inkCanvas = floor.GetComponent<InkCanvas>();
         defaultscale = gameObject.transform.localScale;
-        collisionPainter = GetComponent<CollisionPainter>();
+       // collisionPainter = GetComponent<CollisionPainter>();
         player_color = GetComponent<MeshRenderer>().material.GetColor("_Color");
         defaultposition = gameObject.transform.position;
         //ext = Saveprefab.next;
         //particle_clear = Saveprefab.particle;
+        //balloonparticle = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
         ration_change1 = 0;
         ration_change2 = ration_change1;
         ration_change3 = ration_change2;
         trailRenderer = GetComponent<TrailRenderer>();
         trail_balance = trailRenderer.startWidth - trailRenderer.endWidth;
+        line = GetComponent<LineRenderer>();
         
         //  Roller.SetActive(false);
     }
@@ -111,7 +119,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ink_ratio =(collisionPainter.Ink / collisionPainter.Ink_max);
+        ink_ratio = 1;/*(collisionPainter.Ink / collisionPainter.Ink_max);*/
         if (ink_ratio > 0.1f)
         {
             PlayerFlick();
@@ -131,7 +139,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerFlick()
     {
-        if (inkCanvas.Per < 95)
+        if (inkCanvas.Per < 100)
         {
             mouseDirection = (Input.mousePosition - this.screenPoint);
             mouseDirection.z = mouseDirection.y;
@@ -145,14 +153,15 @@ public class PlayerController : MonoBehaviour
 
                 this.screenPoint = Input.mousePosition;
                 this.startPos = Input.mousePosition;
+                line.enabled = true;
                 //this.time = 0;
             }
 
-            ////スワイプ中の時間を取得する
-            //if (Input.GetMouseButton(0))
-            //{
-            //    this.time += Time.deltaTime;
-            //}
+            //スワイプ中の時間を取得する
+            if (Input.GetMouseButton(0))
+            {
+                DrawLine(-mouseDirection);
+            }
 
             if (Input.GetMouseButtonUp(0))
             {
@@ -166,7 +175,7 @@ public class PlayerController : MonoBehaviour
                 this.dir = Mathf.Abs(Vector3.Distance(this.startPos, this.endPos));
                 //Debug.Log("スワイプ距離" + dir);
 
-
+                line.enabled = false;
                 //速度を計算する
                 //（スワイプした速度で速さが変わる）
                 //this.speed = (this.dir / this.time);
@@ -324,6 +333,22 @@ public class PlayerController : MonoBehaviour
             //バンパーの跳ね返し 
             rb.AddForce(explosion.normalized * 300, ForceMode.Impulse);
         }
+
+        if(collision.gameObject.CompareTag("Wall"))
+        {
+            foreach (var p in collision.contacts)
+                balloonparticle.Play();
+
+        }
        
+    }
+
+
+    private void DrawLine(Vector3 mouseDirection)
+    {
+        player_pos = gameObject.transform.position;
+        end_pos = mouseDirection * 2;
+        line.SetPosition(0, player_pos);
+        line.SetPosition(1, player_pos + end_pos);
     }
 }
