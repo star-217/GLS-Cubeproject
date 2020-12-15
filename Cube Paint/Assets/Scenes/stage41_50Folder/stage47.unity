@@ -1179,11 +1179,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 52
       objectReference: {fileID: 0}
-    - target: {fileID: 1846125924325371236, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: field of view
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 1846125924733791720, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: m_LocalPosition.x
