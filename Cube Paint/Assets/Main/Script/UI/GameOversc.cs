@@ -23,7 +23,7 @@ public class GameOversc : MonoBehaviour
         if (!flag)
         {
             var sequence = DOTween.Sequence();
-            sequence.Append(text.DOAnchorPosY(-326.0f, 0.8f));
+            sequence.Append(text.DOAnchorPosY(-300.0f, 1.0f));
             sequence.Append(skip.DOScale(1.0f, 0.3f));
             retry.DOScale(1.0f, 0.3f).SetDelay(3.0f);
             flag = true;
