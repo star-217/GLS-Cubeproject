@@ -7,7 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
     Transform transform;
-    bool flag
+    bool flag;
     void Start()
     {
         transform = GetComponent<Transform>();

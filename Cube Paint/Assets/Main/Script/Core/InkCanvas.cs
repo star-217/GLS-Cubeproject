@@ -290,7 +290,7 @@ namespace Es.InkPainter
 
 		private Vector3 Floor_localScale;
 		private Vector3 area_localScale;
-		private float   area_count;
+		private int   area_count;
 
 		private RaycastHit hit;
 		private int distance = 100;
@@ -309,6 +309,8 @@ namespace Es.InkPainter
 		bool[,] countArea;
 		int countWidth;
 		int countHeight;
+
+		const float DIVIDE_SIZE = 16.0f;
 
 		private void Awake()
 		{
@@ -354,17 +356,17 @@ namespace Es.InkPainter
 			floor_height = Floor_obj.GetComponent<Renderer>().bounds.size.z;
 			print("height: " + floor_height);
 
-			area_count = 0.0f;
-			for (int i = 0; i < area_objs.Length; i++)
-            {
-				area_count += rt.width  * (area_objs[i].transform.localScale.x / Floor_localScale.x) * 
-							  rt.height * (area_objs[i].transform.localScale.z / Floor_localScale.z);
-			}
+//			area_count = 0.0f;
+			//for (int i = 0; i < area_objs.Length; i++)
+   //         {
+			//	area_count += rt.width  * (area_objs[i].transform.localScale.x / Floor_localScale.x) * 
+			//				  rt.height * (area_objs[i].transform.localScale.z / Floor_localScale.z);
+			//}
 
-            area_count /= 32.0f * 32.0f;
+//            area_count /= DIVIDE_SIZE * DIVIDE_SIZE;
 
-			countHeight = (int)(renderTexture.height / 32.0f + 0.5f);
-			countWidth =  (int)(renderTexture.width  / 32.0f + 0.5f);
+			countHeight = (int)(renderTexture.height / DIVIDE_SIZE + 0.5f);
+			countWidth =  (int)(renderTexture.width  / DIVIDE_SIZE + 0.5f);
 			countArea = new bool[countHeight, countWidth];
 
 			
@@ -388,7 +390,8 @@ namespace Es.InkPainter
 						if (hit.collider.CompareTag("Block"))
 						{
 							countArea[y, x] = false;
-                        }
+							area_count += 1;
+						}
                         else
                         {
 							countArea[y, x] = true;
@@ -425,10 +428,10 @@ namespace Es.InkPainter
 					paintCount = 0;
 					int ca_y, ca_x;
 					ca_y = 0;
-					for (int y = renderTexture.height / 32 / 2; y < renderTexture.height; y += 32)
+					for (int y = renderTexture.height / (int)DIVIDE_SIZE / 2; y < renderTexture.height; y += (int)DIVIDE_SIZE)
 					{
 						ca_x = 0;
-						for (int x = renderTexture.width / 32 / 2; x < renderTexture.width; x += 32)
+						for (int x = renderTexture.width / (int)DIVIDE_SIZE / 2; x < renderTexture.width; x += (int)DIVIDE_SIZE)
 						{
 							if (countArea[ca_y, ca_x])
 							{
@@ -442,9 +445,11 @@ namespace Es.InkPainter
 					}
 					fps_count = 0;
 				}
-
-				int fuck = (int)(renderTexture.width / 32.0f + 0.5f) * (int)(renderTexture.height / 32.0f + 0.5f) - (int)area_count;
-				per = (paintCount / ((int)(renderTexture.width / 32.0f + 0.5f) * (int)(renderTexture.height / 32.0f + 0.5f) - area_count)) * 100.0f;
+				
+				float fuck = (renderTexture.width / DIVIDE_SIZE) * (renderTexture.height / DIVIDE_SIZE); // - (int)area_count;
+//				int bitch = Mathf.CeilToInt(area_count);
+//				per = (paintCount / ((int)(renderTexture.width / DIVIDE_SIZE + 0.5f) * (int)(renderTexture.height / DIVIDE_SIZE + 0.5f) - area_count)) * 100.0f;
+				per = paintCount / (fuck - area_count) * 100.0f;
 				Debug.Log(per);
 				//Debug.Log("塗った数:" + paintCount + " 塗らないといけない数:" + fuck);
 
