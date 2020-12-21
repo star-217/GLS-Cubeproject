@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3128935329725473745}
   - component: {fileID: 3128935329725473744}
   - component: {fileID: 3128935329725473747}
-  - component: {fileID: 3128935329725473749}
   - component: {fileID: 3128935329725473748}
   - component: {fileID: 3128935329725473751}
   - component: {fileID: 3009802903957059958}
@@ -87,44 +86,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3128935329725473749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3128935329725473750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1259da91c24a6d34ba000c2454d018a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brush:
-    brushTexture: {fileID: 2800000, guid: 15480de9f28297540985742639bf48cb, type: 3}
-    brushNormalTexture: {fileID: 2800000, guid: 945b831b22eb06945bf77e00f16ff51a,
-      type: 3}
-    brushHeightTexture: {fileID: 0}
-    brushScale: 0.005
-    rotateAngle: 0
-    brushNormalBlend: 0
-    brushHeightBlend: 0
-    brushColor: {r: 0.3066038, g: 0.53441507, b: 1, a: 0.21176471}
-    colorBlendType: 0
-    normalBlendType: 3
-    heightBlendType: 0
-  wait: 3
-  effect_length: 0
-  effect: {fileID: 1758814872590016959, guid: 811380154a8d9f048ae8a51f5ec25918, type: 3}
-  player_speed: 30
-  ink_max: 200
-  ink: 200
-  save_ink: 0
-  count: 10
-  intervalSecond: 0.1
-  addScale: 0.07
-  attenuation: 0.85
-  inkCanvas_obj: {fileID: 0}
-  playerController_obj: {fileID: 0}
 --- !u!54 &3128935329725473748
 Rigidbody:
   m_ObjectHideFlags: 0

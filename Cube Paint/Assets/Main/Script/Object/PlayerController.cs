@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     Vector3 player_pos;
     Vector3 end_pos;
 
-    public ParticleSystem balloonparticle;
+   // public ParticleSystem balloonparticle;
 
     public float Dir
     {
@@ -334,12 +334,12 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(explosion.normalized * 300, ForceMode.Impulse);
         }
 
-        if(collision.gameObject.CompareTag("Wall"))
-        {
-            foreach (var p in collision.contacts)
-                balloonparticle.Play();
+        //if(collision.gameObject.CompareTag("Wall"))
+        //{
+        //    foreach (var p in collision.contacts)
+        //        balloonparticle.Play();
 
-        }
+        //}
        
     }
 
