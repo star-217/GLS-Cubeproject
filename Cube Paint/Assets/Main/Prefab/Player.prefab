@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7820201998438093811}
   - component: {fileID: 1939398970013688349}
   - component: {fileID: 3616748292202125599}
+  - component: {fileID: 6131978295496612584}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -156,7 +157,7 @@ MonoBehaviour:
   Roller: {fileID: 0}
   clear_score: 75
   end: {fileID: 78697878519688468, guid: 5dae09e7442fd8047925e628802dce99, type: 3}
-  line: {fileID: 0}
+  balloonparticle: {fileID: 0}
   speed_up: 1
   next: {fileID: 0}
   particle_clear: {fileID: 0}
@@ -324,7 +325,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 58137adb5546de140a31536333c7630a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -403,3 +404,16 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &6131978295496612584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3128935329725473750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d09e7477f15fd9c4d83ce697dfca4b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {fileID: 3616748292202125599}
