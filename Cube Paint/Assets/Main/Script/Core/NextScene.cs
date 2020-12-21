@@ -9,10 +9,10 @@ public class NextScene : MonoBehaviour
 {
     
     Button testButton;
-    [SerializeField] public static int stage = 1;
+    public static int stage = 1;
     float time;
     GameObject player;
-    CollisionPainter collisionPainter;
+    //CollisionPainter collisionPainter;
 
     public ClearEvent ClearEvent => clearEvent;
 
@@ -33,7 +33,7 @@ public class NextScene : MonoBehaviour
         testButton.onClick.AddListener(OnclickScene);
         stage = PlayerPrefs.GetInt("stage", stage);
         player = GameObject.FindGameObjectWithTag("Player");
-        collisionPainter = player.GetComponent<CollisionPainter>();
+       // collisionPainter = player.GetComponent<CollisionPainter>();
 
        
         
@@ -49,11 +49,11 @@ public class NextScene : MonoBehaviour
 
     void OnclickScene()
     {
-        save_ink = collisionPainter.save_ink;
+        //save_ink = collisionPainter.save_ink;
 
         GLS.Ad.ShowInterstitial(0);
 
-        clearEvent.Invoke(save_ink);
+        //sclearEvent.Invoke(save_ink);
         //isClear = true;
 
         GLS.GLSAnalyticsUtility.TrackEvent("StageClear", "Stage" + stage, stage);

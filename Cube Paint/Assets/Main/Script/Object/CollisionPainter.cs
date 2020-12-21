@@ -129,10 +129,7 @@ namespace Es.InkPainter.Sample
 									ink -= 2;
 							}else
                             {
-								
 									save_ink = ink;
-									
-								
 							}
 
 						}

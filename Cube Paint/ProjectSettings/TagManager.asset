@@ -32,7 +32,7 @@ TagManager:
   - PlayerLayer
   - MoveCubeAdjustmentLayer
   - subplayerLayer
-  - 
+  - RotatingWallLayer
   - 
   - 
   - 
