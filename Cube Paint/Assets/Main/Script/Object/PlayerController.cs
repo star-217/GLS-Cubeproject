@@ -25,14 +25,16 @@ public class PlayerController : MonoBehaviour
 
     Vector3 startPos; //タップした場所を記録
     Vector3 endPos;　//指を離した場所を記録
+    private Vector3 direction;
     private float dir = 0;
     [SerializeField] float clear_score = 75;
     [SerializeField] ParticleSystem end;
     bool end_b = false;
 
-    [SerializeField]LineRenderer line;
+
     Vector3 player_pos;
     Vector3 end_pos;
+    const float MaxMagnitude = 2.0f;
 
     public ParticleSystem balloonparticle;
 
@@ -108,7 +110,7 @@ public class PlayerController : MonoBehaviour
         ration_change3 = ration_change2;
         trailRenderer = GetComponent<TrailRenderer>();
         trail_balance = trailRenderer.startWidth - trailRenderer.endWidth;
-        line = GetComponent<LineRenderer>();
+
         
         //  Roller.SetActive(false);
     }
@@ -153,15 +155,12 @@ public class PlayerController : MonoBehaviour
 
                 this.screenPoint = Input.mousePosition;
                 this.startPos = Input.mousePosition;
-                line.enabled = true;
+
                 //this.time = 0;
             }
 
             //スワイプ中の時間を取得する
-            if (Input.GetMouseButton(0))
-            {
-                DrawLine(-mouseDirection);
-            }
+
 
             if (Input.GetMouseButtonUp(0))
             {
@@ -173,9 +172,10 @@ public class PlayerController : MonoBehaviour
 
                 //スワイプした距離を取得する
                 this.dir = Mathf.Abs(Vector3.Distance(this.startPos, this.endPos));
+
                 //Debug.Log("スワイプ距離" + dir);
 
-                line.enabled = false;
+
                 //速度を計算する
                 //（スワイプした速度で速さが変わる）
                 //this.speed = (this.dir / this.time);
@@ -344,11 +344,5 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void DrawLine(Vector3 mouseDirection)
-    {
-        player_pos = gameObject.transform.position;
-        end_pos = mouseDirection * 2;
-        line.SetPosition(0, player_pos);
-        line.SetPosition(1, player_pos + end_pos);
-    }
+
 }

@@ -25,8 +25,7 @@ public class Balloon : MonoBehaviour
         particle[i] = transform.GetChild(i).gameObject.GetComponent<ParticleSystem>();
         collisionPainter = player.GetComponent<CollisionPainter>();
         player_material = player.GetComponent<MeshRenderer>().material;
-        player_color = player_material.GetColor("_BaseColor");
-        player_color2 = player_material.GetColor("_1st_ShadeColor");
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,7 +40,7 @@ public class Balloon : MonoBehaviour
             gameObject.GetComponent<SphereCollider>().enabled = false;
             gameObject.GetComponent<MeshRenderer>().enabled = false;
 
-            collisionPainter.Ink = collisionPainter.Ink_max;
+            //collisionPainter.Ink = collisionPainter.Ink_max;
             
             //player.transform.localScale += new Vector3(1, 1, 1);
             //player.transform.position += new Vector3(0, 0.5f, 0);

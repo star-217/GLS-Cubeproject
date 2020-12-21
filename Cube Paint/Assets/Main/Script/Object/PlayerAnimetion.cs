@@ -13,6 +13,9 @@ public class PlayerAnimetion : MonoBehaviour
     Rigidbody rigidbody;
 
     Vector3 slide;
+    Vector3 startPos;
+    Vector3 endPos;
+    Vector3 distance;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +32,18 @@ public class PlayerAnimetion : MonoBehaviour
         //slide = rigidbody.velocity;
         //transform.DOScale(defaultscale + (-slide) * 2, 0.01f);
 
+        if(Input.GetMouseButtonDown(0))
+        {
+            startPos = Input.mousePosition;
+        }
+
+
+
         if (Input.GetMouseButton(0))
         {
             gameObject.transform.rotation = Quaternion.identity;
-            transform.DOScale(new Vector3(1.5f,0.5f,1.5f),0.3f);
+            distance = Input.mousePosition - startPos;
+            transform.DOScale(defaultscale + new Vector3(0.5f,-0.5f,0.5f),0.3f);
 
             //if(gameObject.transform.localScale.x < 1.5 )
             //gameObject.transform.localScale += new Vector3(0.05f, 0, 0.05f);
