@@ -17,6 +17,7 @@ TagManager:
   - InkGaugeTag
   - ShopTag
   - Hole
+  - subBallstopTag
   layers:
   - Default
   - TransparentFX
@@ -31,8 +32,8 @@ TagManager:
   - FloorLayer
   - PlayerLayer
   - MoveCubeAdjustmentLayer
-  - 
-  - 
+  - subplayerLayer
+  - RotatingWallLayer
   - 
   - 
   - 

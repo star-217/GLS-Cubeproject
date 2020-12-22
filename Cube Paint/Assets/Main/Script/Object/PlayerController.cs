@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     Vector3 end_pos;
     const float MaxMagnitude = 2.0f;
 
-    public ParticleSystem balloonparticle;
+   // public ParticleSystem balloonparticle;
 
     public float Dir
     {
@@ -334,12 +334,12 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(explosion.normalized * 300, ForceMode.Impulse);
         }
 
-        if(collision.gameObject.CompareTag("Wall"))
-        {
-            foreach (var p in collision.contacts)
-                balloonparticle.Play();
+        //if(collision.gameObject.CompareTag("Wall"))
+        //{
+        //    foreach (var p in collision.contacts)
+        //        balloonparticle.Play();
 
-        }
+        //}
        
     }
 
