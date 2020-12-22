@@ -10,7 +10,8 @@ public class Resultcontroller : MonoBehaviour
     public RectTransform star2;
     public RectTransform star3;
     public RectTransform text;
-    public RectTransform button;
+    public RectTransform nextButton;
+    public RectTransform noThanks;
     bool flag = false;
 
 
@@ -30,7 +31,8 @@ public class Resultcontroller : MonoBehaviour
             sequence.Append(star2.DOScale(1.0f, 0.3f));
             sequence.Append(star3.DOScale(1.0f, 0.3f));
             sequence.Append(text.DOScale(1.0f, 0.5f));
-            sequence.Append(button.DOScale(1.0f, 0.3f));
+            sequence.Append(nextButton.DOScale(1.0f, 0.3f));
+            sequence.Append(noThanks.DOScale(1.0f, 0.3f));
 
             flag = true;
         }
