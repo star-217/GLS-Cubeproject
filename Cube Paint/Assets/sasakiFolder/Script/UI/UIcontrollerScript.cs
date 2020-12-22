@@ -12,8 +12,6 @@ public class UIcontrollerScript : MonoBehaviour
     public GameObject PercentageGauge_Object;
     public GameObject Gauge_Outline;
 
-    [Header("残りのインク量のゲージを入れる")]
-    public GameObject InkRemnantGauge_Object;
 
 
     [Header("TapToStartを入れる")]

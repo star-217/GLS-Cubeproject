@@ -19,6 +19,6 @@ public class CurrentStageScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textMeshPro.text = "Level " + stage;
+        textMeshPro.text = "" + stage;
     }
 }
