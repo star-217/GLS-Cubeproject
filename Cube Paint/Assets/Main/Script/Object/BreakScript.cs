@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class BreakScript : MonoBehaviour
 {
+    private ParticleSystem BreakWallParticle;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        BreakWallParticle = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -19,7 +21,9 @@ public class BreakScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            BreakWallParticle.Play();
+            //Destroy(gameObject);
         }
     }
+   
 }
