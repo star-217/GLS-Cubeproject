@@ -661,41 +661,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 2.7
       objectReference: {fileID: 0}
-    - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
-      value: 0.2682927
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].inWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689743844163696019, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outWeight
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed386ba92b397d14893cf375eb96237f, type: 3}
 --- !u!1 &1901118914

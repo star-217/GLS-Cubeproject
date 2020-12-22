@@ -435,8 +435,10 @@ namespace Es.InkPainter
 						{
 							if (countArea[ca_y, ca_x])
 							{
-								var color = newTex.GetPixel(x, y);
-								if (color != new Color(0, 0, 0, 1))
+								Color32 color = newTex.GetPixel(x, y);
+								Color32 color2 = new Color32(2, 35, 43, 255);
+								Debug.Log(color);
+								if(!color.Equals(color2))
 									++paintCount;
 							}
 							++ca_x;
