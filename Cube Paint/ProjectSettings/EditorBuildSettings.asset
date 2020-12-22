@@ -191,7 +191,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Stage/Mesh/sample.unity
     guid: b1b5646c77e2e0b4da81761510432c83
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/stage1_10Folder/teststage.unity
     guid: e4dcd20288c1c444eb42c14c1697e247
   m_configObjects: {}

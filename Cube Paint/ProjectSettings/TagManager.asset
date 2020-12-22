@@ -17,6 +17,7 @@ TagManager:
   - InkGaugeTag
   - ShopTag
   - Hole
+  - subBallstopTag
   layers:
   - Default
   - TransparentFX
