@@ -18,6 +18,10 @@ TagManager:
   - ShopTag
   - Hole
   - subBallstopTag
+  - UpWall
+  - DownWall
+  - LeftWall
+  - RightWall
   layers:
   - Default
   - TransparentFX
@@ -35,7 +39,7 @@ TagManager:
   - subplayerLayer
   - RotatingWallLayer
   - BalloonEffectLayer
-  - 
+  - Ray
   - 
   - 
   - 

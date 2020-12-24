@@ -437,7 +437,7 @@ namespace Es.InkPainter
 							{
 								Color32 color = newTex.GetPixel(x, y);
 								Color32 color2 = new Color32(2, 35, 43, 255);
-								Debug.Log(color);
+						
 								if(!color.Equals(color2))
 									++paintCount;
 							}
@@ -452,7 +452,7 @@ namespace Es.InkPainter
 //				int bitch = Mathf.CeilToInt(area_count);
 //				per = (paintCount / ((int)(renderTexture.width / DIVIDE_SIZE + 0.5f) * (int)(renderTexture.height / DIVIDE_SIZE + 0.5f) - area_count)) * 100.0f;
 				per = paintCount / (fuck - area_count) * 100.0f;
-				Debug.Log(per);
+				//Debug.Log(per);
 				//Debug.Log("塗った数:" + paintCount + " 塗らないといけない数:" + fuck);
 
 				RenderTexture.active = null;

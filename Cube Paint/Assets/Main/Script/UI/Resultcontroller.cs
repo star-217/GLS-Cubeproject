@@ -26,13 +26,14 @@ public class Resultcontroller : MonoBehaviour
         if (flag == false)
         {
             var sequence = DOTween.Sequence();
+            var sequence2 = DOTween.Sequence();
 
             sequence.Append(star1.DOScale(1.0f, 0.3f));
-            sequence.Append(star2.DOScale(1.0f, 0.3f));
-            sequence.Append(star3.DOScale(1.0f, 0.3f));
-            sequence.Append(text.DOScale(1.0f, 0.5f));
+            //sequence.Append(star2.DOScale(1.0f, 0.3f));
+            //sequence.Append(star3.DOScale(1.0f, 0.3f));
+            //sequence.Append(text.DOScale(1.0f, 0.5f));
             sequence.Append(nextButton.DOScale(1.0f, 0.3f));
-            sequence.Append(noThanks.DOScale(1.0f, 0.3f));
+            (noThanks.DOScale(1.0f, 0.5f)).SetDelay(5.0f);
 
             flag = true;
         }

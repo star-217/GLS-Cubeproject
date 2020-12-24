@@ -33,10 +33,11 @@ public class bullon_hit_Script : MonoBehaviour
         if (canvas != null)
         {
             int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
-            for (int i = 0; i < numCollisionEvents; i++)
-            {
-                canvas.Paint(brush, collisionEvents[i].intersection);
-            }
+            //for (int i = 0; i < numCollisionEvents; i++)
+            //{
+            Debug.Log(collisionEvents[0].intersection);
+                canvas.Paint(brush, collisionEvents[0].intersection);
+         //   }
 
         }
         
