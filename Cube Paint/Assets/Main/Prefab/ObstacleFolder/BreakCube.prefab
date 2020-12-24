@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9149252243102149191}
   m_Layer: 0
   m_Name: BreakCube
-  m_TagString: Untagged
+  m_TagString: BreakCubeTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,8 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ba2eef0e84b284d94aee81e4acac91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BreakWallParticle_obj: {fileID: 541264776189159164, guid: 8d6a3a1fcb05ce74c910b038f058d4de,
-    type: 3}
 --- !u!1001 &3478664286932580710
 PrefabInstance:
   m_ObjectHideFlags: 0

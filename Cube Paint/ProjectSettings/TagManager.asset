@@ -18,6 +18,7 @@ TagManager:
   - ShopTag
   - Hole
   - subBallstopTag
+  - BreakCubeTag
   layers:
   - Default
   - TransparentFX
