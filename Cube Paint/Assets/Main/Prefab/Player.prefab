@@ -124,7 +124,8 @@ MonoBehaviour:
   next: {fileID: 0}
   particle_clear: {fileID: 0}
   Gameover: {fileID: 0}
-  minimum_speed: 500
+  ClearEffect: {fileID: 0}
+  minimum_speed: 2500
   max_speed: 2500
 --- !u!135 &3009802903957059958
 SphereCollider:

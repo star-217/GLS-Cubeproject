@@ -407,8 +407,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: swipe to start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 665eaeb39072853478480fcdad7bfa69, type: 2}
-  m_sharedMaterial: {fileID: -5912255860828582081, guid: 665eaeb39072853478480fcdad7bfa69,
+  m_fontAsset: {fileID: 11400000, guid: 278c6c2edbedd894690f7d967c3b6e09, type: 2}
+  m_sharedMaterial: {fileID: -3974761161926022380, guid: 278c6c2edbedd894690f7d967c3b6e09,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -439,11 +439,11 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 30
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -2008,8 +2008,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 665eaeb39072853478480fcdad7bfa69, type: 2}
-  m_sharedMaterial: {fileID: -5912255860828582081, guid: 665eaeb39072853478480fcdad7bfa69,
+  m_fontAsset: {fileID: 11400000, guid: 278c6c2edbedd894690f7d967c3b6e09, type: 2}
+  m_sharedMaterial: {fileID: -3974761161926022380, guid: 278c6c2edbedd894690f7d967c3b6e09,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2040,7 +2040,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2695,9 +2695,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4eb6d9feaadb044a83c03bdc6133d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  star1: {fileID: 2519211884351215180}
-  star2: {fileID: 1903436503504151571}
-  star3: {fileID: 0}
   text: {fileID: 2103979689492789492}
   nextButton: {fileID: 3239447272738421950}
   noThanks: {fileID: 8037932683344913923}
@@ -2731,7 +2728,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2887926506806946818}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3709,12 +3706,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2887926506806946818}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 190, y: 660}
-  m_SizeDelta: {x: 700, y: 40}
+  m_AnchoredPosition: {x: 198.7, y: 660}
+  m_SizeDelta: {x: 680, y: 25}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &8340461089888821509
 CanvasRenderer:
