@@ -18,6 +18,7 @@ namespace Es.InkPainter.Sample
 
 		[SerializeField] private float effect_length;
 
+
 		[SerializeField]
 		private ParticleSystem effect;
 

@@ -14,6 +14,7 @@ public class crystalScript : MonoBehaviour
     private TextMeshProUGUI textMeshPro;
     public Inkgauge inkgauge;
     private InkCanvas inkCanvas;
+  
     [SerializeField] private GameObject next;
     private NextScene nextScene;
     //private float score;

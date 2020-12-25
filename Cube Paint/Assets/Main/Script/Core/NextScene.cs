@@ -11,7 +11,8 @@ public class NextScene : MonoBehaviour
     Button testButton;
     public static int stage = 1;
     float time;
-    GameObject player;
+    GameObject[] player;
+    int count;
     //CollisionPainter collisionPainter;
 
     public ClearEvent ClearEvent => clearEvent;
@@ -19,7 +20,8 @@ public class NextScene : MonoBehaviour
     private bool isClear = false;
     private ClearEvent clearEvent = new ClearEvent();
 
-    float save_ink;
+
+    [SerializeField]private int clearScore = 10;
     //public int Stage
     //{
     //    get { return stage; }
@@ -32,11 +34,12 @@ public class NextScene : MonoBehaviour
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(OnclickScene);
         stage = PlayerPrefs.GetInt("stage", stage);
-        player = GameObject.FindGameObjectWithTag("Player");
-       // collisionPainter = player.GetComponent<CollisionPainter>();
-
        
         
+       // collisionPainter = player.GetComponent<CollisionPainter>();
+
+
+
     }
 
     // Update is called once per frame
@@ -50,10 +53,11 @@ public class NextScene : MonoBehaviour
     void OnclickScene()
     {
         //save_ink = collisionPainter.save_ink;
-
+        player = GameObject.FindGameObjectsWithTag("Player");
+        count = player.Length;
         GLS.Ad.ShowInterstitial(0);
 
-        //sclearEvent.Invoke(save_ink);
+        clearEvent.Invoke(clearScore * count);
         //isClear = true;
 
         GLS.GLSAnalyticsUtility.TrackEvent("StageClear", "Stage" + stage, stage);

@@ -38,8 +38,8 @@ public class GaugeBOXScript : MonoBehaviour
     {
         //if(cooldown.fillAmount <= (inkCanvas.Per / 100)) var targetAmount
         //    cooldown.fillAmount += 0.002f;
-        cooldown.fillAmount = Mathf.Lerp(cooldown.fillAmount, (inkCanvas.Per / 100), 0.01f);
-
+        //cooldown.fillAmount = Mathf.Lerp(cooldown.fillAmount, (inkCanvas.Per / 100), 0.01f);
+        rect.DOScaleX(inkCanvas.Per / 100, 0.5f);
 
 
 

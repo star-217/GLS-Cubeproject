@@ -18,9 +18,10 @@ public class stop : MonoBehaviour
     {
         time += Time.time;
 
-        if (time >= 1)
+        if (time >= 3)
         {
-            if (rb.velocity.magnitude <= 3.0f)
+            //rb.velocity *= 0.8f;
+            if (rb.velocity.magnitude <= 1.0f)
                 rb.velocity = Vector3.zero;
         }
 

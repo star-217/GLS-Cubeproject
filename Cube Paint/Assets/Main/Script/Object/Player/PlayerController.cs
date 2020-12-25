@@ -82,6 +82,8 @@ public class PlayerController : MonoBehaviour
     float trail_balance;
     TrailRenderer trailRenderer;
 
+    [SerializeField]GameObject ClearEffect;
+    float time;
 
     //プレイヤーのスピードを増やす変数（12/10）
     [Header("短いときの速度")]
@@ -111,7 +113,7 @@ public class PlayerController : MonoBehaviour
         trailRenderer = GetComponent<TrailRenderer>();
         trail_balance = trailRenderer.startWidth - trailRenderer.endWidth;
 
-        
+
         //  Roller.SetActive(false);
     }
 
@@ -211,12 +213,21 @@ public class PlayerController : MonoBehaviour
             //}
            
 
-            if (!particle_flag)
+           
+            ClearEffect.SetActive(true);
+            time += Time.deltaTime;
+
+            if (time >= 3.0f)
             {
-                particle_flag = true;
-                particle_clear.Play();
+                if (!particle_flag)
+                {
+                    particle_flag = true;
+                    particle_clear.Play();
+                }
+                next.SetActive(true);
+
             }
-            next.SetActive(true);
+           
            // Roller.SetActive(true);
         }
 

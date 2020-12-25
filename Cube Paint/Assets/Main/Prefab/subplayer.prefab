@@ -245,12 +245,12 @@ MonoBehaviour:
     brushNormalBlend: 0
     brushHeightBlend: 0
     brushColor: {r: 0.2971698, g: 1, b: 0.5699358, a: 1}
-    colorBlendType: 0
+    colorBlendType: 2
     normalBlendType: 0
     heightBlendType: 0
   wait: 3
   effect: {fileID: 19876522, guid: 263867d4955e3644f9a1dfa779ab7d1e, type: 3}
-  count: 15
+  count: 3
   intervalSecond: 0.1
   addScale: 0.03
   attenuation: 0.85
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0dfcf0fec0e2094a813515290a9eeee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 1
   power: 3.46
 --- !u!1001 &811805684620388199
 PrefabInstance:
