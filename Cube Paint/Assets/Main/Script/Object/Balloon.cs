@@ -29,7 +29,7 @@ public class Balloon : MonoBehaviour
     
         collisionPainter = player.GetComponent<CollisionPainter>();
         player_material = player.GetComponent<MeshRenderer>().material;
-        
+
     }
 
     private void OnTriggerEnter(Collider other)

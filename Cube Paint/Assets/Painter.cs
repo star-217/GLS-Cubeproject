@@ -14,8 +14,8 @@ namespace Es.InkPainter.Sample
 
 		private int waitCount;
 
-		[SerializeField]
-		private ParticleSystem effect;
+		//[SerializeField]
+		//private ParticleSystem effect;
 
 		private Rigidbody rigidbody;
 
