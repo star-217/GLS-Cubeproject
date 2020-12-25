@@ -7,7 +7,6 @@ public class BalloonPaint : MonoBehaviour
 {
     [SerializeField] private Brush brush;
     int mask = 1 << 10;
-   // public InkCanvas canvas;
     // Start is called before the first frame update
     void Start()
     {

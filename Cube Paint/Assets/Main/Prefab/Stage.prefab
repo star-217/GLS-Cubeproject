@@ -960,21 +960,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3128935329725473745, guid: 898c0b64afe23a848ace49c4836486e5,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3128935329725473745, guid: 898c0b64afe23a848ace49c4836486e5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3128935329725473745, guid: 898c0b64afe23a848ace49c4836486e5,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3128935329725473749, guid: 898c0b64afe23a848ace49c4836486e5,
         type: 3}
       propertyPath: playerController_obj

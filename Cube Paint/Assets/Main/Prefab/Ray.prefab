@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6163982018335676877
 Transform:
   m_ObjectHideFlags: 0
@@ -48,11 +48,11 @@ MonoBehaviour:
     brushNormalTexture: {fileID: 2800000, guid: 945b831b22eb06945bf77e00f16ff51a,
       type: 3}
     brushHeightTexture: {fileID: 0}
-    brushScale: 0.333
+    brushScale: 0.5
     rotateAngle: 0
     brushNormalBlend: 0.216
     brushHeightBlend: 0
-    brushColor: {r: 1, g: 0, b: 0, a: 1}
+    brushColor: {r: 1, g: 0.9627769, b: 0.4292453, a: 1}
     colorBlendType: 0
     normalBlendType: 0
     heightBlendType: 0

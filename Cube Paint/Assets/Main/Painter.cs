@@ -14,9 +14,9 @@ namespace Es.InkPainter.Sample
 
 		private int waitCount;
 
-		[SerializeField]
-		private ParticleSystem effect;
-		int effectCount;
+		//[SerializeField]
+		//private ParticleSystem effect;
+
 		private Rigidbody rigidbody;
 
 		public int count = 15;// 塗りを行う回数
@@ -36,11 +36,10 @@ namespace Es.InkPainter.Sample
 
 		public void OnCollisionStay(Collision collision)
 		{
-			
 			if(waitCount < wait)
 				return;
 			waitCount = 0;
-			var dir = rigidbody.velocity.normalized * -1;
+			//var dir = rigidbody.velocity.normalized * -1;
 			foreach (var p in collision.contacts)
 			{
 				var canvas = p.otherCollider.GetComponent<InkCanvas>();
@@ -48,12 +47,7 @@ namespace Es.InkPainter.Sample
 					canvas.Paint(brush, p.point);
 
 				StartCoroutine(HogePaint(canvas, p.point));
-				if (rigidbody.velocity.sqrMagnitude > 10)
-				{
-					if(effectCount % 2 == 0)
-					Instantiate(effect, p.point + dir * 0.1f, Quaternion.identity);
-					effectCount++;
-				}
+				//Instantiate(effect, p.point + dir * 1.01f, Quaternion.identity);
 			}
 		}
 

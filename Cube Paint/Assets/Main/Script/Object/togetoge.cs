@@ -4,35 +4,34 @@ using UnityEngine;
 
 public class togetoge : MonoBehaviour
 {
-
-    Material material;
-    float time;
-    bool flag = false;
-    [SerializeField] float toge_time;
+    //Material material;
+    //float time;
+    //bool flag = false;
+    //[SerializeField] float toge_time;
     // Start is called before the first frame update
     void Start()
     {
-        material = GetComponent<MeshRenderer>().material;
+        //material = GetComponent<MeshRenderer>().material;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        time++;
+        //time++;
 
-        if (time % toge_time == 0)
-        {
-            if (flag)
-                flag = false;
-            else
-                flag = true;
-        }
+        //if (time % toge_time == 0)
+        //{
+        //    if (flag)
+        //        flag = false;
+        //    else
+        //        flag = true;
+        //}
 
-        if (flag)
-            material.color = Color.red;
-        else
-            material.color = Color.white;
+        //if (flag)
+        //    material.color = Color.red;
+        //else
+        //    material.color = Color.white;
 
 
     }
@@ -41,7 +40,7 @@ public class togetoge : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (flag)
+            //if (flag)
                 Destroy(collision.gameObject);
         }
     }
