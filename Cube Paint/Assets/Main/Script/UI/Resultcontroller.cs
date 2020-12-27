@@ -31,8 +31,8 @@ public class Resultcontroller : MonoBehaviour
             //sequence.Append(star1.DOScale(1.0f, 0.3f));
             //sequence.Append(star2.DOScale(1.0f, 0.3f));
             //sequence.Append(star3.DOScale(1.0f, 0.3f));
-            sequence.Append(text.DOScale(1.0f, 1.0f));
-            sequence.Append(nextButton.DOScale(1.0f, 1.0f));
+            sequence.Append(text.DOScale(1.0f, 0.5f));
+            sequence.Append(nextButton.DOScale(1.0f, 0.5f));
             (noThanks.DOScale(1.0f, 0.5f)).SetDelay(5.0f);
 
             flag = true;
