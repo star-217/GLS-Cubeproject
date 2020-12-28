@@ -23,12 +23,13 @@ using UnityEngine.UI;
             MAX
         }
 
-        public TextureChange texture_change;
-        Button ColorButton;
-        public GameObject player;
-        public Material material;
-        public static Color player_color;
-        public static int colorNumber = 1;
+    public TextureChange texture_change;
+    public int texture_number;
+    Button ColorButton;
+    public GameObject player;
+    public Material material;
+    public static Color player_color;
+    public static int colorNumber = 1;
    
 
     // Start is called before the first frame update
@@ -43,7 +44,7 @@ using UnityEngine.UI;
     // Update is called once per frame
     void Update()
         {
-        
+         texture_number = (int)texture_change;
         }
 
         void OnclickScene()

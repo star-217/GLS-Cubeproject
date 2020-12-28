@@ -14,8 +14,8 @@ namespace Es.InkPainter.Sample
 
 		private int waitCount;
 
-		//[SerializeField]
-		//private ParticleSystem effect;
+		[SerializeField]
+		private ParticleSystem effect;
 
 		private Rigidbody rigidbody;
 
@@ -39,7 +39,7 @@ namespace Es.InkPainter.Sample
 			if(waitCount < wait)
 				return;
 			waitCount = 0;
-			//var dir = rigidbody.velocity.normalized * -1;
+			var dir = rigidbody.velocity.normalized * -1;
 			foreach (var p in collision.contacts)
 			{
 				var canvas = p.otherCollider.GetComponent<InkCanvas>();
@@ -47,7 +47,7 @@ namespace Es.InkPainter.Sample
 					canvas.Paint(brush, p.point);
 
 				StartCoroutine(HogePaint(canvas, p.point));
-				//Instantiate(effect, p.point + dir * 1.01f, Quaternion.identity);
+				Instantiate(effect, p.point + dir * 1.01f, Quaternion.identity);
 			}
 		}
 

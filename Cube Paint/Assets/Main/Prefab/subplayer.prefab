@@ -200,6 +200,7 @@ MonoBehaviour:
     normalBlendType: 0
     heightBlendType: 0
   wait: 3
+  effect: {fileID: 19876522, guid: 263867d4955e3644f9a1dfa779ab7d1e, type: 3}
   count: 3
   intervalSecond: 0.1
   addScale: 0.035
