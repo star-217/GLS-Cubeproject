@@ -423,5 +423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ec9a2c613cc3244af94e10e4759f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle: {fileID: 19886758, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  particle: {fileID: 2892835273324444684, guid: 063237ef20587da418efa0dfce876fd0,
+    type: 3}
   ray: {fileID: 8669986733552838771, guid: da4459fdc0164f241869aeb6d0182e8c, type: 3}

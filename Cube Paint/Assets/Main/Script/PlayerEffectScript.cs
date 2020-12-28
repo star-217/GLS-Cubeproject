@@ -57,8 +57,15 @@ public class PlayerEffectScript : MonoBehaviour
             }
         }
 
+        if (collision.gameObject.CompareTag("Block"))
+        {
+            foreach (var p in collision.contacts)
+            {
+                Instantiate(particle, p.point, Quaternion.Euler(0.0f, 0.0f, 0.0f));
+                Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
+            }
+        }
 
-       
     }
 
   

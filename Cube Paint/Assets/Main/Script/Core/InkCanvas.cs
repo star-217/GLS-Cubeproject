@@ -356,16 +356,16 @@ namespace Es.InkPainter
 			floor_height = Floor_obj.GetComponent<Renderer>().bounds.size.z;
 			print("height: " + floor_height);
 
-//			area_count = 0.0f;
-			//for (int i = 0; i < area_objs.Length; i++)
-   //         {
-			//	area_count += rt.width  * (area_objs[i].transform.localScale.x / Floor_localScale.x) * 
-			//				  rt.height * (area_objs[i].transform.localScale.z / Floor_localScale.z);
-			//}
+            float not_area_count = 0.0f;
+            for (int i = 0; i < area_objs.Length; i++)
+            {
+				not_area_count += rt.width * (area_objs[i].transform.localScale.x / Floor_localScale.x) *
+                              rt.height * (area_objs[i].transform.localScale.z / Floor_localScale.z);
+            }
 
-//            area_count /= DIVIDE_SIZE * DIVIDE_SIZE;
+			not_area_count /= DIVIDE_SIZE * DIVIDE_SIZE;
 
-			countHeight = (int)(renderTexture.height / DIVIDE_SIZE + 0.5f);
+            countHeight = (int)(renderTexture.height / DIVIDE_SIZE + 0.5f);
 			countWidth =  (int)(renderTexture.width  / DIVIDE_SIZE + 0.5f);
 			countArea = new bool[countHeight, countWidth];
 
@@ -399,6 +399,9 @@ namespace Es.InkPainter
 					}
 				}
 			}
+
+			//if (not_area_count > area_count)
+			//	area_count = (int)(not_area_count + 0.5f);
 		}
 
 		private int fps_count;
@@ -435,11 +438,18 @@ namespace Es.InkPainter
 						{
 							if (countArea[ca_y, ca_x])
 							{
-								Color32 color = newTex.GetPixel(x, y);
-								Color32 color2 = new Color32(2, 35, 43, 255);
-						
-								if(!color.Equals(color2))
+								Color32 color = newTex.GetPixel(x, renderTexture.height - y);
+//								Color32 color2 = new Color32(2, 35, 43, 255);
+
+								if (color.r != 2 && color.g != 35 && color.b != 43)
 									++paintCount;
+								//else
+								//	Debug.Log("はずれの色:" + color);
+
+								//if (!color.Equals(color2))
+								//	++paintCount;
+								//else
+								//	Debug.Log("はずれの色:" + color);
 							}
 							++ca_x;
 						}
@@ -453,7 +463,7 @@ namespace Es.InkPainter
 //				per = (paintCount / ((int)(renderTexture.width / DIVIDE_SIZE + 0.5f) * (int)(renderTexture.height / DIVIDE_SIZE + 0.5f) - area_count)) * 100.0f;
 				per = paintCount / (fuck - area_count) * 100.0f;
 				//Debug.Log(per);
-				//Debug.Log("塗った数:" + paintCount + " 塗らないといけない数:" + fuck);
+				//Debug.Log("塗った数:" + paintCount + " 塗らないといけない数:" + (fuck - area_count));
 
 				RenderTexture.active = null;
 			}

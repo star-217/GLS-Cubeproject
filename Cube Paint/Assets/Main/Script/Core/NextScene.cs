@@ -62,13 +62,13 @@ public class NextScene : MonoBehaviour
 
         GLS.GLSAnalyticsUtility.TrackEvent("StageClear", "Stage" + stage, stage);
         stage += 1;
-        if (stage > 19)
+        if (stage > 10)
         {
             stage = 1;
         }
         PlayerPrefs.SetInt("stage", stage);
 
-        SceneManager.LoadScene("stage"+ stage);
+        SceneManager.LoadScene("MainStage"+ stage);
 
 
     }
