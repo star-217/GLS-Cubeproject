@@ -132,8 +132,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
         }
-        PlayerScaleController(ink_ratio);
-        ColorController(ink_ratio);
         //if (defaultscale + 5 < gameObject.transform.localScale.x)
         //{
         //    //for (int i = 0; i < transform.childCount; i++)

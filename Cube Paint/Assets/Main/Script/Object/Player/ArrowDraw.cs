@@ -63,6 +63,7 @@ public class ArrowDraw : MonoBehaviour
     private void Update()
     {
         player_pos = transform.position;
+        player_pos.y = 1.0f;
         mouseDirection = (Input.mousePosition - this.screenPoint);
         mouseDirection.z = mouseDirection.y;
         mouseDirection.y = 0;
@@ -98,7 +99,7 @@ public class ArrowDraw : MonoBehaviour
             direction.enabled = true;
 
             direction.SetPosition(0,player_pos);
-            direction.SetPosition(1, player_pos - mouseDirection * 2);
+            direction.SetPosition(1, player_pos - mouseDirection * dirMax);
 
         }
 

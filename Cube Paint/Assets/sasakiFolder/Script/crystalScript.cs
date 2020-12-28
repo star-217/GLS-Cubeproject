@@ -16,7 +16,9 @@ public class crystalScript : MonoBehaviour
     private InkCanvas inkCanvas;
   
     [SerializeField] private GameObject next;
+    [SerializeField] private GameObject nothanks;
     private NextScene nextScene;
+    private NextSceneBonus nextSceneBonus;
     //private float score;
     private float score_save = 0;
     bool scoreFlag = false;
@@ -29,8 +31,10 @@ public class crystalScript : MonoBehaviour
         //inkgauge = GameObject.FindGameObjectWithTag("InkGaugeTag").GetComponent<Inkgauge>();
         inkCanvas = GameObject.FindGameObjectWithTag("Floor").GetComponent<InkCanvas>();
         //player = GameObject.FindGameObjectWithTag("Player");
-        nextScene = next.GetComponent<NextScene>();
+        nextSceneBonus = next.GetComponent<NextSceneBonus>();
+        nextScene = nothanks.GetComponent<NextScene>();
         nextScene.ClearEvent.AddListener(StageClear);
+        nextSceneBonus.ClearEvent.AddListener(StageClear);
 
         score_save = PlayerPrefs.GetFloat("score_save");
         //textMeshPro.text = "" + (int)score_save;
