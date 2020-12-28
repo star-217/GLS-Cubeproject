@@ -8,13 +8,13 @@ public class EffectScroll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        //rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rigidbody.velocity = new Vector3(0, 0, 10);
-        //transform.position += new Vector3(0, 0, 0.1f);
+        //rigidbody.velocity = new Vector3(0, 0, 10);
+        transform.position += new Vector3(0, 0, 15.0f * Time.deltaTime);
     }
 }
