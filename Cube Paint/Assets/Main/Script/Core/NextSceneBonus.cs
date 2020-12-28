@@ -14,7 +14,7 @@ public class NextSceneBonus : MonoBehaviour
     GameObject[] player;
     int count;
     //CollisionPainter collisionPainter;
-
+    private int maxStage = 10;
     public ClearEvent ClearEvent => clearEvent;
 
     private bool isClear = false;
@@ -53,22 +53,44 @@ public class NextSceneBonus : MonoBehaviour
     void OnclickScene()
     {
         //save_ink = collisionPainter.save_ink;
+        if (GLS.Ad.RewardVideoIsReady(0))
+        {
+            GLS.Ad.ShowRewardedVideo(0, RewardSuccess, AdRewardFailed, AdRewardFailed);
+        }
+        else
+        {
+            AdRewardFailed();
+        }
        
-        GLS.Ad.ShowInterstitial(1);
 
-        clearEvent.Invoke(clearScore);
-        //isClear = true;
+    }
 
+    private void AdRewardFailed()
+    {
         GLS.GLSAnalyticsUtility.TrackEvent("StageClear", "Stage" + stage, stage);
         stage += 1;
-        if (stage > 19)
+        if (stage > maxStage)
         {
             stage = 1;
         }
         PlayerPrefs.SetInt("stage", stage);
 
-        SceneManager.LoadScene("stage"+ stage);
+        SceneManager.LoadScene("MainStage" + stage);
+    }
 
+    private void RewardSuccess()
+    {
+        clearEvent.Invoke(clearScore);
+        //isClear = true;
 
+        GLS.GLSAnalyticsUtility.TrackEvent("StageClear", "Stage" + stage, stage);
+        stage += 1;
+        if (stage > maxStage)
+        {
+            stage = 1;
+        }
+        PlayerPrefs.SetInt("stage", stage);
+
+        SceneManager.LoadScene("MainStage" + stage);
     }
 }

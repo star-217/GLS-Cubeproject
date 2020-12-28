@@ -31,6 +31,14 @@
             }
         }
 
+        public static bool RewardVideoIsReady(int index)
+        {
+            if(!GLS.AdvertisementUtility.IsNullInstance)
+            {
+                return GLS.AdvertisementUtility.Instance.RewardVideoIsReady(index);
+            }
+            return false;
+        }
         /// <summary>
         /// バナー広告を表示
         /// </summary>

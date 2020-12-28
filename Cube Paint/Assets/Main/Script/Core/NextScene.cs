@@ -14,7 +14,7 @@ public class NextScene : MonoBehaviour
     GameObject[] player;
     int count;
     //CollisionPainter collisionPainter;
-
+    private int maxStage = 10;
     public ClearEvent ClearEvent => clearEvent;
 
     private bool isClear = false;
@@ -53,16 +53,16 @@ public class NextScene : MonoBehaviour
     void OnclickScene()
     {
         //save_ink = collisionPainter.save_ink;
-        player = GameObject.FindGameObjectsWithTag("Player");
-        count = player.Length;
+
+       
         GLS.Ad.ShowInterstitial(0);
 
-        clearEvent.Invoke(clearScore * count);
+        clearEvent.Invoke(clearScore);
         //isClear = true;
 
         GLS.GLSAnalyticsUtility.TrackEvent("StageClear", "Stage" + stage, stage);
         stage += 1;
-        if (stage > 10)
+        if (stage > maxStage)
         {
             stage = 1;
         }
