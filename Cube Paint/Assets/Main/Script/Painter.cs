@@ -47,7 +47,7 @@ namespace Es.InkPainter.Sample
 					canvas.Paint(brush, p.point);
 
 				StartCoroutine(HogePaint(canvas, p.point));
-				Instantiate(effect, p.point + dir * 1.01f, Quaternion.identity);
+				Instantiate(effect, p.point + dir * 0.1f, Quaternion.identity);
 			}
 		}
 

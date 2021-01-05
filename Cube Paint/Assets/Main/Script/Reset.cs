@@ -24,6 +24,6 @@ public class Reset : MonoBehaviour
     void Onclick()
     {
         int stage = PlayerPrefs.GetInt("stage");
-        SceneManager.LoadScene("stage" +stage);
+        SceneManager.LoadScene("MainStage" +stage);
     }
 }
