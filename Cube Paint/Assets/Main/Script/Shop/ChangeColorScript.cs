@@ -5,8 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 
-//namespace PLAYERCOLOR
-//{
+
 public class ChangeColorScript : MonoBehaviour
 {
 
@@ -34,6 +33,7 @@ public class ChangeColorScript : MonoBehaviour
     Skinprice Price;
     public float set_score;
     public bool buy_flag = false;
+    string name;
 
     // Start is called before the first frame update
     void Start()
@@ -41,14 +41,18 @@ public class ChangeColorScript : MonoBehaviour
         ColorButton = GetComponent<Button>();
         ColorButton.onClick.AddListener(OnclickScene);
         Price = transform.GetChild(1).gameObject.GetComponent<Skinprice>();
-        set_score = Price.price;
-        colorNumber = PlayerPrefs.GetInt("ColorNumber");
+        name = gameObject.name; 
+
+
     }
     
     // Update is called once per frame
     void Update()
     {
-     texture_number = (int)texture_change;
+        colorNumber = PlayerPrefs.GetInt("ColorNumber");
+        set_score = Price.price;
+        texture_number = (int)texture_change;
+
     }
     
     void OnclickScene()
@@ -72,8 +76,6 @@ public class ChangeColorScript : MonoBehaviour
         if (texture_change == TextureChange.LightBlue)
             colorNumber = 8;
 
-        if (buy_flag)
-            Price.price = 0;
 
         PlayerPrefs.SetInt("ColorNumber", colorNumber);
         PlayerPrefs.SetFloat("Price", set_score);
