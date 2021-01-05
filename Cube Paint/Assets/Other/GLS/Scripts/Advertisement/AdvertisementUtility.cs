@@ -39,6 +39,12 @@ namespace GLS
             glsRewardedVideo.ShowRewardedVideo(placementID, onFinished, onSkipped, onFailed);
         }
 
+       public bool RewardVideoIsReady(int index)
+        {
+            var placementID = placementIDData.RewardedVideoPlacementIDArray[index];
+            return Advertisement.IsReady(placementID);
+        }
+
         /// <summary>
         /// バナー広告を表示
         /// </summary>

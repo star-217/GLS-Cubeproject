@@ -45,6 +45,7 @@ namespace GLS
             if (placementID != placementId) return;
 
             Debug.Log($"<Ad> { placementID } : Video Ready");
+            
         }
 
         /// <summary>

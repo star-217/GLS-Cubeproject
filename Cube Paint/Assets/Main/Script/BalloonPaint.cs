@@ -10,9 +10,11 @@ public class BalloonPaint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Physics.Raycast(transform.position, -Vector3.up, out RaycastHit hit, 1000.0f, mask);
-        var canvas = hit.collider.gameObject.GetComponent<InkCanvas>();
-        canvas.Paint(brush, hit);
+        if (Physics.Raycast(transform.position, -Vector3.up, out RaycastHit hit, 1000.0f, mask))
+        {
+            var canvas = hit.collider.gameObject.GetComponent<InkCanvas>();
+            canvas.Paint(brush, hit);
+        }
     }
 
     // Update is called once per frame
