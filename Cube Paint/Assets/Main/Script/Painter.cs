@@ -25,7 +25,7 @@ namespace Es.InkPainter.Sample
 		public float attenuation = 0.85f;// インクが広がる強さの減衰率
 		public void Awake()
 		{
-			GetComponent<MeshRenderer>().material.color = brush.Color;
+			//GetComponent<MeshRenderer>().material.color = brush.Color;
 			rigidbody = GetComponent<Rigidbody>();
 		}
 
