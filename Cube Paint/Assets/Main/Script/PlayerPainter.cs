@@ -53,6 +53,9 @@ namespace Es.InkPainter.Sample
 
 		private IEnumerator HogePaint(InkCanvas canvas, Vector3 contactPoint)
 		{
+			if (canvas == null)
+				yield break;
+
 			var brush = new Brush(this.brush.BrushTexture, this.brush.Scale, this.brush.Color);
 			float addScale = this.addScale;
 			for (int i = 0; i < count; i++)

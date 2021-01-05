@@ -44,15 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brush:
-    brushTexture: {fileID: 2800000, guid: 4b6e2f4c248baf34fa63bdaffbfcc08f, type: 3}
+    brushTexture: {fileID: 2800000, guid: f198c1c995ef08c478009b65a48af828, type: 3}
     brushNormalTexture: {fileID: 2800000, guid: 945b831b22eb06945bf77e00f16ff51a,
       type: 3}
     brushHeightTexture: {fileID: 0}
-    brushScale: 0.6
+    brushScale: 0.3
     rotateAngle: 0
     brushNormalBlend: 0.216
     brushHeightBlend: 0
-    brushColor: {r: 1, g: 0.9627769, b: 0.4292453, a: 1}
+    brushColor: {r: 1, g: 0.6, b: 0, a: 1}
     colorBlendType: 0
     normalBlendType: 0
     heightBlendType: 0

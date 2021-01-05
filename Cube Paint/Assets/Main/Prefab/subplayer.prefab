@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1576682419064453732
 Transform:
   m_ObjectHideFlags: 0
@@ -43,7 +43,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.3
+  m_Radius: 1.55
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3867259191133910663
 MonoBehaviour:
@@ -57,7 +57,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d726c72f414367c45b7259874b230868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  painter: {fileID: 6453944323321517155}
+  subPlayer_obj: {fileID: 8285834072196364449}
+  Player_obj: {fileID: 3128935329725473750, guid: 898c0b64afe23a848ace49c4836486e5,
+    type: 3}
 --- !u!1 &8285834072196364449
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,14 +5,24 @@ using Es.InkPainter.Sample;
 
 public class notColorScript : MonoBehaviour
 {
-    [SerializeField] private Painter painter;
+    [SerializeField] private GameObject subPlayer_obj;
+    [SerializeField] private GameObject Player_obj;
+    private Painter painter;
+    private PlayerPainter playerPainter;
+
+    private void Start()
+    {
+        painter = subPlayer_obj.GetComponent<Painter>();
+        playerPainter = Player_obj.GetComponent<PlayerPainter>();
+    }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             if (painter != null)
-                painter.enabled = false;
+                painter.enabled       = false;
+                playerPainter.enabled = false;
         }
     }
 
@@ -21,7 +31,9 @@ public class notColorScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             if (painter != null)
-                painter.enabled = true;
+                painter.enabled       = true;
+                playerPainter.enabled = true;
+
         }
     }
 }
