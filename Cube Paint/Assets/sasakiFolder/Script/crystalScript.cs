@@ -13,7 +13,7 @@ public class crystalScript : MonoBehaviour
 
     private TextMeshProUGUI textMeshPro;
     public Inkgauge inkgauge;
-    private InkCanvas inkCanvas;
+
   
     [SerializeField] private GameObject next;
     [SerializeField] private GameObject nothanks;
@@ -29,7 +29,7 @@ public class crystalScript : MonoBehaviour
     {
         textMeshPro =GetComponent<TextMeshProUGUI>();
         //inkgauge = GameObject.FindGameObjectWithTag("InkGaugeTag").GetComponent<Inkgauge>();
-        inkCanvas = GameObject.FindGameObjectWithTag("Floor").GetComponent<InkCanvas>();
+       
         //player = GameObject.FindGameObjectWithTag("Player");
         nextSceneBonus = next.GetComponent<NextSceneBonus>();
         nextScene = nothanks.GetComponent<NextScene>();

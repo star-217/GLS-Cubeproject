@@ -55,6 +55,7 @@ public class NextScene : MonoBehaviour
         //save_ink = collisionPainter.save_ink;
 
        
+        if(stage > 3)
         GLS.Ad.ShowInterstitial(0);
 
         clearEvent.Invoke(clearScore);
