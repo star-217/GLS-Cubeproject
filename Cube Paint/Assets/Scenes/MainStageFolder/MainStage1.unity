@@ -184,11 +184,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Balloon (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
-        type: 3}
-      propertyPath: brush.brushScale
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23cb060b0c8416744b4b3f59b68cbec6, type: 3}
 --- !u!1001 &604345419
@@ -257,11 +252,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Balloon
-      objectReference: {fileID: 0}
-    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
-        type: 3}
-      propertyPath: brush.brushScale
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23cb060b0c8416744b4b3f59b68cbec6, type: 3}
@@ -355,26 +345,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 383976289797669374, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: count
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 383976289797669374, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: brush.brushColor.a
-      value: 0.47058824
-      objectReference: {fileID: 0}
-    - target: {fileID: 383976289797669374, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: brush.brushScale
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 383976289797669374, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: addScale
-      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 1846125924733791720, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
