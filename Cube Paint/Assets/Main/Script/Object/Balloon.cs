@@ -8,7 +8,7 @@ using Es.InkPainter;
 public class Balloon : MonoBehaviour
 {
     private ParticleSystem[] particle;
-    private ParticleSystem particle2;
+
     [SerializeField] private Brush brush = null;
     private CollisionPainter collisionPainter;
     private GameObject player;
@@ -46,10 +46,7 @@ public class Balloon : MonoBehaviour
 
             ray.SetActive(true);
         
-            //collisionPainter.Ink = collisionPainter.Ink_max;
-            
-            //player.transform.localScale += new Vector3(1, 1, 1);
-            //player.transform.position += new Vector3(0, 0.5f, 0);
+
             
         }
     }

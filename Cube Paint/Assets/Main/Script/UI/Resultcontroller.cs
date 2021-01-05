@@ -13,6 +13,7 @@ public class Resultcontroller : MonoBehaviour
     public RectTransform nextButton;
     public RectTransform noThanks;
     bool flag = false;
+    bool flag_anime = false;
 
 
     void Start()
@@ -33,9 +34,14 @@ public class Resultcontroller : MonoBehaviour
             //sequence.Append(backpanel.DOScale(1.0f, 0.3f));
             //sequence.Append(text.DOScale(1.0f, 0.5f));
             sequence.Append(nextButton.DOScale(1.0f, 0.5f));
-            (noThanks.DOScale(1.0f, 0.5f)).SetDelay(5.0f);
+
+            (noThanks.DOScale(1.0f, 0.5f)).SetDelay(3.4f);
 
             flag = true;
         }
+
+
     }
+
+   
 }
