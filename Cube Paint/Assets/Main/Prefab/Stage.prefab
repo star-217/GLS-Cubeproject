@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 2757058155603064146}
   - component: {fileID: 8546560089183774085}
   m_Layer: 0
-  m_Name: Analitics
+  m_Name: AnaliticsAndLogin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

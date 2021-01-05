@@ -23,6 +23,9 @@ public class UIcontrollerScript : MonoBehaviour
     [Header("リザルトを入れる")]
     [SerializeField] private GameObject result;
 
+    public GameObject Tutorial;
+    public GameObject Arrow;
+
     private Button testButton;
 
 
@@ -74,6 +77,10 @@ public class UIcontrollerScript : MonoBehaviour
        // InkRemnantGauge_Object.SetActive(true);
         Gauge_Outline.SetActive(true);
         Shop_Object.SetActive(false);
+        if (Tutorial != null)
+            Tutorial.SetActive(false);
+        if (Arrow != null)
+            Arrow.SetActive(false);
     }
     void ShopOnclick()
     {

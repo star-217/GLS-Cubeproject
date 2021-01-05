@@ -9,7 +9,8 @@ public class BuySkin : MonoBehaviour
 {
     Button testButton;
     float shop_money;
-    public float skin_price = 1000;
+    float skin_price = 1000;
+    bool use_flag = false;
     [SerializeField]private TextMeshProUGUI textMeshPro;
     // Start is called before the first frame update
     void Start()
@@ -24,15 +25,25 @@ public class BuySkin : MonoBehaviour
     void Update()
     {
         shop_money = PlayerPrefs.GetFloat("score_save");
-        textMeshPro.text = "" + (int)skin_price;
+        skin_price = PlayerPrefs.GetFloat("Price");
+        if (skin_price != 0)
+            textMeshPro.text = "" + (int)skin_price;
+        else if(use_flag)
+            textMeshPro.text = "Use";
+        else
+            textMeshPro.text = "Have";
     }
 
     void Buy()
     {
+        
+
         if (shop_money > skin_price)
         {
             shop_money -= skin_price;
             PlayerPrefs.SetFloat("score_save", shop_money);
         }
+
+
     }
 }

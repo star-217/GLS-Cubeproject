@@ -5,11 +5,15 @@ using System;
 
 public class LoginBonus : MonoBehaviour
 {
+     float score;
     // Start is called before the first frame update
     void Start()
     {
         if (DateUpdated())
         {
+            score = PlayerPrefs.GetFloat("score_save");
+            score += 1000;
+            PlayerPrefs.SetFloat("score_save",score);
             // ログインボーナスの処理
         }
     }
@@ -20,7 +24,6 @@ public class LoginBonus : MonoBehaviour
         int todayInt = 0;
 
         todayInt = now.Year * 1000 + now.Month * 100 + now.Day;
-
 
 
         if (!PlayerPrefs.HasKey("Date"))
