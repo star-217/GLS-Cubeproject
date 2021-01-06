@@ -6,7 +6,7 @@ public class StartUp : MonoBehaviour
 {
     // Start is called before the first frame update\
 
-    int max_skin = 10;
+    int max_skin = 100;
     void Awake()
     {
         if (!PlayerPrefs.HasKey("Start"))

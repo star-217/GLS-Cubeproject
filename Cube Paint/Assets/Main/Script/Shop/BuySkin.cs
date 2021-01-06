@@ -20,6 +20,9 @@ public class BuySkin : MonoBehaviour
 
     void Start()
     {
+        if (!PlayerPrefs.HasKey("Use"))
+            PlayerPrefs.SetInt("Use", 0);
+
         texture_number = PlayerPrefs.GetInt("ColorNumber"); 
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(Buy);

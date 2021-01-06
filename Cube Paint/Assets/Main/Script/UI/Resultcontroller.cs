@@ -27,19 +27,28 @@ public class Resultcontroller : MonoBehaviour
         if (flag == false)
         {
             var sequence = DOTween.Sequence();
-            var sequence2 = DOTween.Sequence();
+            
 
             //sequence.Append(star1.DOScale(1.0f, 0.3f));
             sequence.Append(result.DOScale(1.0f, 0.3f));
             //sequence.Append(backpanel.DOScale(1.0f, 0.3f));
             //sequence.Append(text.DOScale(1.0f, 0.5f));
-            sequence.Append(nextButton.DOScale(1.0f, 0.5f));
+            sequence.Append(nextButton.DOScale(1.0f, 0.5f)).OnComplete(BottonAnimetion);
 
             (noThanks.DOScale(1.0f, 0.5f)).SetDelay(3.4f);
 
             flag = true;
         }
 
+
+    }
+
+    void BottonAnimetion()
+    {
+        var sequence2 = DOTween.Sequence();
+
+        sequence2.Append(nextButton.DOScale(1.2f, 1.0f));
+        sequence2.Append(nextButton.DOScale(1.0f, 0.5f)).SetLoops(-1);
 
     }
 
