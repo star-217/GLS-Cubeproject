@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7790028679350225074
+--- !u!1 &8669986733552838771
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6163982018335676877}
-  - component: {fileID: 2562461040393112415}
+  - component: {fileID: 41142716216924769}
+  - component: {fileID: 7961213380877414951}
   m_Layer: 0
-  m_Name: Ray
+  m_Name: WallRay 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6163982018335676877
+--- !u!4 &41142716216924769
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7790028679350225074}
+  m_GameObject: {fileID: 8669986733552838771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: -0.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2562461040393112415
+--- !u!114 &7961213380877414951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7790028679350225074}
+  m_GameObject: {fileID: 8669986733552838771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df1a6d5724f3ba42b9f17db508ad519, type: 3}
+  m_Script: {fileID: 11500000, guid: 26352c17d5d074141aa24d04ecbbaefa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   brush:
-    brushTexture: {fileID: 2800000, guid: f198c1c995ef08c478009b65a48af828, type: 3}
-    brushNormalTexture: {fileID: 2800000, guid: 945b831b22eb06945bf77e00f16ff51a,
-      type: 3}
+    brushTexture: {fileID: 2800000, guid: 4b6e2f4c248baf34fa63bdaffbfcc08f, type: 3}
+    brushNormalTexture: {fileID: 0}
     brushHeightTexture: {fileID: 0}
-    brushScale: 0.5
+    brushScale: 0.2
     rotateAngle: 0
-    brushNormalBlend: 0.216
+    brushNormalBlend: 0
     brushHeightBlend: 0
-    brushColor: {r: 1, g: 0.6, b: 0, a: 1}
+    brushColor: {r: 0.47058824, g: 0.8156863, b: 0.93333334, a: 1}
     colorBlendType: 0
     normalBlendType: 0
     heightBlendType: 0

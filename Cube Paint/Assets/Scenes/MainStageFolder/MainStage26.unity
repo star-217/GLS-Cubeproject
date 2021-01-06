@@ -607,6 +607,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 452665601}
     m_Modifications:
+    - target: {fileID: 2135732856514782722, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
+        type: 3}
+      propertyPath: ray
+      value: 
+      objectReference: {fileID: 8669986733552838771, guid: 6fdf695821b4fd5409009f8415d51006,
+        type: 3}
     - target: {fileID: 6453944323321517155, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
         type: 3}
       propertyPath: brush.brushColor.g
@@ -1506,6 +1512,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 452665601}
     m_Modifications:
+    - target: {fileID: 2135732856514782722, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
+        type: 3}
+      propertyPath: ray
+      value: 
+      objectReference: {fileID: 8669986733552838771, guid: 18ac362e3b172e74a9823a35d88c33a7,
+        type: 3}
     - target: {fileID: 6453944323321517155, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
         type: 3}
       propertyPath: brush.brushColor.g
@@ -1690,6 +1702,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 452665601}
     m_Modifications:
+    - target: {fileID: 2135732856514782722, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
+        type: 3}
+      propertyPath: ray
+      value: 
+      objectReference: {fileID: 8669986733552838771, guid: e34b47b8a90ef244cb0c2aa750aa2927,
+        type: 3}
     - target: {fileID: 6453944323321517155, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
         type: 3}
       propertyPath: brush.brushColor.r

@@ -4,13 +4,15 @@ using System.Collections;
 namespace Es.InkPainter.Sample
 {
 	[RequireComponent(typeof(Collider), typeof(MeshRenderer))]
-	public class Painter: MonoBehaviour
+	public class Painter : MonoBehaviour
 	{
 		[SerializeField]
 		private Brush brush = null;
 
 		[SerializeField]
 		private int wait = 3;
+
+		private Color paintColor;
 
 		private int waitCount;
 
@@ -23,10 +25,17 @@ namespace Es.InkPainter.Sample
 		public float intervalSecond = 0.05f;// 塗りを行う隔(秒)
 		public float addScale = 0.01f; //インクが広がる強さ
 		public float attenuation = 0.85f;// インクが広がる強さの減衰率
+
+		public Color SubPaintColor
+		{
+			set { paintColor = value; }
+		}
+
 		public void Awake()
 		{
 			//GetComponent<MeshRenderer>().material.color = brush.Color;
 			rigidbody = GetComponent<Rigidbody>();
+
 		}
 
 		public void FixedUpdate()
@@ -56,7 +65,10 @@ namespace Es.InkPainter.Sample
 			if (canvas == null)
 				yield break;
 
-			var brush = new Brush(this.brush.BrushTexture, this.brush.Scale, this.brush.Color);
+			var brush = new Brush(this.brush.BrushTexture, this.brush.Scale, paintColor);
+
+			//brush.Color = paintColor;
+
 			float addScale = this.addScale;
 			for (int i = 0; i < count; i++)
 			{

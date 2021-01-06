@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.5019608, g: 0.67058825, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -455,6 +455,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3606271877186787821, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
+        type: 3}
+      propertyPath: materialsNum
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6453944323321517155, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
         type: 3}
       propertyPath: addScale
