@@ -15,6 +15,8 @@ public class ShopMaterial : MonoBehaviour
     void Start()
     {
         player_material = GetComponent<MeshRenderer>().material;
+        color_mode = PlayerPrefs.GetInt("Use");
+        PlayerPrefs.SetInt("ColorNumber", color_mode);
        
     }
 
