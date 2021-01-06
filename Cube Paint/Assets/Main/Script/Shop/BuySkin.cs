@@ -14,12 +14,14 @@ public class BuySkin : MonoBehaviour
     int texture_number;
     public int max_texture;
     
+    
     [SerializeField]private TextMeshProUGUI textMeshPro;
     // Start is called before the first frame update
 
 
     void Start()
     {
+        
         if (!PlayerPrefs.HasKey("Use"))
             PlayerPrefs.SetInt("Use", 0);
 
@@ -43,7 +45,10 @@ public class BuySkin : MonoBehaviour
             textMeshPro.text = "Use";
         else
             textMeshPro.text = "Have";
-        
+
+
+
+
     }
 
     void Buy()

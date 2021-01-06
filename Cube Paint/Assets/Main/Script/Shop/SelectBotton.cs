@@ -10,7 +10,14 @@ public class SelectBotton : MonoBehaviour
     ChangeColorScript colorScript;
     int colorCode;
     Color Co;
+    GameObject image_out;
+    int useFlag;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        image_out = transform.GetChild(2).gameObject;
+        image_out.SetActive(false);
+    }
     void Start()
     {
         image = GetComponent<Image>();
@@ -22,6 +29,16 @@ public class SelectBotton : MonoBehaviour
     void Update()
     {
         colorCode = PlayerPrefs.GetInt("ColorNumber");
+        useFlag = PlayerPrefs.GetInt("Use");
+
+        if(colorScript.texture_number == useFlag)
+        {
+            image_out.SetActive(true);
+        }
+        else
+        {
+            image_out.SetActive(false);
+        }
 
         if (colorCode == colorScript.texture_number)
         {

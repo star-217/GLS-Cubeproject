@@ -2134,7 +2134,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 17
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3395,7 +3395,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 17
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4819,7 +4819,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5113,6 +5113,8 @@ MonoBehaviour:
   TapToStart_Object: {fileID: 7245795054732235973}
   Shop_Object: {fileID: 862827753420403164}
   result: {fileID: 6578620189282497566}
+  Tutorial: {fileID: 0}
+  Arrow: {fileID: 0}
 --- !u!1 &8340461089501426281
 GameObject:
   m_ObjectHideFlags: 0

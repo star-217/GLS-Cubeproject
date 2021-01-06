@@ -26,18 +26,20 @@ public class ChangeColorScript : MonoBehaviour
     public TextureChange texture_change;
     public int texture_number;
     Button ColorButton;
-    public GameObject player;
-    public Material material;
     public static Color player_color;
     public static int colorNumber = 1;
     Skinprice Price;
     public float set_score;
     public bool buy_flag = false;
     string name;
+    GameObject blackImage;
 
     // Start is called before the first frame update
+
     void Start()
     {
+        blackImage = transform.GetChild(3).gameObject;
+
         ColorButton = GetComponent<Button>();
         ColorButton.onClick.AddListener(OnclickScene);
         Price = transform.GetChild(1).gameObject.GetComponent<Skinprice>();
@@ -52,11 +54,15 @@ public class ChangeColorScript : MonoBehaviour
         colorNumber = PlayerPrefs.GetInt("ColorNumber");
         set_score = Price.price;
         texture_number = (int)texture_change;
-
+        if (set_score == 0)
+            blackImage.SetActive(false);
     }
     
     void OnclickScene()
     {
+      
+
+
         if (texture_change == TextureChange.Blue)
             colorNumber = 0;
         if (texture_change == TextureChange.Red)
