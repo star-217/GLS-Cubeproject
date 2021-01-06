@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Es.InkPainter;
+using Es.InkPainter.Sample;
 
 public class PlayerEffectScript : MonoBehaviour
 {
@@ -13,7 +14,10 @@ public class PlayerEffectScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        color = GetComponent<MeshRenderer>().material.color;
+        if (GetComponent<Painter>() != null)
+            color = GetComponent<Painter>().SubPaintColor;
+        else
+            color = GetComponent<PlayerPainter>().GetColor;
     }
 
     // Update is called once per frame

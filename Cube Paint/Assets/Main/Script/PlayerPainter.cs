@@ -23,6 +23,13 @@ namespace Es.InkPainter.Sample
 		public float intervalSecond = 0.05f;// 塗りを行う隔(秒)
 		public float addScale = 0.01f; //インクが広がる強さ
 		public float attenuation = 0.85f;// インクが広がる強さの減衰率
+
+		public Color GetColor
+        {
+            get { return brush.Color; }
+		}
+
+
 		public void Awake()
 		{
 			//GetComponent<MeshRenderer>().material.color = brush.Color;

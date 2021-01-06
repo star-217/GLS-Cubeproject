@@ -29,6 +29,7 @@ namespace Es.InkPainter.Sample
 		public Color SubPaintColor
 		{
 			set { paintColor = value; }
+			get { return paintColor; }
 		}
 
 		public void Awake()
