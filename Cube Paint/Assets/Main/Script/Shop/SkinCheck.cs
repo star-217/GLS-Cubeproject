@@ -8,7 +8,12 @@ public class SkinCheck : MonoBehaviour
     public int max_skin;
     void Start()
     {
-        
+        for (int i = 0; i < max_skin; i++)
+        {
+            var flag = PlayerPrefs.GetInt("BuyFlag" + i);
+            if (flag == 1)
+                PlayerPrefs.SetInt("Skin" + i, 0);
+        }
     }
 
     // Update is called once per frame

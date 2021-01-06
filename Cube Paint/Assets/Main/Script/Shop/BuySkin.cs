@@ -12,12 +12,15 @@ public class BuySkin : MonoBehaviour
     float skin_price = 1000;
     bool use_flag = false;
     int texture_number;
+    public int max_texture;
     
     [SerializeField]private TextMeshProUGUI textMeshPro;
     // Start is called before the first frame update
+
+
     void Start()
     {
- 
+        texture_number = PlayerPrefs.GetInt("ColorNumber"); 
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(Buy);
 
@@ -30,9 +33,10 @@ public class BuySkin : MonoBehaviour
         
         texture_number = PlayerPrefs.GetInt("ColorNumber");
         skin_price = PlayerPrefs.GetInt("Skin"+ texture_number);
+        var useFlag = PlayerPrefs.GetInt("Use");
         if (skin_price != 0)
             textMeshPro.text = "" + (int)skin_price;
-        else if(use_flag)
+        else if(useFlag == texture_number)
             textMeshPro.text = "Use";
         else
             textMeshPro.text = "Have";
@@ -41,8 +45,8 @@ public class BuySkin : MonoBehaviour
 
     void Buy()
     {
-        
-        if(skin_price != 0)
+
+        if (skin_price != 0)
         {
             if (shop_money >= skin_price)
             {
@@ -51,6 +55,12 @@ public class BuySkin : MonoBehaviour
                 PlayerPrefs.SetFloat("score_save", shop_money);
             }
         }
+        else
+        {
+            PlayerPrefs.SetInt("Use", texture_number);
+           
+        }
+        
       
 
 
