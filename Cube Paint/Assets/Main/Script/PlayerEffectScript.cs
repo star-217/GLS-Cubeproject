@@ -1,21 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Es.InkPainter;
 
 public class PlayerEffectScript : MonoBehaviour
 {
     public ParticleSystem particle;
     public GameObject ray;
+    private GameObject ray_color;
+    Color color;
 
     // Start is called before the first frame update
     void Start()
     {
+        color = GetComponent<MeshRenderer>().material.color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
 
@@ -26,7 +30,9 @@ public class PlayerEffectScript : MonoBehaviour
             foreach (var p in collision.contacts)
             {
                 Instantiate(particle, p.point, Quaternion.Euler(0.0f, 90.0f, 0.0f));
-                Instantiate(ray, p.point + new Vector3(0,1.5f,0), Quaternion.identity);
+                ray_color = Instantiate(ray, p.point + new Vector3(0,1.5f,0), Quaternion.identity);
+                var s = ray_color.GetComponent<WallPaint>();
+                s.brush.Color = color;
             }
         }
 
@@ -35,7 +41,9 @@ public class PlayerEffectScript : MonoBehaviour
             foreach (var p in collision.contacts)
             {
                 Instantiate(particle, p.point, Quaternion.Euler(0.0f, 270.0f, 0.0f));
-                Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
+                ray_color = Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
+                var s = ray_color.GetComponent<WallPaint>();
+                s.brush.Color = color;
             }
         }
 
@@ -44,7 +52,9 @@ public class PlayerEffectScript : MonoBehaviour
             foreach (var p in collision.contacts)
             {
                 Instantiate(particle, p.point, Quaternion.Euler(0.0f,180.0f, 0.0f));
-                Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
+                ray_color = Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
+                var s = ray_color.GetComponent<WallPaint>();
+                s.brush.Color = color;
             }
         }
 
@@ -53,7 +63,9 @@ public class PlayerEffectScript : MonoBehaviour
             foreach (var p in collision.contacts)
             {
                 Instantiate(particle, p.point, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-                Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
+                ray_color = Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
+                var s = ray_color.GetComponent<WallPaint>();
+                s.brush.Color = color;
             }
         }
 
@@ -62,7 +74,9 @@ public class PlayerEffectScript : MonoBehaviour
             foreach (var p in collision.contacts)
             {
                 Instantiate(particle, p.point, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-                Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
+                ray_color = Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
+                var s = ray_color.GetComponent<WallPaint>();
+                s.brush.Color = color;
             }
         }
 

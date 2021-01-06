@@ -5,15 +5,22 @@ using Es.InkPainter;
 
 public class WallPaint : MonoBehaviour
 {
-    [SerializeField] private Brush brush;
+    [SerializeField] public Brush brush;
     int mask = 1 << 10;
     Vector3 position;
     RaycastHit hit;
     float time;
     // Start is called before the first frame update
+    
+    //public Brush ColorChange
+    //{
+    //    set { brush = value ; }
+    //}
+
 
     void Start()
     {
+        
         Physics.Raycast(transform.position, -Vector3.up, out hit, 1000.0f, mask);
 
         if (hit.collider != null)
@@ -22,6 +29,8 @@ public class WallPaint : MonoBehaviour
             canvas.Paint(brush, hit);
         }
     }
+
+  
 
     // Update is called once per frame
     void Update()
