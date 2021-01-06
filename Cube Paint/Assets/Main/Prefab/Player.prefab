@@ -323,7 +323,7 @@ LineRenderer:
   - {x: 100, y: 100, z: 100}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 1.298653
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {fileID: 3616748292202125599}
-  dirMax: 2
+  dirMax: 3
 --- !u!114 &3209496027744330908
 MonoBehaviour:
   m_ObjectHideFlags: 0

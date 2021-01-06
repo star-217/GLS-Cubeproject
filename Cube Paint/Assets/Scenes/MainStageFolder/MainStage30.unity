@@ -6599,6 +6599,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 7.46
       objectReference: {fileID: 0}
+    - target: {fileID: 2012834909506190461, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 2.645435
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012834909506190461, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3132390791421398253, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: m_LocalScale.x
