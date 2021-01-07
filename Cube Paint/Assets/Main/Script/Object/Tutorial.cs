@@ -6,15 +6,21 @@ using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
 
-    RectTransform rect;
-    Vector3 position;
-    float time;
-    Image image;
+    private RectTransform rect;
+    private Vector3 position;
+    private float time;
+    private Image image;
+    bool flag = false;
+
+    private RectTransform Arrow_rectTransform;　　　　//チュートリアルの指のRectTransform
+    [SerializeField] private GameObject Arrow_obj;　　//チュートリアルの指のオブジェクト
+    private bool arrow_swich = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rect = GetComponent<RectTransform>();
+        Arrow_rectTransform = Arrow_obj.GetComponent<RectTransform>();
         position = transform.position;
         image = GetComponent<Image>();
     }
@@ -23,15 +29,28 @@ public class Tutorial : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+        var sequence = DOTween.Sequence();
 
         if (time > 1.0f)
         {
-            image.enabled = true;   
-            rect.DOLocalMoveY(-670.0f, 0.5f).OnComplete(() =>
+           
+            if (!flag)
             {
+                sequence.Append(Arrow_rectTransform.DOScale(new Vector3(1, 1, 1), 0.5f));
+                flag = true;
+            }
+               
+
+            image.enabled = true;   
+            sequence.Join(rect.DOLocalMoveY(-670.0f, 0.5f)).OnComplete(() =>
+            {
+                sequence.Append(Arrow_rectTransform.DOScale(new Vector3(0, 1, 1), 0.001f));
+                
+
                 image.enabled = false;
                 transform.position = position;
                 time = 0;
+                flag = false;
             }).SetDelay(0.5f);
         }
 

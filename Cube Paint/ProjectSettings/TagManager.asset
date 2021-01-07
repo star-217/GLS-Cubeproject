@@ -25,6 +25,7 @@ TagManager:
   - RightWall
   - ClearEffect
   - NotPaintWallTag
+  - notdoublePaintTag
   layers:
   - Default
   - TransparentFX

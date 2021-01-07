@@ -24,10 +24,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MainStageFolder/MainStage5.unity
     guid: bbd6dd2b697a0eb4cb9a05a78c0b7846
   - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage6.unity
+    path: Assets/Scenes/MainStageFolder/MainStage7.unity
     guid: fb5f5d66cf262ef43adcf257780c9446
   - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage7.unity
+    path: Assets/Scenes/MainStageFolder/MainStage6.unity
     guid: 4036dc68ad2838344ab61fece0738f84
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage8.unity
