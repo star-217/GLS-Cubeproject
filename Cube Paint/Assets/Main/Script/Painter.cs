@@ -16,8 +16,12 @@ namespace Es.InkPainter.Sample
 
 		private int waitCount;
 
-		[SerializeField]
-		private ParticleSystem effect;
+
+		public ParticleSystem[] effect;
+		private SetMaterial setMaterial;
+		[SerializeField] private GameObject subPlayer;
+		private int effectNumber;
+
 
 		private Rigidbody rigidbody;
 
@@ -36,7 +40,15 @@ namespace Es.InkPainter.Sample
 		{
 			//GetComponent<MeshRenderer>().material.color = brush.Color;
 			rigidbody = GetComponent<Rigidbody>();
-
+			if (GetComponent<SetMaterial>() != null)
+			{
+				setMaterial = subPlayer.GetComponent<SetMaterial>();
+				effectNumber = setMaterial.MaterialsNum;
+			}
+			else
+			{
+				effectNumber = 0;
+			}
 		}
 
 		public void FixedUpdate()
@@ -57,7 +69,7 @@ namespace Es.InkPainter.Sample
 					canvas.Paint(brush, p.point);
 
 				StartCoroutine(HogePaint(canvas, p.point));
-				Instantiate(effect, p.point + dir * 0.1f, Quaternion.identity);
+				Instantiate(effect[effectNumber], p.point + dir * 0.1f, Quaternion.identity);
 			}
 		}
 

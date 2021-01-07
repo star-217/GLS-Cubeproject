@@ -8,6 +8,7 @@ public class WallBounce : MonoBehaviour
     Vector3 velocity;
     public float speed;
     public float power;
+    [SerializeField] private float impact = 3.0f;
     stop stopSc;
 
     // Start is called before the first frame update
@@ -66,7 +67,7 @@ public class WallBounce : MonoBehaviour
             // velocity = rigidbody.velocity * speed;
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
-            rigidbody.AddForce(Vector3.back * 3.0f, ForceMode.Impulse);
+            rigidbody.AddForce(Vector3.back * impact, ForceMode.Impulse);
             return;
         }
         if (collision.gameObject.CompareTag("DownWall"))
@@ -74,7 +75,7 @@ public class WallBounce : MonoBehaviour
             // velocity = rigidbody.velocity * speed;
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
-            rigidbody.AddForce(Vector3.forward * 3.0f, ForceMode.Impulse);
+            rigidbody.AddForce(Vector3.forward * impact, ForceMode.Impulse);
             return;
         }
         if (collision.gameObject.CompareTag("LeftWall"))
@@ -82,7 +83,7 @@ public class WallBounce : MonoBehaviour
             // velocity = rigidbody.velocity * speed;
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
-            rigidbody.AddForce(Vector3.right * 3.0f, ForceMode.Impulse);
+            rigidbody.AddForce(Vector3.right * impact, ForceMode.Impulse);
             return;
         }
         if (collision.gameObject.CompareTag("RightWall"))
@@ -90,7 +91,7 @@ public class WallBounce : MonoBehaviour
             // velocity = rigidbody.velocity * speed;
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
-            rigidbody.AddForce(Vector3.left * 3.0f, ForceMode.Impulse);
+            rigidbody.AddForce(Vector3.left * impact, ForceMode.Impulse);
             return;
         }
     }
@@ -103,7 +104,7 @@ public class WallBounce : MonoBehaviour
             // velocity = rigidbody.velocity * speed;
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
-            rigidbody.AddForce(Vector3.back * 3.0f, ForceMode.Impulse);
+            rigidbody.AddForce(Vector3.back * impact, ForceMode.Impulse);
             return;
         }
         if (collision.gameObject.CompareTag("DownWall"))
@@ -111,7 +112,7 @@ public class WallBounce : MonoBehaviour
             // velocity = rigidbody.velocity * speed;
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
-            rigidbody.AddForce(Vector3.forward * 3.0f, ForceMode.Impulse);
+            rigidbody.AddForce(Vector3.forward * impact, ForceMode.Impulse);
             return;
         }
         if (collision.gameObject.CompareTag("LeftWall"))
@@ -119,7 +120,7 @@ public class WallBounce : MonoBehaviour
             // velocity = rigidbody.velocity * speed;
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
-            rigidbody.AddForce(Vector3.right * 3.0f, ForceMode.Impulse);
+            rigidbody.AddForce(Vector3.right * impact, ForceMode.Impulse);
             return;
         }
         if (collision.gameObject.CompareTag("RightWall"))
@@ -127,7 +128,7 @@ public class WallBounce : MonoBehaviour
             // velocity = rigidbody.velocity * speed;
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power,ForceMode.Acceleration);
-            rigidbody.AddForce(Vector3.left * 3.0f, ForceMode.Impulse);
+            rigidbody.AddForce(Vector3.left * impact, ForceMode.Impulse);
             return;
         }
     }
