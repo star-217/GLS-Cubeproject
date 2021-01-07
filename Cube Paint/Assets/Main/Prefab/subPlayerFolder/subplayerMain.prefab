@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3867259191133910663}
   m_Layer: 13
   m_Name: notdoublePaint
-  m_TagString: Untagged
+  m_TagString: notdoublePaintTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

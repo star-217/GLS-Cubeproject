@@ -18,7 +18,7 @@ public class notColorScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "notdoublePaintTag")
         {
             if (painter != null)
                 painter.enabled       = false;
@@ -28,7 +28,7 @@ public class notColorScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "notdoublePaintTag")
         {
             if (painter != null)
                 painter.enabled       = true;
