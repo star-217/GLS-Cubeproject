@@ -13,6 +13,7 @@ public class BuySkin : MonoBehaviour
     bool use_flag = false;
     int texture_number;
     public int max_texture;
+    Image image;
     
     
     [SerializeField]private TextMeshProUGUI textMeshPro;
@@ -28,7 +29,7 @@ public class BuySkin : MonoBehaviour
         texture_number = PlayerPrefs.GetInt("ColorNumber"); 
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(Buy);
-
+        image = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -40,11 +41,19 @@ public class BuySkin : MonoBehaviour
         skin_price = PlayerPrefs.GetInt("Skin"+ texture_number);
         var useFlag = PlayerPrefs.GetInt("Use");
         if (skin_price != 0)
+        {
+            image.enabled = true;
             textMeshPro.text = "" + (int)skin_price;
-        else if(useFlag == texture_number)
-            textMeshPro.text = "Use";
+        }
         else
-            textMeshPro.text = "Have";
+        {
+            textMeshPro.text = "";
+            image.enabled = false;
+        }
+        //else if(useFlag == texture_number)
+        //    textMeshPro.text = "Use";
+        //else
+        //    textMeshPro.text = "Have";
 
 
 

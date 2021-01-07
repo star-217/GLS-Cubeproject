@@ -8,6 +8,7 @@ public class SkinCheck : MonoBehaviour
     public int max_skin;
     void Start()
     {
+        PlayerPrefs.SetInt("BuyFlag0", 1);
         for (int i = 0; i < max_skin; i++)
         {
             var flag = PlayerPrefs.GetInt("BuyFlag" + i);

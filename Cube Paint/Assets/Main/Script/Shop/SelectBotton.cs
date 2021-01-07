@@ -30,8 +30,16 @@ public class SelectBotton : MonoBehaviour
     {
         colorCode = PlayerPrefs.GetInt("ColorNumber");
         useFlag = PlayerPrefs.GetInt("Use");
+        var buyFlag = PlayerPrefs.GetInt("BuyFlag" + colorCode);
 
-        if(colorScript.texture_number == useFlag)
+        if(buyFlag == 1)
+        {
+            PlayerPrefs.SetInt("Use", colorCode);
+        }
+
+
+
+        if (colorScript.texture_number == useFlag)
         {
             image_out.SetActive(true);
         }
@@ -40,25 +48,25 @@ public class SelectBotton : MonoBehaviour
             image_out.SetActive(false);
         }
 
-        if (colorCode == colorScript.texture_number)
-        {
-            if (!flag)
-                image.color -= new Color(0, 0, 0, 0.01f);
-            else
-                image.color += new Color(0, 0, 0, 0.01f);
+        //if (colorCode == colorScript.texture_number)
+        //{
+        //    if (!flag)
+        //        image.color -= new Color(0, 0, 0, 0.01f);
+        //    else
+        //        image.color += new Color(0, 0, 0, 0.01f);
 
 
-            if (image.color.a < 0)
-                flag = true;
-            if (image.color.a > 1)
-                flag = false;
+        //    if (image.color.a < 0)
+        //        flag = true;
+        //    if (image.color.a > 1)
+        //        flag = false;
 
-        }
-        else
-        {
+        //}
+        //else
+        //{
 
-            image.color = Co;
-        }
+        //    image.color = Co;
+        //}
 
     }
 }
