@@ -61,7 +61,7 @@ public class ChangeColorScript : MonoBehaviour
     void OnclickScene()
     {
       
-
+      
 
         if (texture_change == TextureChange.Blue)
             colorNumber = 0;
@@ -83,7 +83,8 @@ public class ChangeColorScript : MonoBehaviour
             colorNumber = 8;
 
 
-        PlayerPrefs.SetInt("ColorNumber", colorNumber);
+        if (PlayerPrefs.GetInt("BuyFlag" + colorNumber) == 1)
+            PlayerPrefs.SetInt("ColorNumber", colorNumber);
         PlayerPrefs.SetFloat("Price", set_score);
     }
 }

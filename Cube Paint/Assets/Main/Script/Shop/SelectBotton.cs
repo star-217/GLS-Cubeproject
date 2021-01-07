@@ -11,7 +11,9 @@ public class SelectBotton : MonoBehaviour
     int colorCode;
     Color Co;
     GameObject image_out;
+    [SerializeField] Image randamSelect;
     int useFlag;
+    int random;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -28,6 +30,7 @@ public class SelectBotton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        random = PlayerPrefs.GetInt("Random");
         colorCode = PlayerPrefs.GetInt("ColorNumber");
         useFlag = PlayerPrefs.GetInt("Use");
         var buyFlag = PlayerPrefs.GetInt("BuyFlag" + colorCode);
@@ -48,25 +51,14 @@ public class SelectBotton : MonoBehaviour
             image_out.SetActive(false);
         }
 
-        //if (colorCode == colorScript.texture_number)
-        //{
-        //    if (!flag)
-        //        image.color -= new Color(0, 0, 0, 0.01f);
-        //    else
-        //        image.color += new Color(0, 0, 0, 0.01f);
-
-
-        //    if (image.color.a < 0)
-        //        flag = true;
-        //    if (image.color.a > 1)
-        //        flag = false;
-
-        //}
-        //else
-        //{
-
-        //    image.color = Co;
-        //}
+        if (colorScript.texture_number == random)
+        {
+            randamSelect.enabled = true;
+        }
+        else
+        {
+            randamSelect.enabled = false;
+        }
 
     }
 }
