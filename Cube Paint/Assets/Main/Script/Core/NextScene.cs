@@ -15,6 +15,7 @@ public class NextScene : MonoBehaviour
     int count;
     //CollisionPainter collisionPainter;
     private int maxStage = 35;
+    private int stageCount;
     public ClearEvent ClearEvent => clearEvent;
 
     private bool isClear = false;
@@ -33,10 +34,15 @@ public class NextScene : MonoBehaviour
     {
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(OnclickScene);
-        stage = PlayerPrefs.GetInt("stage", stage);
-       
-        
-       // collisionPainter = player.GetComponent<CollisionPainter>();
+        stage = PlayerPrefs.GetInt("stage");
+
+        if (!PlayerPrefs.HasKey("StageCount"))
+            PlayerPrefs.SetInt("StageCount", 1);
+        else
+            stageCount = PlayerPrefs.GetInt("StageCount");
+
+
+        // collisionPainter = player.GetComponent<CollisionPainter>();
 
 
 
