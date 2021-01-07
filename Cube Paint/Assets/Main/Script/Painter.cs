@@ -65,11 +65,13 @@ namespace Es.InkPainter.Sample
 			foreach (var p in collision.contacts)
 			{
 				var canvas = p.otherCollider.GetComponent<InkCanvas>();
-				if(canvas != null)
-					canvas.Paint(brush, p.point);
 
+				if (canvas != null)
+					canvas.Paint(brush, new Vector3(p.point.x, p.point.y, p.point.z));
+			
 				StartCoroutine(HogePaint(canvas, p.point));
 				Instantiate(effect[effectNumber], p.point + dir * 0.1f, Quaternion.identity);
+
 			}
 		}
 
