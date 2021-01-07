@@ -70,9 +70,9 @@ public class NextScene : MonoBehaviour
         GLS.GLSAnalyticsUtility.TrackEvent("StageClear", "Stage" + stage, stage);
         stage += 1;
         stageCount += 1;
-        if (stage > maxStage)
+        if (stageCount > maxStage)
         {
-            stage = 1;
+            stage = Random.Range(4, maxStage);
         }
         PlayerPrefs.SetInt("stage", stage);
         PlayerPrefs.SetInt("StageCount", stageCount);
