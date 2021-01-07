@@ -292,6 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8faf0df9350a5d24cbb8b38b1fcff778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Arrow_obj: {fileID: 2115765107}
 --- !u!114 &218312126
 MonoBehaviour:
   m_ObjectHideFlags: 0
