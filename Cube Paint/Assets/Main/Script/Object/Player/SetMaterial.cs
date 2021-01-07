@@ -7,6 +7,11 @@ public class SetMaterial : MonoBehaviour
 {
     [SerializeField] private Painter painter = null;
     [SerializeField] private int materialsNum;
+    public int MaterialsNum
+    {
+        get { return materialsNum; }
+    }
+
     [SerializeField] private Material[] materials;
     [SerializeField] private Color[] colors;
 

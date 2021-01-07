@@ -432,6 +432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ec9a2c613cc3244af94e10e4759f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particle: {fileID: 2892835273324444684, guid: 063237ef20587da418efa0dfce876fd0,
+  subPlayer: {fileID: 8285834072196364449, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
     type: 3}
+  particle:
+  - {fileID: 2892835273324444684, guid: 063237ef20587da418efa0dfce876fd0, type: 3}
   ray: {fileID: 8669986733552838771, guid: da4459fdc0164f241869aeb6d0182e8c, type: 3}

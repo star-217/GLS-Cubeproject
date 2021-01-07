@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brush:
-    brushTexture: {fileID: 2800000, guid: f198c1c995ef08c478009b65a48af828, type: 3}
+    brushTexture: {fileID: 2800000, guid: a236a5337337702458eb61a40cf49a84, type: 3}
     brushNormalTexture: {fileID: 2800000, guid: 945b831b22eb06945bf77e00f16ff51a,
       type: 3}
     brushHeightTexture: {fileID: 0}
-    brushScale: 0.5
+    brushScale: 0.35
     rotateAngle: 0
     brushNormalBlend: 0.216
     brushHeightBlend: 0
