@@ -13,7 +13,7 @@ public class CurrentStageScript : MonoBehaviour
     void Start()
     {
         textMeshPro = CurrentStage_obj.GetComponent<TextMeshProUGUI>();
-        stage = PlayerPrefs.GetInt("stage");
+        stage = PlayerPrefs.GetInt("StageCount");
     }
 
     // Update is called once per frame

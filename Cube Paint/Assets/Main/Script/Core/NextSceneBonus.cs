@@ -15,6 +15,7 @@ public class NextSceneBonus : MonoBehaviour
     int count;
     //CollisionPainter collisionPainter;
     private int maxStage = 35;
+    private int stageCount;
     public ClearEvent ClearEvent => clearEvent;
 
     private bool isClear = false;
@@ -34,9 +35,12 @@ public class NextSceneBonus : MonoBehaviour
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(OnclickScene);
         stage = PlayerPrefs.GetInt("stage", stage);
-       
-        
-       // collisionPainter = player.GetComponent<CollisionPainter>();
+
+        if (!PlayerPrefs.HasKey("StageCount"))
+            PlayerPrefs.SetInt("StageCount", 1);
+        else
+            stageCount = PlayerPrefs.GetInt("StageCount");
+        // collisionPainter = player.GetComponent<CollisionPainter>();
 
 
 
@@ -69,12 +73,13 @@ public class NextSceneBonus : MonoBehaviour
     {
         GLS.GLSAnalyticsUtility.TrackEvent("StageClear", "Stage" + stage, stage);
         stage += 1;
+        stageCount += 1;
         if (stage > maxStage)
         {
             stage = 1;
         }
         PlayerPrefs.SetInt("stage", stage);
-
+        PlayerPrefs.SetInt("StageCount", stageCount);
         SceneManager.LoadScene("MainStage" + stage);
     }
 
@@ -85,12 +90,13 @@ public class NextSceneBonus : MonoBehaviour
 
         GLS.GLSAnalyticsUtility.TrackEvent("StageClear", "Stage" + stage, stage);
         stage += 1;
+        stageCount += 1;
         if (stage > maxStage)
         {
             stage = 1;
         }
         PlayerPrefs.SetInt("stage", stage);
-
+        PlayerPrefs.SetInt("StageCount", stageCount);
         SceneManager.LoadScene("MainStage" + stage);
     }
 }

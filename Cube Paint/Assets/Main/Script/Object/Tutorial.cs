@@ -20,6 +20,7 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         rect = GetComponent<RectTransform>();
+        if(Arrow_obj != null)
         Arrow_rectTransform = Arrow_obj.GetComponent<RectTransform>();
         position = transform.position;
         image = GetComponent<Image>();
