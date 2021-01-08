@@ -45,7 +45,7 @@ public class BuySkin : MonoBehaviour
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(Buy);
         image = GetComponent<Image>();
-
+        shop_money = PlayerPrefs.GetFloat("score_save");
 
 
         buy_flag = new bool[9];
@@ -74,7 +74,9 @@ public class BuySkin : MonoBehaviour
     {
         if (skin_price <= shop_money)
         {
-            
+            testButton.enabled = false;
+
+
             int notbuyCount = 0;
             for (int i = 0; i < buy_flag.Length; ++i)
             {
@@ -118,9 +120,12 @@ public class BuySkin : MonoBehaviour
         shop_money -= skin_price;
         PlayerPrefs.SetFloat("score_save", shop_money);
         PlayerPrefs.SetInt("BuyFlag" + notBuy[index], 1);
+        PlayerPrefs.SetInt("Use", notBuy[index]);
         buy_flag[notBuy[index]] = true;
         buyCount++;
         PlayerPrefs.SetInt("BuyCount", buyCount);
+        
+        testButton.enabled = true;
         particle.Play();
 
         for (int i = 0; i < 3; i++)
@@ -131,6 +136,7 @@ public class BuySkin : MonoBehaviour
             PlayerPrefs.SetInt("Random", 1000);
             yield return new WaitForSeconds(0.3f);
         }
+       
     }
 
 

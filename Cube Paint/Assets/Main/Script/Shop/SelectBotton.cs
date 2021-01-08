@@ -35,10 +35,10 @@ public class SelectBotton : MonoBehaviour
         useFlag = PlayerPrefs.GetInt("Use");
         var buyFlag = PlayerPrefs.GetInt("BuyFlag" + colorCode);
 
-        if(buyFlag == 1)
-        {
-            PlayerPrefs.SetInt("Use", colorCode);
-        }
+        //if(buyFlag == 1)
+        //{
+        //    PlayerPrefs.SetInt("Use", colorCode);
+        //}
 
 
 

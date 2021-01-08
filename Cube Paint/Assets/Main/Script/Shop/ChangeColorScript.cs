@@ -84,8 +84,8 @@ public class ChangeColorScript : MonoBehaviour
 
 
         if (PlayerPrefs.GetInt("BuyFlag" + colorNumber) == 1)
-            PlayerPrefs.SetInt("ColorNumber", colorNumber);
-        PlayerPrefs.SetFloat("Price", set_score);
+            PlayerPrefs.SetInt("Use", colorNumber);
+       
     }
 }
 

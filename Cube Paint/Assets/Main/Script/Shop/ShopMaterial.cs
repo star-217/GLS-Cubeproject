@@ -23,7 +23,7 @@ public class ShopMaterial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        color_mode = PlayerPrefs.GetInt("ColorNumber");
+        color_mode = PlayerPrefs.GetInt("Use");
 
         if (color_mode == 0)
         {
