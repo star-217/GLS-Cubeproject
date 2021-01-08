@@ -74,6 +74,7 @@ public class UIcontrollerScript : MonoBehaviour
 
     private void ScreenEvent()
     {
+        notpaint_swich = true;
         TapToStart_Object.SetActive(false);
         PercentageGauge_Object.SetActive(true);
        // InkRemnantGauge_Object.SetActive(true);

@@ -99,16 +99,14 @@ namespace Es.InkPainter.Sample
 
 			var brush = new Brush(this.brush.BrushTexture, this.brush.Scale, paintColor);
 
+
 			//brush.Color = paintColor;
 
 			float addScale = this.addScale;
 			for (int i = 0; i < count; i++)
 			{
-
-
 				brush.RotateAngle = UnityEngine.Random.Range(0.0f, 360.0f);
 				//brush.Color = new Color(UnityEngine.Random.Range(0.0f,1.0f), UnityEngine.Random.Range(0.0f, 1.0f), UnityEngine.Random.Range(0.0f, 1.0f));
-
 
 				brush.Scale += addScale;
 				//	brush.Color -= new Color(0, 0, 0, 10);
@@ -118,8 +116,6 @@ namespace Es.InkPainter.Sample
 				//brush.Color = default_color;
 
 				//brush.Color = Color.HSVToRGB(0, 0, 0);
-
-
 			}
 		}
 	}
