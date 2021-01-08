@@ -35,7 +35,7 @@ public class Resultcontroller : MonoBehaviour
             //sequence.Append(text.DOScale(1.0f, 0.5f));
             sequence.Append(nextButton.DOScale(1.0f, 0.5f)).OnComplete(BottonAnimetion);
 
-            (noThanks.DOScale(1.0f, 0.5f)).SetDelay(3.4f);
+            (noThanks.DOScale(1.0f, 0.5f)).SetDelay(2.5f);
 
             flag = true;
         }

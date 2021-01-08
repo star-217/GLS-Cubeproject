@@ -12,7 +12,10 @@ public class CurrentStageScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         textMeshPro = CurrentStage_obj.GetComponent<TextMeshProUGUI>();
+        if (!PlayerPrefs.HasKey("StageCount"))
+            PlayerPrefs.SetInt("StageCount", 1);
         stage = PlayerPrefs.GetInt("StageCount");
     }
 
