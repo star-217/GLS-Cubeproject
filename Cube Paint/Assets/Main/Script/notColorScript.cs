@@ -22,7 +22,9 @@ public class notColorScript : MonoBehaviour
         if (other.gameObject.tag == "Player"/*notdoublePaintTag*/)
         {
             if (painter != null)
-                painter.enabled       = false;
+                painter.enabled = false;
+            
+            if(playerPainter != null)
                 playerPainter.enabled = false;
         }
     }
@@ -32,9 +34,11 @@ public class notColorScript : MonoBehaviour
         if (other.gameObject.tag == "Player"/*notdoublePaintTag*/)
         {
             if (painter != null)
-                painter.enabled       = true;
+                painter.enabled = true;
+            
+            if (playerPainter != null)
                 playerPainter.enabled = true;
-
+            
         }
     }
 }

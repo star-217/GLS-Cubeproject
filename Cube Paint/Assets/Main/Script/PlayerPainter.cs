@@ -51,8 +51,7 @@ namespace Es.InkPainter.Sample
 			{
 				var canvas = p.otherCollider.GetComponent<InkCanvas>();
 				if (canvas != null)
-					canvas.Paint(brush, new Vector3(p.point.x, p.point.y, p.point.z));
-
+					canvas.Paint(brush,p.point);
 
 				StartCoroutine(HogePaint(canvas, p.point));
 				//Instantiate(effect, p.point + dir * 1.01f, Quaternion.identity);
