@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class AdBonus : MonoBehaviour
 {
     Button testButton;
     float score;
     public float score_up = 500;
+
     // Start is called before the first frame update
     void Start()
     {
