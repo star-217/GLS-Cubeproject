@@ -34,6 +34,7 @@ public class UIcontrollerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        notpaint_swich = false;
         Gauge_Outline.SetActive(false);
         result.SetActive(false);
         PercentageGauge_Object.SetActive(false);

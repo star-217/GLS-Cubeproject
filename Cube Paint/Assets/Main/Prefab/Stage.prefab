@@ -1307,6 +1307,11 @@ PrefabInstance:
       propertyPath: ClearEffect
       value: 
       objectReference: {fileID: 5594904441568422939}
+    - target: {fileID: 3209496027744330908, guid: 898c0b64afe23a848ace49c4836486e5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 898c0b64afe23a848ace49c4836486e5, type: 3}
 --- !u!4 &194347328249693875 stripped

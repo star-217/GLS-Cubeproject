@@ -67,25 +67,8 @@ namespace Es.InkPainter.Sample
 				var canvas = p.otherCollider.GetComponent<InkCanvas>();
 
 				if (canvas != null)
-				{
-					if(setMaterial.MaterialsNum == 0)
-					    canvas.Paint(brush, new Vector3(p.point.x, p.point.y, p.point.z));
+					canvas.Paint(brush,p.point);
 
-					if (setMaterial.MaterialsNum == 1)
-						canvas.Paint(brush, new Vector3(p.point.x, p.point.y - 0.1f, p.point.z));
-
-					if (setMaterial.MaterialsNum == 2)
-						canvas.Paint(brush, new Vector3(p.point.x, p.point.y - 0.2f, p.point.z));
-
-					if (setMaterial.MaterialsNum == 3)
-						canvas.Paint(brush, new Vector3(p.point.x, p.point.y - 0.3f, p.point.z));
-
-					if (setMaterial.MaterialsNum == 4)
-						canvas.Paint(brush, new Vector3(p.point.x, p.point.y - 0.4f, p.point.z));
-
-					if (setMaterial.MaterialsNum == 5)
-						canvas.Paint(brush, new Vector3(p.point.x, p.point.y - 0.5f, p.point.z));
-				}
 				StartCoroutine(HogePaint(canvas, p.point));
 				Instantiate(effect[effectNumber], p.point + dir * 0.1f, Quaternion.identity);
 
