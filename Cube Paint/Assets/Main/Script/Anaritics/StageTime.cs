@@ -7,8 +7,8 @@ public class StageTime : MonoBehaviour
 {
     float time;
     bool flag = false;
-    int[] haveSkin;
-    int skinCount;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,14 +20,7 @@ public class StageTime : MonoBehaviour
     {
 
         time += Time.deltaTime;
-        for (int i = 0; i < 9; i++)
-            haveSkin[i] = PlayerPrefs.GetInt("BuyFlag",+i);
-
-        for (int i = 0; i < 9; i++)
-        {
-            if (haveSkin[i] == 1)
-                skinCount++;
-        }
+      
 
         if (!flag)
         {
@@ -39,7 +32,7 @@ public class StageTime : MonoBehaviour
     void Analitics(Scene thisScene)
     {
         GLS.GLSAnalyticsUtility.TrackEvent("StageTime", "Stage" + PlayerPrefs.GetInt("StageCount"),(int)time);
-        GLS.GLSAnalyticsUtility.TrackEvent("HaveSkin", "Stage" + PlayerPrefs.GetInt("StageCount"), skinCount);
+       
         Debug.Log(time);
     }
 

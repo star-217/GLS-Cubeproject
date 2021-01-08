@@ -35,7 +35,7 @@ public class BuySkin : MonoBehaviour
         
         if (!PlayerPrefs.HasKey("Use"))
             PlayerPrefs.SetInt("Use", 0);
-        if (!PlayerPrefs.HasKey("Random"))
+ 
             PlayerPrefs.SetInt("Random", 1000);
         if (!PlayerPrefs.HasKey("score_save"))
             PlayerPrefs.SetInt("score_save", 0);
