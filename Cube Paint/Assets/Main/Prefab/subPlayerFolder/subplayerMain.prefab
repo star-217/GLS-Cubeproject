@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1576682419064453732}
   - component: {fileID: 8196772177044254824}
   - component: {fileID: 3867259191133910663}
+  - component: {fileID: 32969796041422555}
   m_Layer: 13
   m_Name: notdoublePaint
   m_TagString: notdoublePaintTag
@@ -52,7 +53,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7529462042898310993}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d726c72f414367c45b7259874b230868, type: 3}
   m_Name: 
@@ -60,6 +61,19 @@ MonoBehaviour:
   subPlayer_obj: {fileID: 8285834072196364449}
   Player_obj: {fileID: 3128935329725473750, guid: 898c0b64afe23a848ace49c4836486e5,
     type: 3}
+--- !u!114 &32969796041422555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529462042898310993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d5938fefa256a4d8f32ad2ac19772d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notcolorScript: {fileID: 3867259191133910663}
 --- !u!1 &8285834072196364449
 GameObject:
   m_ObjectHideFlags: 0
