@@ -23,6 +23,7 @@ public class UIcontrollerScript : MonoBehaviour
     [Header("リザルトを入れる")]
     [SerializeField] private GameObject result;
 
+   
     public GameObject Tutorial;
     public GameObject Arrow;
 

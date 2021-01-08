@@ -36,6 +36,7 @@ public class Balloon : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if(PlayerPrefs.GetInt("Vibe") == 1)
             Vibration.Vibrate(100);
 
             for (int i = 0; i < 4; i++)
