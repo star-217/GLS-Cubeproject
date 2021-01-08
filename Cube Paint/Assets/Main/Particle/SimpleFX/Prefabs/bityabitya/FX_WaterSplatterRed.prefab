@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 19876522}
   - component: {fileID: 19917480}
   m_Layer: 0
-  m_Name: FX_WaterSplatter 4
+  m_Name: FX_WaterSplatterRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,7 +222,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.20392157, b: 0.1254902, a: 1}
+      maxColor: {r: 0.98039216, g: 0.38039216, b: 0.3647059, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

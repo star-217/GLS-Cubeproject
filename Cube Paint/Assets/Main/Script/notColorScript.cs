@@ -14,6 +14,7 @@ public class notColorScript : MonoBehaviour
     {
         painter = subPlayer_obj.GetComponent<Painter>();
         playerPainter = Player_obj.GetComponent<PlayerPainter>();
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)

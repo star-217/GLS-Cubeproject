@@ -28,6 +28,8 @@ public class UIcontrollerScript : MonoBehaviour
 
     private Button testButton;
 
+    static public bool notpaint_swich = false;
+
 
     // Start is called before the first frame update
     void Start()
