@@ -340,7 +340,7 @@ public class PlayerController : MonoBehaviour
             explosion = collision.gameObject.transform.position - transform.position;
             explosion.y = 0;
             //バンパーの跳ね返し 
-            rb.AddForce(explosion.normalized * 300, ForceMode.Impulse);
+            rb.AddForce(explosion.normalized * 500, ForceMode.Impulse);
         }
 
         //if(collision.gameObject.CompareTag("Wall"))

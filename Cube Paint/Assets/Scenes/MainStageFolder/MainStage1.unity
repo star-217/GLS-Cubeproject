@@ -174,10 +174,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: Balloon
       objectReference: {fileID: 0}
+    - target: {fileID: 3446984797568727981, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.87058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446984797568727981, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.34509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446984797568727981, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.72156864
+      objectReference: {fileID: 0}
     - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}
       propertyPath: brush.brushScale
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923443294752199146, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.87058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923443294752199146, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.34509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923443294752199146, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.72156864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23cb060b0c8416744b4b3f59b68cbec6, type: 3}
@@ -483,6 +513,21 @@ PrefabInstance:
       propertyPath: count
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 383976289797669374, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 383976289797669374, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.g
+      value: 0.9647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 383976289797669374, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.b
+      value: 0.34509805
+      objectReference: {fileID: 0}
     - target: {fileID: 790289494425010938, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -581,32 +626,32 @@ PrefabInstance:
     - target: {fileID: 6577598695701339589, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: brush.brushColor.r
-      value: 0.9882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 6577598695701339589, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: brush.brushColor.g
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6577598695701339589, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
+      propertyPath: brush.brushColor.g
+      value: 0.9647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577598695701339589, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
       propertyPath: brush.brushColor.b
-      value: 0.53333336
+      value: 0.34509805
       objectReference: {fileID: 0}
     - target: {fileID: 7722807515948439065, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: brush.brushColor.r
-      value: 0.9882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722807515948439065, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: brush.brushColor.g
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7722807515948439065, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
+      propertyPath: brush.brushColor.g
+      value: 0.9647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722807515948439065, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
       propertyPath: brush.brushColor.b
-      value: 0.53333336
+      value: 0.34509805
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7601128224813422874, guid: ed386ba92b397d14893cf375eb96237f, type: 3}
