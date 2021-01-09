@@ -38,18 +38,19 @@ public class crystalScript : MonoBehaviour
 
         score_save = PlayerPrefs.GetFloat("score_save");
         //textMeshPro.text = "" + (int)score_save;
-        textMeshPro.text = "" + (int)score_save;
+        
     }
     // Update is called once per frame
     void Update()
     {
-        
 
+        score_save = PlayerPrefs.GetFloat("score_save");
+        textMeshPro.text = "" + (int)score_save;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             PlayerPrefs.DeleteKey("score_save");
             //score_save = 0.0f;
-            
+           
         }
 
       

@@ -124,7 +124,7 @@ PlayerSettings:
     16:10: 0
     16:9: 0
     Others: 1
-  bundleVersion: 1.12
+  bundleVersion: 1.14
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -170,7 +170,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: gls.gls0403
   buildNumber: {}
-  AndroidBundleVersionCode: 12
+  AndroidBundleVersionCode: 14
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 29
   AndroidPreferredInstallLocation: 1
@@ -267,7 +267,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 25020048cd9dea849a6fe9b55e53bfa0, type: 3}
+      m_Icon: {fileID: 2800000, guid: bd3ccd6b4081baa4bbe423293e8402d5, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

@@ -2382,6 +2382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score_up: 500
+  Login: {fileID: 0}
 --- !u!114 &1509724468
 MonoBehaviour:
   m_ObjectHideFlags: 0

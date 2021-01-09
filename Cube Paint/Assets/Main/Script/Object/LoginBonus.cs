@@ -6,14 +6,18 @@ using System;
 public class LoginBonus : MonoBehaviour
 {
      float score;
+    [SerializeField] GameObject Bonus;
+    int count = 1;
+    public int debugcount;
     // Start is called before the first frame update
     void Start()
     {
+        if(PlayerPrefs.HasKey("DateCount"))
+        count = PlayerPrefs.GetInt("DateCount");
+
         if (DateUpdated())
         {
-            score = PlayerPrefs.GetFloat("score_save");
-            score += 1000;
-            PlayerPrefs.SetFloat("score_save",score);
+            Bonus.SetActive(true);
             // ログインボーナスの処理
         }
     }
@@ -30,6 +34,12 @@ public class LoginBonus : MonoBehaviour
         {
             Debug.Log("Dateというデータが存在しません");
             PlayerPrefs.SetInt("Date", todayInt);
+            PlayerPrefs.SetInt("DateCount", 1);
+
+           
+            score += 1000;
+            PlayerPrefs.SetFloat("score_save", score);
+            return true;
         }
         else
         {
@@ -37,6 +47,15 @@ public class LoginBonus : MonoBehaviour
             {
                 PlayerPrefs.SetInt("Date", todayInt);
                 Debug.Log("次の日になりました");
+                count++;
+                if (count > 7)
+                    count = 1;
+
+                score = PlayerPrefs.GetInt("score_save");
+                score += 1000;
+                PlayerPrefs.SetFloat("score_save", score);
+
+                PlayerPrefs.SetInt("DateCount", count);
                 return true;
             }
             else
