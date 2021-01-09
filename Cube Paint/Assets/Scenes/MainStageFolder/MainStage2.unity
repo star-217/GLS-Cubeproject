@@ -172,7 +172,22 @@ PrefabInstance:
     - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}
       propertyPath: brush.brushScale
-      value: 0.4
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushColor.r
+      value: 0.9841842
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushColor.b
+      value: 0.3726415
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23cb060b0c8416744b4b3f59b68cbec6, type: 3}
@@ -314,7 +329,22 @@ PrefabInstance:
     - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}
       propertyPath: brush.brushScale
-      value: 0.4
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushColor.r
+      value: 0.9841842
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushColor.b
+      value: 0.3726415
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23cb060b0c8416744b4b3f59b68cbec6, type: 3}
@@ -561,7 +591,22 @@ PrefabInstance:
     - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}
       propertyPath: brush.brushScale
-      value: 0.4
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushColor.r
+      value: 0.9841842
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushColor.b
+      value: 0.3726415
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23cb060b0c8416744b4b3f59b68cbec6, type: 3}
@@ -615,7 +660,22 @@ PrefabInstance:
     - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}
       propertyPath: brush.brushScale
-      value: 0.4
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushColor.r
+      value: 0.9841842
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushColor.b
+      value: 0.3726415
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23cb060b0c8416744b4b3f59b68cbec6, type: 3}
@@ -738,6 +798,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577598695701339589, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.r
+      value: 0.9882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577598695701339589, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577598695701339589, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.b
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722807515948439065, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.r
+      value: 0.9882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722807515948439065, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722807515948439065, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: brush.brushColor.b
+      value: 0.53333336
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed386ba92b397d14893cf375eb96237f, type: 3}
