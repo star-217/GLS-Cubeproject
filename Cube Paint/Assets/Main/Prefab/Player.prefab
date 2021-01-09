@@ -397,7 +397,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3128935329725473750}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06b6877c0db0e6a49a29985b1c9911fe, type: 3}
   m_Name: 
@@ -418,7 +418,7 @@ MonoBehaviour:
   wait: 3
   count: 5
   intervalSecond: 0.1
-  addScale: 0.03
+  addScale: 0.025
   attenuation: 0.85
 --- !u!114 &3348017399857761102
 MonoBehaviour:
