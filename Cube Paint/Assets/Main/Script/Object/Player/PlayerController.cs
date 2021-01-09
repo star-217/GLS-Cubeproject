@@ -123,20 +123,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ink_ratio = 1;/*(collisionPainter.Ink / collisionPainter.Ink_max);*/
-        if (ink_ratio > 0.1f)
-        {
-            PlayerFlick();
-        }
+        if(PlayerPrefs.GetInt("Player") == 1)
+            PlayerFlick();       
         else
         {
             rb.velocity = Vector3.zero;
+            mouseDirection = Vector3.zero;
         }
-        //if (defaultscale + 5 < gameObject.transform.localScale.x)
-        //{
-        //    //for (int i = 0; i < transform.childCount; i++)
-        //    //    particle[i].Play();
-        //}
+       
     }
 
     void PlayerFlick()

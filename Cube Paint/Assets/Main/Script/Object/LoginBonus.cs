@@ -17,6 +17,7 @@ public class LoginBonus : MonoBehaviour
 
         if (DateUpdated())
         {
+            PlayerPrefs.SetInt("Player", 0);
             Bonus.SetActive(true);
             // ログインボーナスの処理
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 using System;
 
 public class LoginScore : MonoBehaviour
@@ -17,6 +18,7 @@ public class LoginScore : MonoBehaviour
         score = PlayerPrefs.GetFloat("score_save");
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(OnClickBonus);
+        
     }
 
     // Update is called once per frame
@@ -28,10 +30,15 @@ public class LoginScore : MonoBehaviour
 
     void OnClickBonus()
     {
-        
 
+        Invoke("PlayerStop", 0.2f);
         if (Login != null)
             Login.SetActive(false);
+    }
+
+    void PlayerStop()
+    {
+         PlayerPrefs.SetInt("Player", 1);
     }
 
   

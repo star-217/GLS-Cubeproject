@@ -29,24 +29,31 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(PlayerPrefs.GetInt("Player") == 1)
+        DrawTutorial();
+
+    }
+
+    void DrawTutorial()
+    {
         time += Time.deltaTime;
         var sequence = DOTween.Sequence();
 
         if (time > 1.0f)
         {
-           
+
             if (!flag)
             {
                 sequence.Append(Arrow_rectTransform.DOScale(new Vector3(1, 1, 1), 0.5f));
                 flag = true;
             }
-               
 
-            image.enabled = true;   
+
+            image.enabled = true;
             sequence.Join(rect.DOLocalMoveY(-670.0f, 0.5f)).OnComplete(() =>
             {
                 sequence.Append(Arrow_rectTransform.DOScale(new Vector3(0, 1, 1), 0.001f));
-                
+
 
                 image.enabled = false;
                 transform.position = position;
@@ -54,7 +61,6 @@ public class Tutorial : MonoBehaviour
                 flag = false;
             }).SetDelay(0.5f);
         }
-
 
     }
 }

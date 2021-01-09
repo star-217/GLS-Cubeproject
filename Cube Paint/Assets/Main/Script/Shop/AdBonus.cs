@@ -40,9 +40,10 @@ public class AdBonus : MonoBehaviour
 
     private void AdRewardFailed()
     {
-       
-       
-   
+
+        Invoke("PlayerStop", 0.2f);
+        if (Login != null)
+            Login.SetActive(false);
     }
 
     private void RewardSuccess()
@@ -50,8 +51,14 @@ public class AdBonus : MonoBehaviour
         score += score_up;
 
         PlayerPrefs.SetFloat("score_save", score);
-
+        Invoke("PlayerStop", 0.2f);
         if (Login != null)
             Login.SetActive(false);
+    }
+
+
+    void PlayerStop()
+    {
+        PlayerPrefs.SetInt("Player", 1);
     }
 }
