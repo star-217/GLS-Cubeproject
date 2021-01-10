@@ -14,7 +14,7 @@ public class NextScene : MonoBehaviour
     GameObject[] player;
     int count;
     //CollisionPainter collisionPainter;
-    private int maxStage = 35;
+    public int maxStage = 35;
     private int stageCount;
     public ClearEvent ClearEvent => clearEvent;
 
