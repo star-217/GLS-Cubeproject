@@ -34,6 +34,9 @@ public class NextScene : MonoBehaviour
     {
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(OnclickScene);
+        if (!PlayerPrefs.HasKey("stage"))
+            PlayerPrefs.SetInt("stage", 1);
+
         stage = PlayerPrefs.GetInt("stage");
 
         if (!PlayerPrefs.HasKey("StageCount"))

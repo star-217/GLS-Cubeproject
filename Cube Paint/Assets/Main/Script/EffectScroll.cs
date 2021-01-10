@@ -15,6 +15,6 @@ public class EffectScroll : MonoBehaviour
     void Update()
     {
         //rigidbody.velocity = new Vector3(0, 0, 10);
-        transform.position += new Vector3(0, 0, 15.0f * Time.deltaTime);
+        transform.position += new Vector3(0, 0, 25.0f * Time.deltaTime);
     }
 }
