@@ -76,7 +76,7 @@ public class NextSceneBonus : MonoBehaviour
         stageCount += 1;
         if (stage > maxStage)
         {
-            stage = 1;
+            stage = Random.Range(4, maxStage);
         }
         PlayerPrefs.SetInt("stage", stage);
         PlayerPrefs.SetInt("StageCount", stageCount);
