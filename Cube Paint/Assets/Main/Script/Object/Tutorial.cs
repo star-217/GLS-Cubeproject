@@ -8,7 +8,7 @@ public class Tutorial : MonoBehaviour
 
     private RectTransform rect;
     private Vector3 position;
-    private float time;
+    //private float time;
     private float stayTime;
     private Image image;
     bool flag = false;
@@ -62,12 +62,12 @@ public class Tutorial : MonoBehaviour
         //    })/*.SetDelay(0.5f)*/;
         //}
 
-        time += Time.deltaTime;
+        //time += Time.deltaTime;
         var sequence = DOTween.Sequence();
         var arrow_sequence = DOTween.Sequence();
 
-        if (time > 1.0f)
-        {
+        //if (time > 1.0f)
+        //{
             if (animation_count == 0)
             {
                 sequence.Append(rect.DOLocalMoveY(-670.0f, 1.0f));
@@ -103,10 +103,10 @@ public class Tutorial : MonoBehaviour
                 sequence.Join(Arrow_rectTransform.DOScale(new Vector3(0, 1, 1), 1.0f))
                      .OnComplete(() => {
                          animation_count = 0;
-                         time = 0.0f;
+                         //time = 0.0f;
                      });
             }
-        }
+        //}
 
 
     }
