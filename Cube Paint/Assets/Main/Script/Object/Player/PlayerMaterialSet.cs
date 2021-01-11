@@ -37,9 +37,18 @@ public class PlayerMaterialSet : MonoBehaviour
             player_material.SetTexture("_MainTex", texture[texture_mode - 1]);
         if (texture_mode == 8)
             player_material.SetTexture("_MainTex", texture[texture_mode - 1]);
-
-
-
+        if (texture_mode == 9)
+            player_material.SetTexture("_MainTex", texture[texture_mode - 1]);
+        if (texture_mode == 10)
+            player_material.SetTexture("_MainTex", texture[texture_mode - 1]);
+        if (texture_mode == 11)
+            player_material.SetTexture("_MainTex", texture[texture_mode - 1]);
+        if (texture_mode == 12)
+            player_material.SetTexture("_MainTex", texture[texture_mode - 1]);
+        if (texture_mode == 13)
+            player_material.SetTexture("_MainTex", texture[texture_mode - 1]);
+        if (texture_mode == 14)
+            player_material.SetTexture("_MainTex", texture[texture_mode - 1]);
 
     }
 

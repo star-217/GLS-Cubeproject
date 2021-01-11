@@ -13,7 +13,7 @@ public class SkinCheck : MonoBehaviour
         {
             var flag = PlayerPrefs.GetInt("BuyFlag" + i);
             if (flag == 1)
-                PlayerPrefs.SetInt("Skin" + i, 0);
+                PlayerPrefs.SetInt("Skin" + i, 1);
         }
     }
 
@@ -24,7 +24,7 @@ public class SkinCheck : MonoBehaviour
         {
             var flag = PlayerPrefs.GetInt("BuyFlag" + i);
             if (flag == 1)
-                PlayerPrefs.SetInt("Skin" + i, 0);
+                PlayerPrefs.SetInt("Skin" + i, 1);
         }
     }
 }

@@ -7,22 +7,22 @@ using UnityEngine.UI;
 
 public class BuySkin : MonoBehaviour
 {
-    Button testButton;
-    float shop_money;
+    private Button testButton;
+    private float shop_money;
     [SerializeField] float skin_price = 1000;
-    bool use_flag = false;
-    int texture_number;
+    private bool use_flag = false;
+    private int texture_number;
+    private bool[] buy_flag;
+    private int buyCount;
     public int max_texture;
-    Image image;
-    bool[] buy_flag;
-    int buyCount;
-    
+    private Image image;
+
     [SerializeField]private TextMeshProUGUI textMeshPro;
-    int start = 1;
-    int end = 9;
-    int ransu;
+    private int start = 1;
+    private int end = 9;
+    private int ransu;
     [SerializeField]ParticleSystem particle;
-    [SerializeField] int randomCount = 15;
+    [SerializeField] int randomCount = 20;
     [SerializeField] float attenuation = 0.8f;
 
 
@@ -65,10 +65,7 @@ public class BuySkin : MonoBehaviour
     private void Update()
     {
         shop_money = PlayerPrefs.GetFloat("score_save");
-
     }
-
-
 
     void Buy()
     {
@@ -98,19 +95,15 @@ public class BuySkin : MonoBehaviour
                 }
             }
             StartCoroutine(RandomSelect(notBuy));
-
         }  
     }
-
-
 
     private IEnumerator RandomSelect(int[] notBuy)
     {
         int index = 0;
-        var time = 0.7f;
+        var time = 0.5f;
         for (int i = 0; i < randomCount; i++)
         {
-           
             index = Random.Range(0, notBuy.Length);
             PlayerPrefs.SetInt("Random" , notBuy[index]);
             time *= attenuation;
@@ -138,6 +131,4 @@ public class BuySkin : MonoBehaviour
         }
        
     }
-
-
 }

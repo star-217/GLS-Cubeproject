@@ -11,15 +11,22 @@ public class ChangeColorScript : MonoBehaviour
 
      public enum TextureChange
      {
-         Blue,
-         Red,
-         Green,
-         Yellow,
-         Purple,
-         YellowGreen,
-         Black,
-         Brown,
-         LightBlue,
+         White,            // 白色のスキン
+         Light_Blue,       // 水色のスキン
+         Orange,           // オレンジ色のスキン
+         SideLine_Green,   // 横線スキンの緑
+         SideLine_Blue,    // 横線スキンの青
+         SideLine_Pink,    // 横線スキンのピンク
+         hurikake_Red,     // 横線スキンの赤
+         hurikake_Orange,  // 横線スキンのオレンジ
+         tennis,           // テニスボールスキン
+         baseball,         // 野球ボールスキン
+         Beach_Ball,       // ビーチボールスキン
+         Pinball,          // ピンボールスキン
+         Skull,            // 骸骨のスキン
+         Spiderman_Red,    // スパイダーマンスキン（赤）
+         Spiderman_Blue,   // スパイダーマンスキン（青）
+         Magma,            // マグマスキン
          MAX
      }
 
@@ -52,9 +59,9 @@ public class ChangeColorScript : MonoBehaviour
     void Update()
     {
         colorNumber = PlayerPrefs.GetInt("ColorNumber");
-        set_score = Price.price;
+        set_score = PlayerPrefs.GetInt(name);
         texture_number = (int)texture_change;
-        if (set_score == 0)
+        if (set_score == 1)
             blackImage.SetActive(false);
     }
     
@@ -63,24 +70,38 @@ public class ChangeColorScript : MonoBehaviour
       
       
 
-        if (texture_change == TextureChange.Blue)
+        if (texture_change == TextureChange.White)
             colorNumber = 0;
-        if (texture_change == TextureChange.Red)
+        if (texture_change == TextureChange.Light_Blue)
             colorNumber = 1;
-        if (texture_change == TextureChange.Green)
+        if (texture_change == TextureChange.Orange)
             colorNumber = 2;  
-        if (texture_change == TextureChange.Yellow)      
+        if (texture_change == TextureChange.SideLine_Green)      
             colorNumber = 3;
-        if (texture_change == TextureChange.Purple)
+        if (texture_change == TextureChange.SideLine_Blue)
             colorNumber = 4;
-        if (texture_change == TextureChange.YellowGreen)
+        if (texture_change == TextureChange.SideLine_Pink)
             colorNumber = 5;
-        if (texture_change == TextureChange.Black)
+        if (texture_change == TextureChange.hurikake_Red)
             colorNumber = 6;  
-        if (texture_change == TextureChange.Brown)
+        if (texture_change == TextureChange.hurikake_Orange)
             colorNumber = 7;
-        if (texture_change == TextureChange.LightBlue)
+        if (texture_change == TextureChange.tennis)
             colorNumber = 8;
+        if (texture_change == TextureChange.baseball)
+            colorNumber = 9;
+        if (texture_change == TextureChange.Beach_Ball)
+            colorNumber = 10;
+        if (texture_change == TextureChange.Pinball)
+            colorNumber = 11;
+        if (texture_change == TextureChange.Skull)
+            colorNumber = 12;
+        if (texture_change == TextureChange.Spiderman_Red)
+            colorNumber = 13;
+        if (texture_change == TextureChange.Spiderman_Blue)
+            colorNumber = 14;
+        if (texture_change == TextureChange.Magma)
+            colorNumber = 15;
 
 
         if (PlayerPrefs.GetInt("BuyFlag" + colorNumber) == 1)

@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     Vector3 end_pos;
     const float MaxMagnitude = 2.0f;
 
+    [Header("タップしてもいい回数")]
+    [SerializeField] public int tapCount = 0;
+   
    // public ParticleSystem balloonparticle;
 
     public float Dir
@@ -191,6 +194,10 @@ public class PlayerController : MonoBehaviour
                 {
                     rb.AddForce(-mouseDirection.x * max_speed, 0, -mouseDirection.z * max_speed);
                 }
+
+                tapCount--;
+                if (tapCount <= 0)
+                    tapCount = 0;
             }
 
                 if(rb.velocity.magnitude <= 2.0f)
@@ -204,7 +211,6 @@ public class PlayerController : MonoBehaviour
             //    gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
             //}
            
-
            
             ClearEffect.SetActive(true);
             time += Time.deltaTime;
@@ -222,8 +228,6 @@ public class PlayerController : MonoBehaviour
            
            // Roller.SetActive(true);
         }
-
-
     }
 
 
