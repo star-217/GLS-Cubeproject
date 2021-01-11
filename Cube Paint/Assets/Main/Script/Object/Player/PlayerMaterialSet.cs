@@ -50,6 +50,8 @@ public class PlayerMaterialSet : MonoBehaviour
         if (texture_mode == 14)
             player_material.SetTexture("_MainTex", texture[texture_mode - 1]);
 
+
+      
     }
 
 

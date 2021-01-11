@@ -14,6 +14,8 @@ public class SkinCheck : MonoBehaviour
             var flag = PlayerPrefs.GetInt("BuyFlag" + i);
             if (flag == 1)
                 PlayerPrefs.SetInt("Skin" + i, 1);
+
+            Debug.Log("BuyFlag" + i +" "+ PlayerPrefs.GetInt("BuyFlag" + i));
         }
     }
 
@@ -25,6 +27,9 @@ public class SkinCheck : MonoBehaviour
             var flag = PlayerPrefs.GetInt("BuyFlag" + i);
             if (flag == 1)
                 PlayerPrefs.SetInt("Skin" + i, 1);
+
+
+           
         }
     }
 }

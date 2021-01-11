@@ -47,10 +47,11 @@ public class BuySkin1 : MonoBehaviour
         shop_money = PlayerPrefs.GetFloat("score_save");
 
 
-        buy_flag = new bool[7];
+        buy_flag = new bool[6];
         for(int i = 0; i < buy_flag.Length; ++i)
         {
-            if(PlayerPrefs.GetInt("BuyFlag" + i + 9) != 1)
+            var number = i + 9;
+            if (PlayerPrefs.GetInt("BuyFlag" + number) != 1)
                 buy_flag[i] = false;
             else
                 buy_flag[i] = true;
@@ -111,14 +112,17 @@ public class BuySkin1 : MonoBehaviour
             yield return new WaitForSeconds(time);
         }
 
+        var number = notBuy[index] + 9;
         shop_money -= skin_price;
         PlayerPrefs.SetFloat("score_save", shop_money);
-        PlayerPrefs.SetInt("BuyFlag" + notBuy[index] + 9, 1);
+        PlayerPrefs.SetInt("BuyFlag" + number, 1);
         PlayerPrefs.SetInt("Use", notBuy[index] + 9);
         buy_flag[notBuy[index]] = true;
         buyCount++;
         PlayerPrefs.SetInt("BuyCount", buyCount);
+
         
+
         testButton.enabled = true;
         particle.Play();
 

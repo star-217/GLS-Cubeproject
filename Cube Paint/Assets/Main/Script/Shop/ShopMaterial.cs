@@ -9,6 +9,7 @@ public class ShopMaterial : MonoBehaviour
     int color_mode;
     Material player_material;
     public Texture[] texture;
+    public Material[] material;
     
 
     // Start is called before the first frame update
@@ -25,10 +26,12 @@ public class ShopMaterial : MonoBehaviour
     {
         color_mode = PlayerPrefs.GetInt("Use");
 
+       
+
         if (color_mode == 0)
             player_material.SetTexture("_MainTex", null);
         if (color_mode == 1)
-            player_material.SetTexture("_MainTex", texture[color_mode-1]); 
+            player_material.SetTexture("_MainTex", texture[color_mode - 1]);
         if (color_mode == 2)
             player_material.SetTexture("_MainTex", texture[color_mode - 1]);
         if (color_mode == 3)
@@ -56,7 +59,6 @@ public class ShopMaterial : MonoBehaviour
         if (color_mode == 14)
             player_material.SetTexture("_MainTex", texture[color_mode - 1]);
 
-        player_material.SetColor("_BaseColor", color);
-      
+       
     }
 }
