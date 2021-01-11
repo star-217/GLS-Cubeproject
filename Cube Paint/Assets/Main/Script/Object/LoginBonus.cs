@@ -7,6 +7,7 @@ public class LoginBonus : MonoBehaviour
 {
      float score;
     [SerializeField] GameObject Bonus;
+    [SerializeField] GameObject retry;
     int count = 1;
     public int debugcount;
     // Start is called before the first frame update
@@ -21,6 +22,8 @@ public class LoginBonus : MonoBehaviour
             Bonus.SetActive(true);
             // ログインボーナスの処理
         }
+        else
+           PlayerPrefs.SetInt("Player", 1);
     }
 
     private bool DateUpdated()
@@ -65,6 +68,8 @@ public class LoginBonus : MonoBehaviour
             }
 
         }
+
+
 
         return false;
     }
