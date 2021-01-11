@@ -10,7 +10,7 @@ public class BrockVibrateScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             if (PlayerPrefs.GetInt("Vibe") == 1)
-                Vibration.Vibrate(50);
+                Vibration.Vibrate(20);
         }
     }
 }

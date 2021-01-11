@@ -9,7 +9,7 @@ public class BreakCubeVibrateScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             if (PlayerPrefs.GetInt("Vibe") == 1)
-                Vibration.Vibrate(150);
+                Vibration.Vibrate(120);
         }
     }
 }
