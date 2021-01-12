@@ -127,12 +127,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerPrefs.GetInt("Player") == 1)
-            PlayerFlick();       
+        if (clearFlag == false)
+        {
+            if (PlayerPrefs.GetInt("Player") == 1)
+                PlayerFlick();
+        }
         else
         {
             rb.velocity = Vector3.zero;
             mouseDirection = Vector3.zero;
+
+           
+           
         }
        
     }
@@ -207,12 +213,8 @@ public class PlayerController : MonoBehaviour
         else
         {
             rb.velocity = Vector3.zero;
-            //if (defaultscale + 6 > gameObject.transform.localScale.x)
-            //{
-            //    gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
-            //}
+        
 
-            clearFlag = true;
             ClearEffect.SetActive(true);
             time += Time.deltaTime;
 
@@ -226,8 +228,8 @@ public class PlayerController : MonoBehaviour
                 next.SetActive(true);
 
             }
-           
-           // Roller.SetActive(true);
+
+            // Roller.SetActive(true);
         }
     }
 

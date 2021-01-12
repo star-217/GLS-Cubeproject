@@ -34,7 +34,7 @@ public class TimeScript : MonoBehaviour
             }
             else
             {
-
+                playerController.clearFlag = true;
                 time = 0;
                 gameOver.SetActive(true);
             }
