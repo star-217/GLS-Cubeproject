@@ -9,6 +9,7 @@ public class GameOversc : MonoBehaviour
     [SerializeField] RectTransform text;
     [SerializeField] RectTransform skip;
     [SerializeField] RectTransform retry;
+    public static int gameoverCount; 
 
     bool flag = false;
 
@@ -22,10 +23,21 @@ public class GameOversc : MonoBehaviour
     {
         if (!flag)
         {
-            var sequence = DOTween.Sequence();
-            sequence.Append(text.DOAnchorPosY(-300.0f, 1.0f));
-            sequence.Append(skip.DOScale(1.0f, 0.3f));
-            retry.DOScale(1.0f, 0.3f).SetDelay(3.0f);
+            if (gameoverCount > 2)
+            {
+                var sequence = DOTween.Sequence();
+                sequence.Append(text.DOAnchorPosY(-300.0f, 1.0f));
+                sequence.Append(skip.DOScale(1.0f, 0.3f));
+                retry.DOScale(1.0f, 0.3f).SetDelay(3.0f);
+            }
+            else
+            {
+                var sequence = DOTween.Sequence();
+                sequence.Append(text.DOAnchorPosY(-300.0f, 0.5f));
+                sequence.Append(retry.DOScale(1.0f, 0.3f));
+            }
+
+
             flag = true;
         }
     }

@@ -23,6 +23,7 @@ public class UIcontrollerScript : MonoBehaviour
     [Header("リザルトを入れる")]
     [SerializeField] private GameObject result;
 
+    [SerializeField] private GameObject Timer;
    
     public GameObject Tutorial;
     public GameObject Arrow;
@@ -82,6 +83,8 @@ public class UIcontrollerScript : MonoBehaviour
        // InkRemnantGauge_Object.SetActive(true);
         Gauge_Outline.SetActive(true);
         Shop_Object.SetActive(false);
+        if (Timer != null)
+            Timer.SetActive(true);
         if (Tutorial != null)
             Tutorial.SetActive(false);
         if (Arrow != null)

@@ -18,6 +18,7 @@ public class GaugeBOXScript : MonoBehaviour
     [SerializeField]
     RectTransform rect;
 
+    [SerializeField] private TimeScript timer;
    
 
 
@@ -39,7 +40,7 @@ public class GaugeBOXScript : MonoBehaviour
         //if(cooldown.fillAmount <= (inkCanvas.Per / 100)) var targetAmount
         //    cooldown.fillAmount += 0.002f;
         //cooldown.fillAmount = Mathf.Lerp(cooldown.fillAmount, (inkCanvas.Per / 100), 0.01f);
-        rect.DOScaleX(inkCanvas.Per / 100, 0.5f);
+        rect.DOScaleX(timer.time / timer.maxTime, 0.5f);
 
 
 
