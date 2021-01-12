@@ -2315,6 +2315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bonus: {fileID: 786816323619983418}
+  retry: {fileID: 0}
   debugcount: 0
 --- !u!1 &4060819960866257161
 GameObject:
@@ -2467,7 +2468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8222454641544072966
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4068,7 +4069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1974283966560257887
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5318,8 +5319,8 @@ MonoBehaviour:
   TapToStart_Object: {fileID: 7245795054732235973}
   Shop_Object: {fileID: 862827753420403164}
   result: {fileID: 6578620189282497566}
-  Tutorial: {fileID: 0}
-  Arrow: {fileID: 0}
+  Tutorial: {fileID: 6638733945240297979}
+  Arrow: {fileID: 4252276889795399761}
 --- !u!1 &8340461089501426281
 GameObject:
   m_ObjectHideFlags: 0

@@ -1373,11 +1373,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: subplayer (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 8285834072196364451, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285834072196364454, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3775,11 +3770,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: subplayer (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 8285834072196364451, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285834072196364454, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4343,11 +4333,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: subplayer (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8285834072196364451, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285834072196364454, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4511,11 +4496,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: subplayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 8285834072196364451, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8285834072196364454, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
         type: 3}
@@ -7099,16 +7079,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.7
       objectReference: {fileID: 0}
-    - target: {fileID: 194347328249693877, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: minimum_speed
-      value: 6500
-      objectReference: {fileID: 0}
-    - target: {fileID: 194347328249693877, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: max_speed
-      value: 6500
-      objectReference: {fileID: 0}
     - target: {fileID: 383976289797669374, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: brush.brushColor.r
@@ -7143,12 +7113,12 @@ PrefabInstance:
     - target: {fileID: 1846125924325371235, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 46.6
+      value: 40.03
       objectReference: {fileID: 0}
     - target: {fileID: 1846125924325371235, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.7
+      value: -23.44
       objectReference: {fileID: 0}
     - target: {fileID: 1846125924325371236, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
@@ -7433,11 +7403,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: subplayer (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8285834072196364451, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8285834072196364454, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
         type: 3}
@@ -8064,11 +8029,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: subplayer (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8285834072196364451, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8285834072196364454, guid: 7883b2d4333cb7d48856762e1a7ae1a4,
         type: 3}
