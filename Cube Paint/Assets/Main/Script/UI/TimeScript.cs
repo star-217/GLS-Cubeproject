@@ -10,6 +10,7 @@ public class TimeScript : MonoBehaviour
     float seconds;
     private TextMeshProUGUI textMeshPro;
     [SerializeField] private GameObject gameOver;
+    [SerializeField] private PlayerController playerController;
 
     // Start is called before the first frame update
     void Start()
@@ -22,21 +23,22 @@ public class TimeScript : MonoBehaviour
     void Update()
     {
 
-
-        if (time > 0)
+        if (playerController.clearFlag == false)
         {
-            time -= Time.deltaTime;
+            if (time > 0)
+            {
+                time -= Time.deltaTime;
 
 
-            textMeshPro.text = "Time:" + time.ToString("00"); //+ ":" + (time-(int)time).ToString(".00").TrimStart('0').TrimStart('.');
+                textMeshPro.text = "Time:" + time.ToString("00"); //+ ":" + (time-(int)time).ToString(".00").TrimStart('0').TrimStart('.');
+            }
+            else
+            {
+
+                time = 0;
+                gameOver.SetActive(true);
+            }
         }
-        else
-        {
-            
-            time = 0;
-            gameOver.SetActive(true);
-        }
-
 
     }
 }
