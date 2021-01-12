@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotatingWallScript : MonoBehaviour
 {
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class RotatingWallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 50 * Time.deltaTime, 0));
+        transform.Rotate(new Vector3(0, 20 * Time.deltaTime, 0));
     }
 }
