@@ -13,55 +13,55 @@ EditorBuildSettings:
     guid: bc28b06105ba00a4ea23aecbc3fb30aa
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage2.unity
-    guid: bf559834cc89f1e40818a6a8d32d4494
+    guid: d3e0b4aaac7401142b7aed37071c5555
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage3.unity
-    guid: bbd6dd2b697a0eb4cb9a05a78c0b7846
-  - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage4.unity
     guid: 622c0a2d7a26f7b45af48513b34e1b9a
   - enabled: 1
+    path: Assets/Scenes/MainStageFolder/MainStage4.unity
+    guid: 20d1ce8a9d5a96e4d9420b2d1c33859d
+  - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage5.unity
-    guid: 63a763dd7220be0489b8205c66525641
-  - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage6.unity
-    guid: 45774e099cdef664e92d61054d6097f0
-  - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage7.unity
-    guid: 71f55f29d12d4b948b769a6ef310c61a
-  - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage8.unity
-    guid: 7ba5c3489ba227840a7abd7700259617
-  - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage9.unity
     guid: 4f5e6680c6178c04188e407af2cd1907
   - enabled: 1
+    path: Assets/Scenes/MainStageFolder/MainStage6.unity
+    guid: 979927e4eb634654a9512d66d6a02443
+  - enabled: 1
+    path: Assets/Scenes/MainStageFolder/MainStage7.unity
+    guid: 7ba5c3489ba227840a7abd7700259617
+  - enabled: 1
+    path: Assets/Scenes/MainStageFolder/MainStage8.unity
+    guid: 71f55f29d12d4b948b769a6ef310c61a
+  - enabled: 1
+    path: Assets/Scenes/MainStageFolder/MainStage9.unity
+    guid: 2da542a90cd31b4478ddde0344fccb8c
+  - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage10.unity
-    guid: cbf85e88501ee134298524cd79c6cc25
+    guid: 39d0ad1aff26f794a99d704b46068fb4
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage11.unity
-    guid: f8e9c789c3097e9408dc16d3754aeaab
+    guid: 45774e099cdef664e92d61054d6097f0
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage12.unity
-    guid: 162a24a073cff1e4fb74b0d70c199dec
+    guid: d642203c0c302c340932129612771f9f
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage13.unity
-    guid: fb5f5d66cf262ef43adcf257780c9446
+    guid: 72fad8ab07a13e54183ba6635ca6f76b
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage14.unity
-    guid: 3c73e42af697712428c63acba412c952
+    guid: 2afe30adb61bedf4880905357b02e710
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage15.unity
-    guid: 025c4af4affebe043ab3bee3181464c4
+    guid: a948553f3fcb1da43b435d8eb86e5a80
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage16.unity
-    guid: a31ee2fb84c4e7241b6236e4f00e9ddc
+    guid: 56befec0a8649db4dba6d40db1e2a037
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage17.unity
     guid: 233357c23e0cbb04b99015191b4554d2
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage18.unity
-    guid: 4036dc68ad2838344ab61fece0738f84
+    guid: c36cc88faa32b694ebd399d650ee773a
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage19.unity
     guid: 4bcef4fdc5267ed48a4f784982887b23
@@ -70,34 +70,34 @@ EditorBuildSettings:
     guid: b7fb6065f15e58c43b7844be24d7f80e
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage21.unity
-    guid: 8537d6fd31f41004f8911d3381777779
+    guid: 4036dc68ad2838344ab61fece0738f84
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage22.unity
     guid: 1821b93e1a2b53346bd58e0ff1bd7b0e
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage23.unity
-    guid: 2da542a90cd31b4478ddde0344fccb8c
+    guid: bbd6dd2b697a0eb4cb9a05a78c0b7846
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage24.unity
-    guid: 40f56d5ecd9dc7240b9cdeed9efa1646
+    guid: 63a763dd7220be0489b8205c66525641
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage25.unity
-    guid: d642203c0c302c340932129612771f9f
+    guid: 40f56d5ecd9dc7240b9cdeed9efa1646
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage26.unity
-    guid: d3e0b4aaac7401142b7aed37071c5555
+    guid: 3c73e42af697712428c63acba412c952
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage27.unity
-    guid: 20d1ce8a9d5a96e4d9420b2d1c33859d
+    guid: bf559834cc89f1e40818a6a8d32d4494
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage28.unity
-    guid: b56170374b8adad438d39dcd1827149e
+    guid: 8ca6e83907d18064f94b8f6529c7f359
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage29.unity
     guid: 6e684962c11f9b54285fa464b213fae9
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage30.unity
-    guid: 39d0ad1aff26f794a99d704b46068fb4
+    guid: cbf85e88501ee134298524cd79c6cc25
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage31.unity
     guid: ed4b2276602ccd24e9b9f8f99d78cf88
@@ -109,7 +109,7 @@ EditorBuildSettings:
     guid: 1c3c560ac8e548f47beeb91fa320f31f
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage34.unity
-    guid: 56befec0a8649db4dba6d40db1e2a037
+    guid: a31ee2fb84c4e7241b6236e4f00e9ddc
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage35.unity
     guid: 1aec18c508671294e988e7c88a51b3ca
@@ -121,22 +121,13 @@ EditorBuildSettings:
     guid: f53c8fd29c85c0846bd7e7ce58db9781
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage38.unity
-    guid: 979927e4eb634654a9512d66d6a02443
+    guid: 162a24a073cff1e4fb74b0d70c199dec
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage39.unity
-    guid: 2dcfebbdcd2d37e4fa8cdc5489704a2d
+    guid: 025c4af4affebe043ab3bee3181464c4
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage40.unity
     guid: a716235d8020e0d4c83fd794decbe5db
-  - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage41.unity
-    guid: 72fad8ab07a13e54183ba6635ca6f76b
-  - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage42.unity
-    guid: c36cc88faa32b694ebd399d650ee773a
-  - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage43.unity
-    guid: 2afe30adb61bedf4880905357b02e710
   - enabled: 1
     path: Assets/Scenes/ShopScene.unity
     guid: 47e461d0aac6e7742bf6a07161cd8442

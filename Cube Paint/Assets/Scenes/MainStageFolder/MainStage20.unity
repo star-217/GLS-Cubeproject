@@ -523,6 +523,11 @@ PrefabInstance:
       propertyPath: brush.brushColor.b
       value: 0.79220444
       objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushScale
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5923443294752199146, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
@@ -1122,6 +1127,11 @@ PrefabInstance:
       propertyPath: brush.brushColor.b
       value: 0.79220444
       objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushScale
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5923443294752199146, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
@@ -1408,6 +1418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: brush.brushColor.b
       value: 0.79220444
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushScale
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5923443294752199146, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}
@@ -1753,6 +1768,11 @@ PrefabInstance:
         type: 3}
       propertyPath: brush.brushColor.b
       value: 0.79220444
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushScale
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5923443294752199146, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}
@@ -2344,6 +2364,11 @@ PrefabInstance:
       propertyPath: brush.brushColor.b
       value: 0.79220444
       objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushScale
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5923443294752199146, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
@@ -2768,16 +2793,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 194347328249693877, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: max_speed
-      value: 6500
-      objectReference: {fileID: 0}
-    - target: {fileID: 194347328249693877, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: minimum_speed
-      value: 6500
-      objectReference: {fileID: 0}
     - target: {fileID: 383976289797669374, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: brush.brushColor.r
@@ -2792,6 +2807,11 @@ PrefabInstance:
         type: 3}
       propertyPath: brush.brushColor.b
       value: 0.827451
+      objectReference: {fileID: 0}
+    - target: {fileID: 383976289797669374, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: addScale
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 551919452761042476, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
@@ -2933,6 +2953,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -2.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074239354951747264, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: maxTime
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074239354951747264, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: time
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6160978252845688851, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
@@ -3321,6 +3351,11 @@ PrefabInstance:
         type: 3}
       propertyPath: brush.brushColor.b
       value: 0.79220444
+      objectReference: {fileID: 0}
+    - target: {fileID: 3673708217944937945, guid: 23cb060b0c8416744b4b3f59b68cbec6,
+        type: 3}
+      propertyPath: brush.brushScale
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5923443294752199146, guid: 23cb060b0c8416744b4b3f59b68cbec6,
         type: 3}
