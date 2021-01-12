@@ -70,7 +70,7 @@ namespace Es.InkPainter.Sample
 					canvas.Paint(brush,p.point);
 
 				StartCoroutine(HogePaint(canvas, p.point));
-				if(rigidbody.velocity.magnitude > 1.0f)
+				if(rigidbody.velocity.magnitude > 20.0f)
 				Instantiate(effect[effectNumber], p.point + dir * 0.1f, Quaternion.identity);
 
 			}

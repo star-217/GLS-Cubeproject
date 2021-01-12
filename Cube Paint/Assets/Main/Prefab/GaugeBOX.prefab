@@ -434,6 +434,7 @@ MonoBehaviour:
   maxTime: 15
   time: 15
   gameOver: {fileID: 4345693220579151399}
+  playerController: {fileID: 0}
 --- !u!1 &786816323619983418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,7 +2474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8222454641544072966
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2490,7 +2491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -353.53}
+  m_AnchoredPosition: {x: -1, y: -276}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4153887188894798878
@@ -4076,7 +4077,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1974283966560257887
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4093,7 +4094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -500}
+  m_AnchoredPosition: {x: 0, y: -422}
   m_SizeDelta: {x: 170, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6938243113301511506
@@ -5327,8 +5328,8 @@ MonoBehaviour:
   Shop_Object: {fileID: 862827753420403164}
   result: {fileID: 6578620189282497566}
   Timer: {fileID: 756196298724352948}
-  Tutorial: {fileID: 0}
-  Arrow: {fileID: 0}
+  Tutorial: {fileID: 6638733945240297979}
+  Arrow: {fileID: 4252276889795399761}
 --- !u!1 &8340461089501426281
 GameObject:
   m_ObjectHideFlags: 0
