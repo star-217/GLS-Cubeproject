@@ -7,23 +7,20 @@ public class stop : MonoBehaviour
     Rigidbody rb;
     [HideInInspector] public float time;
     bool flag = false;
+    private PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.time;
-
-        if (time >= 3)
-        {
-            //rb.velocity *= 0.8f;
-            if (rb.velocity.magnitude <= 1.0f)
-                rb.velocity = Vector3.zero;
-        }
+      if(playerController.clearFlag == true)       
+            rb.velocity = Vector3.zero;
+        
 
     }
 

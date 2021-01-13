@@ -26,7 +26,7 @@ public class GameOversc : MonoBehaviour
             //if (gameoverCount > 2)
             
                 var sequence = DOTween.Sequence();
-                sequence.Append(text.DOAnchorPosY(-300.0f, 1.0f));
+                sequence.Append(text.DOAnchorPosY(-400.0f, 1.0f));
                 sequence.Append(skip.DOScale(1.0f, 0.3f));
                 retry.DOScale(1.0f, 0.3f).SetDelay(2.5f);
             
