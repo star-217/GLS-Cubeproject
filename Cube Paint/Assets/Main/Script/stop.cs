@@ -12,6 +12,7 @@ public class stop : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        if(playerController == null)
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         
     }

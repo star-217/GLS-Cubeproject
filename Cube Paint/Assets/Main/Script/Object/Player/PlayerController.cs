@@ -97,6 +97,11 @@ public class PlayerController : MonoBehaviour
     [Header("長いときの速度")]
     [SerializeField] private float max_speed = 0.0f;
 
+    private float up_finger_time = 0.0f;
+    private bool fingerUp_switch = false;
+    [SerializeField] private GameObject finger_obj;
+    [SerializeField] private GameObject arrow_obj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -120,6 +125,8 @@ public class PlayerController : MonoBehaviour
 
 
         //  Roller.SetActive(false);
+        up_finger_time = 0;
+        fingerUp_switch = false;
     }
 
    
@@ -148,7 +155,7 @@ public class PlayerController : MonoBehaviour
             ClearEffect.SetActive(true);
             time += Time.deltaTime;
 
-            if (time >= 3.0f)
+            if (time >= 2.0f)
             {
                 if (!particle_flag)
                 {
@@ -159,7 +166,28 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-       
+
+        if(failedFlag  == true)
+        {
+            rb.velocity = Vector3.zero;
+            mouseDirection = Vector3.zero;
+        }
+
+        if (inkCanvas.Per < 100)
+        {
+            if (fingerUp_switch)
+                up_finger_time += Time.deltaTime;
+
+            if (up_finger_time >= 4)
+            {
+                finger_obj.SetActive(true);
+                arrow_obj.SetActive(true);
+            }
+        }else if(inkCanvas.Per >= 100)
+        {
+            finger_obj.SetActive(false);
+            arrow_obj.SetActive(false);
+        }
     }
 
     void PlayerFlick()
@@ -178,6 +206,14 @@ public class PlayerController : MonoBehaviour
 
                 this.screenPoint = Input.mousePosition;
                 this.startPos = Input.mousePosition;
+
+                if (up_finger_time >= 4)
+                {
+                    finger_obj.SetActive(false);
+                    arrow_obj.SetActive(false);
+                    fingerUp_switch = false;
+                    up_finger_time = 0;
+                }
 
                 //this.time = 0;
             }
@@ -224,6 +260,9 @@ public class PlayerController : MonoBehaviour
                 //tapCount--;
                 //if (tapCount <= 0)
                 //    tapCount = 0;
+                up_finger_time = 0;
+                fingerUp_switch = true;
+
             }
 
                 if(rb.velocity.magnitude <= 2.0f)
@@ -233,9 +272,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
         
-
-           
-          
             clearFlag = true;
             
            
@@ -351,7 +387,7 @@ public class PlayerController : MonoBehaviour
             explosion = collision.gameObject.transform.position - transform.position;
             explosion.y = 0;
             //バンパーの跳ね返し 
-            rb.AddForce(explosion.normalized * 500, ForceMode.Impulse);
+            rb.AddForce(explosion.normalized * 200, ForceMode.Impulse);
         }
 
         //if(collision.gameObject.CompareTag("Wall"))
