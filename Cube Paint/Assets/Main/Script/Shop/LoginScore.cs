@@ -10,7 +10,8 @@ public class LoginScore : MonoBehaviour
     Button testButton;
     float score;
     public float score_up = 500;
-    [SerializeField] GameObject Login; 
+    [SerializeField] GameObject Login;
+    RectTransform rect;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,10 @@ public class LoginScore : MonoBehaviour
         score = PlayerPrefs.GetFloat("score_save");
         testButton = GetComponent<Button>();
         testButton.onClick.AddListener(OnClickBonus);
-        
+        rect = GetComponent<RectTransform>();
+
+        rect.DOScale(1.3f, 0.5f).SetLoops(-1,LoopType.Yoyo);
+       
     }
 
     // Update is called once per frame
