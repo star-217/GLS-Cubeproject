@@ -20,10 +20,10 @@ public class stop : MonoBehaviour
     void Update()
     {
 
-        if (playerController.clearFlag == true)
+        if (playerController.failedFlag == true || playerController.clearFlag == true)
         {
-            if (rb.velocity.magnitude <= 1.0f)
-                rb.velocity = Vector3.zero;
+            
+             rb.velocity = Vector3.zero;
         }
 
 

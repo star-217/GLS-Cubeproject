@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     Vector3 end_pos;
     const float MaxMagnitude = 2.0f;
     public bool clearFlag = false;
+    public bool failedFlag = false;
 
     //[Header("タップしてもいい回数")]
     //[SerializeField] public int tapCount = 0;
@@ -129,16 +130,34 @@ public class PlayerController : MonoBehaviour
     {
         if (clearFlag == false)
         {
-            if (PlayerPrefs.GetInt("Player") == 1)
-                PlayerFlick();
+            if (failedFlag == false)
+            {
+                if (PlayerPrefs.GetInt("Player") == 1)
+                    PlayerFlick();
+                else
+                {
+                    rb.velocity = Vector3.zero;
+                    mouseDirection = Vector3.zero;
+                }
+            }
         }
         else
         {
             rb.velocity = Vector3.zero;
             mouseDirection = Vector3.zero;
+            ClearEffect.SetActive(true);
+            time += Time.deltaTime;
 
-           
-           
+            if (time >= 3.0f)
+            {
+                if (!particle_flag)
+                {
+                    particle_flag = true;
+                    particle_clear.Play();
+                }
+                next.SetActive(true);
+
+            }
         }
        
     }
@@ -215,20 +234,11 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector3.zero;
         
 
-            ClearEffect.SetActive(true);
-            time += Time.deltaTime;
-
-            if (time >= 3.0f)
-            {
-                if (!particle_flag)
-                {
-                    particle_flag = true;
-                    particle_clear.Play();
-                }
-                next.SetActive(true);
-
-            }
-
+           
+          
+            clearFlag = true;
+            
+           
             // Roller.SetActive(true);
         }
     }

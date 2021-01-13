@@ -24,11 +24,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainStageFolder/MainStage5.unity
     guid: 4f5e6680c6178c04188e407af2cd1907
   - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage38.unity
-    guid: 979927e4eb634654a9512d66d6a02443
+    path: Assets/Scenes/MainStageFolder/MainStage6.unity
+    guid: bc5cff8319a5ad4479e35df7e5390abb
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage7.unity
     guid: 71f55f29d12d4b948b769a6ef310c61a
+  - enabled: 1
+    path: Assets/Scenes/MainStageFolder/MainStage8.unity
+    guid: 1097ff788ddf11247b50bf2571d8a900
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage9.unity
     guid: 2da542a90cd31b4478ddde0344fccb8c
@@ -51,8 +54,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainStageFolder/MainStage15.unity
     guid: a948553f3fcb1da43b435d8eb86e5a80
   - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage34.unity
-    guid: 56befec0a8649db4dba6d40db1e2a037
+    path: Assets/Scenes/MainStageFolder/MainStage16.unity
+    guid: a31ee2fb84c4e7241b6236e4f00e9ddc
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage17.unity
     guid: 233357c23e0cbb04b99015191b4554d2
@@ -105,8 +108,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainStageFolder/MainStage33.unity
     guid: 1c3c560ac8e548f47beeb91fa320f31f
   - enabled: 1
-    path: Assets/Scenes/MainStageFolder/MainStage16.unity
-    guid: a31ee2fb84c4e7241b6236e4f00e9ddc
+    path: Assets/Scenes/MainStageFolder/MainStage34.unity
+    guid: 56befec0a8649db4dba6d40db1e2a037
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage35.unity
     guid: 1aec18c508671294e988e7c88a51b3ca
@@ -116,6 +119,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage37.unity
     guid: f53c8fd29c85c0846bd7e7ce58db9781
+  - enabled: 1
+    path: Assets/Scenes/MainStageFolder/MainStage38.unity
+    guid: 979927e4eb634654a9512d66d6a02443
   - enabled: 1
     path: Assets/Scenes/MainStageFolder/MainStage39.unity
     guid: 025c4af4affebe043ab3bee3181464c4

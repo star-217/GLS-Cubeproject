@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TimeScript : MonoBehaviour
 {
-    public float maxTime = 10;
+    [System.NonSerialized] public float maxTime = 10;
     public float time = 0; // クリアするための時間
     float seconds;
     private TextMeshProUGUI textMeshPro;
@@ -16,14 +16,14 @@ public class TimeScript : MonoBehaviour
     void Start()
     {
         textMeshPro = GetComponent<TextMeshProUGUI>();
-        
+        maxTime = time;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (playerController.clearFlag == false)
+        if (playerController.failedFlag == false && playerController.clearFlag == false)
         {
             if (time > 0)
             {
@@ -34,7 +34,7 @@ public class TimeScript : MonoBehaviour
             }
             else
             {
-                playerController.clearFlag = true;
+                playerController.failedFlag = true;
                 time = 0;
                 gameOver.SetActive(true);
             }
