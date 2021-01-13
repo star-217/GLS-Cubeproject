@@ -306,9 +306,11 @@ namespace Es.InkPainter
 		private GameObject Floor_obj;
 
 
-		bool[,] countArea;
+		int[,] countArea;
 		int countWidth;
 		int countHeight;
+
+		private float CPS = 1.0f;
 
 		const float DIVIDE_SIZE = 16.0f;
 
@@ -327,6 +329,7 @@ namespace Es.InkPainter
 		private void Start()
 		{	
 
+
 			if (OnInitializedStart != null)
 				OnInitializedStart(this);
 
@@ -334,6 +337,9 @@ namespace Es.InkPainter
 
 			if(OnInitializedAfter != null)
 				OnInitializedAfter(this);
+
+			paintCount = 0;
+			CPS = 1.0f;
 
 			InkCanvas inkCanvas = gameObject.GetComponent<InkCanvas>();
 			Renderer r = inkCanvas.GetComponent<Renderer>();
@@ -367,7 +373,7 @@ namespace Es.InkPainter
 
             countHeight = (int)(renderTexture.height / DIVIDE_SIZE + 0.5f);
 			countWidth =  (int)(renderTexture.width  / DIVIDE_SIZE + 0.5f);
-			countArea = new bool[countHeight, countWidth];
+			countArea = new int[countHeight, countWidth];
 
 			
 			floor_upperLeft.x = Floor_worldPos.x - floor_width * 0.5f;
@@ -389,12 +395,12 @@ namespace Es.InkPainter
 					{
 						if (hit.collider.CompareTag("Block"))
 						{
-							countArea[y, x] = false;
+							countArea[y, x] = -1;
 							area_count += 1;
 						}
                         else
                         {
-							countArea[y, x] = true;
+							countArea[y, x] = 0;
 						}
 					}
 				}
@@ -404,7 +410,7 @@ namespace Es.InkPainter
 			//	area_count = (int)(not_area_count + 0.5f);
 		}
 
-		private int fps_count;
+		private float fps_count;
 
 		private void Update()
 		{
@@ -418,8 +424,8 @@ namespace Es.InkPainter
 
 			if (paintSwitching)
 			{
-				fps_count++;
-				if (fps_count >= 60)
+				fps_count += Time.deltaTime;
+				if (fps_count >= CPS)
 				{
 					
 					RenderTexture.active = renderTexture;
@@ -428,7 +434,7 @@ namespace Es.InkPainter
 
 					//Debug.Log("RenderTexture  width : " + renderTexture.width + ("height : ") + renderTexture.height);
 
-					paintCount = 0;
+					
 					int ca_y, ca_x;
 					ca_y = 0;
 					for (int y = renderTexture.height / (int)DIVIDE_SIZE / 2; y < renderTexture.height; y += (int)DIVIDE_SIZE)
@@ -436,13 +442,16 @@ namespace Es.InkPainter
 						ca_x = 0;
 						for (int x = renderTexture.width / (int)DIVIDE_SIZE / 2; x < renderTexture.width; x += (int)DIVIDE_SIZE)
 						{
-							if (countArea[ca_y, ca_x])
+							if (countArea[ca_y, ca_x] == 0)
 							{
 								Color32 color = newTex.GetPixel(x, renderTexture.height - y);
-//								Color32 color2 = new Color32(2, 35, 43, 255);
+								//								Color32 color2 = new Color32(2, 35, 43, 255);
 
 								if (color.r != 2 && color.g != 35 && color.b != 43)
+								{
 									++paintCount;
+									countArea[ca_y, ca_x] = 1;
+								}
 								//else
 								//	Debug.Log("はずれの色:" + color);
 
@@ -462,6 +471,11 @@ namespace Es.InkPainter
 //				int bitch = Mathf.CeilToInt(area_count);
 //				per = (paintCount / ((int)(renderTexture.width / DIVIDE_SIZE + 0.5f) * (int)(renderTexture.height / DIVIDE_SIZE + 0.5f) - area_count)) * 100.0f;
 				per = paintCount / (fuck - area_count) * 100.0f;
+				if (per >= 75.0f)
+					CPS = 0.25f;
+				else if (per >= 50.0f)
+					CPS = 0.5f;
+				
 				//Debug.Log(per);
 				//Debug.Log("塗った数:" + paintCount + " 塗らないといけない数:" + (fuck - area_count));
 

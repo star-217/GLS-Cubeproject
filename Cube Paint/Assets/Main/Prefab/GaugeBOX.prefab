@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034387783a81f484b9a3fd23a3ffeb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 25
+  time: 15
   gameOver: {fileID: 4345693220579151399}
   playerController: {fileID: 0}
 --- !u!1 &786816323619983418
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d57800ec60813a34497ca19b1f02898c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxStage: 40
+  maxStage: 39
   clearScore: 100
 --- !u!1 &1436615299630381364
 GameObject:
@@ -2490,7 +2490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -258}
+  m_AnchoredPosition: {x: -1, y: -461}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4153887188894798878
@@ -3152,7 +3152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626ee4f2650b2fc4bb1d2107d2e3d4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxStage: 40
+  maxStage: 39
   clearScore: 200
 --- !u!1 &5243702779444335483
 GameObject:
