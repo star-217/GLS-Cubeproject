@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1576682419064453732
 Transform:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3606271877186787821}
   - component: {fileID: 7983009840083404232}
   m_Layer: 13
-  m_Name: subplayerMain
+  m_Name: subplayerMainYellow
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   painter: {fileID: 6453944323321517155}
-  materialsNum: 0
+  materialsNum: 1
   materials:
   - {fileID: 2100000, guid: 9429b351b91e0674aa5ce95a6b605d59, type: 2}
   - {fileID: 2100000, guid: 98571e147a13ba1449ae3fb2f0d7b992, type: 2}
