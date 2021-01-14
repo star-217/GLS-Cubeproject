@@ -17,23 +17,24 @@ public class PlayerEffectScript : MonoBehaviour
 
     [SerializeField] private ParticleController particleController = null;
 
+    private Dictionary<string, Quaternion> particleDirection = new Dictionary<string, Quaternion>();
+
     // Start is called before the first frame update
+    [System.Obsolete]
     void Start()
     {
-        if (GetComponent<SetMaterial>() != null)
-        {
-            setMaterial = subPlayer.GetComponent<SetMaterial>();
-            particleNumber = setMaterial.MaterialsNum;
-        }
-        else
-        {
-            particleNumber = 0;
-        }
+        particleDirection.Add("UpWall", Quaternion.Euler(0.0f, 90.0f, 0.0f));
+        particleDirection.Add("DownWall", Quaternion.Euler(0.0f, 270.0f, 0.0f));
+        particleDirection.Add("RightWall", Quaternion.Euler(0.0f, 180.0f, 0.0f));
+        particleDirection.Add("LeftWall", Quaternion.Euler(0.0f, 0.0f, 0.0f));
+        particleDirection.Add("Block", Quaternion.Euler(0.0f, 0.0f, 0.0f));
 
         if (GetComponent<Painter>() != null)
             color = GetComponent<Painter>().SubPaintColor;
         else
             color = GetComponent<PlayerPainter>().GetColor;
+
+        particleController.ParticleColor(0, color);
     }
 
     // Update is called once per frame
@@ -42,70 +43,15 @@ public class PlayerEffectScript : MonoBehaviour
 
     }
 
-
+    [System.Obsolete]
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("UpWall"))
-        {
-            foreach (var p in collision.contacts)
-            {
-                particleController.ParticlePlay(particleNumber, p.point, Quaternion.Euler(0.0f, 90.0f, 0.0f));
-                // Instantiate(particle[particleNumber], p.point, Quaternion.Euler(0.0f, 90.0f, 0.0f));
-                // ray_color = Instantiate(ray, p.point + new Vector3(0,1.5f,0), Quaternion.identity);
-                // var s = ray_color.GetComponent<WallPaint>();
-                // s.brush.Color = color;
-            }
-        }
+        if (!particleDirection.ContainsKey(collision.gameObject.tag))
+            return;
 
-        if (collision.gameObject.CompareTag("DownWall"))
+        foreach (var p in collision.contacts)
         {
-            foreach (var p in collision.contacts)
-            {
-                particleController.ParticlePlay(particleNumber, p.point, Quaternion.Euler(0.0f, 270.0f, 0.0f));
-                // Instantiate(particle[particleNumber], p.point, Quaternion.Euler(0.0f, 270.0f, 0.0f));
-                // ray_color = Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
-                // var s = ray_color.GetComponent<WallPaint>();
-                // s.brush.Color = color;
-            }
+            particleController.ParticlePlay(0, p.point, particleDirection[collision.gameObject.tag]);
         }
-
-        if (collision.gameObject.CompareTag("RightWall"))
-        {
-            foreach (var p in collision.contacts)
-            {
-                particleController.ParticlePlay(particleNumber, p.point, Quaternion.Euler(0.0f, 180.0f, 0.0f));
-                // Instantiate(particle[particleNumber], p.point, Quaternion.Euler(0.0f, 180.0f, 0.0f));
-                // ray_color = Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
-                // var s = ray_color.GetComponent<WallPaint>();
-                // s.brush.Color = color;
-            }
-        }
-
-        if (collision.gameObject.CompareTag("LeftWall"))
-        {
-            foreach (var p in collision.contacts)
-            {
-                particleController.ParticlePlay(particleNumber, p.point, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-                // Instantiate(particle[particleNumber], p.point, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-                // ray_color = Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
-                // var s = ray_color.GetComponent<WallPaint>();
-                // s.brush.Color = color;
-            }
-        }
-
-        if (collision.gameObject.CompareTag("Block"))
-        {
-            foreach (var p in collision.contacts)
-            {
-                particleController.ParticlePlay(particleNumber, p.point, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-                // Instantiate(particle[particleNumber], p.point, Quaternion.Euler(0.0f, 0.0f, 0.0f));
-                // ray_color = Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
-                // var s = ray_color.GetComponent<WallPaint>();
-                // s.brush.Color = color;
-            }
-        }
-
     }
-
-
 }

@@ -17,10 +17,20 @@ public class ParticleController : MonoBehaviour
         }
     }
 
+    [System.Obsolete]
     public void ParticlePlay(int particleNum, Vector3 position, Quaternion rotation)
     {
         particles[particleNum].transform.position = position;
         particles[particleNum].transform.rotation = rotation;
         particlesList[particleNum].Play();
+    }
+
+    [System.Obsolete]
+    public void ParticleColor(int particleNum, Color color)
+    {
+        var newColor = new ParticleSystem.MinMaxGradient();
+        newColor.mode = ParticleSystemGradientMode.Color;
+        newColor.color = color;
+        particlesList[particleNum].startColor = newColor.color;
     }
 }
