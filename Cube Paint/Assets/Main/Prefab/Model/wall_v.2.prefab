@@ -88,6 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8356462493814282161}
+  - component: {fileID: 1078076027869982436}
   m_Layer: 0
   m_Name: wall_v.2
   m_TagString: Untagged
@@ -117,6 +118,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1078076027869982436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438714412169234509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9869854e81326f42b4fd601a7a1cdf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite:
+  - {fileID: 2800000, guid: 181ac854ed69aa14e9d7c4d862f9611c, type: 3}
+  - {fileID: 2800000, guid: 814202dd15d53ad40bddddb82eec08b7, type: 3}
+  - {fileID: 2800000, guid: 3ec9bfb53cefaf140850372438e6d633, type: 3}
+  bg:
+  - {fileID: 21300000, guid: a7b2cf90a0579604ca273d396542bd0f, type: 3}
+  - {fileID: 21300000, guid: a10b14c03d2dc2743a90268c6df0b473, type: 3}
+  - {fileID: 21300000, guid: c97ad9173dde46343ac6a5d3e396359a, type: 3}
+  image: {fileID: 0}
+  texture: 1
+  wall:
+  - {fileID: 6897877013505277347}
+  - {fileID: 5790949428303386878}
+  - {fileID: 4120728026116845032}
+  - {fileID: 5478044690066895235}
+  - {fileID: 844112098652855708}
+  - {fileID: 1470689987462387704}
+  - {fileID: 4456913085343273488}
+  - {fileID: 4590027468971081993}
 --- !u!1 &1470689987462387704
 GameObject:
   m_ObjectHideFlags: 0

@@ -869,6 +869,11 @@ PrefabInstance:
       propertyPath: time
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6230302263928272312, guid: ed386ba92b397d14893cf375eb96237f,
+        type: 3}
+      propertyPath: texture
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6577598695701339589, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: brush.brushColor.r

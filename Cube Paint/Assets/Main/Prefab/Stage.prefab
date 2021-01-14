@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &264757585120934611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9011758699451086327}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9011758699451086327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264757585120934611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1846125924733791720}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &826369992553360992
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +377,7 @@ Transform:
   - {fileID: 2757058155603064146}
   - {fileID: 3705030883785522023}
   - {fileID: 3759877612692292324}
+  - {fileID: 9011758699451086327}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -671,6 +702,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2be3c2c3d0ca907438b8716aeff14c86, type: 3}
+--- !u!114 &2397000346915278465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2870455277440769358, guid: 2be3c2c3d0ca907438b8716aeff14c86,
+    type: 3}
+  m_PrefabInstance: {fileID: 474633607405573071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2397000346919544278 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2870455277440710169, guid: 2be3c2c3d0ca907438b8716aeff14c86,
@@ -734,15 +777,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84ba54f2e19a50429be07343c6d90b8, type: 3}
---- !u!198 &478931272670072368 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6511829042798694, guid: b84ba54f2e19a50429be07343c6d90b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 482627386911518294}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &478931272670072375 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6511829042798689, guid: b84ba54f2e19a50429be07343c6d90b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 482627386911518294}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &478931272670072368 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6511829042798694, guid: b84ba54f2e19a50429be07343c6d90b8,
     type: 3}
   m_PrefabInstance: {fileID: 482627386911518294}
   m_PrefabAsset: {fileID: 0}
@@ -997,12 +1040,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2885830372127417296}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1460159802641591799 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4345693220579151399, guid: fd12750030232b648b5af8b5707f15c2,
-    type: 3}
-  m_PrefabInstance: {fileID: 2885830372127417296}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1373483684147737473 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4252276889795399761, guid: fd12750030232b648b5af8b5707f15c2,
@@ -1012,6 +1049,12 @@ GameObject:
 --- !u!1 &8306734868139956174 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6578620189282497566, guid: fd12750030232b648b5af8b5707f15c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2885830372127417296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1460159802641591799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4345693220579151399, guid: fd12750030232b648b5af8b5707f15c2,
     type: 3}
   m_PrefabInstance: {fileID: 2885830372127417296}
   m_PrefabAsset: {fileID: 0}
@@ -1402,6 +1445,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1078076027869982436, guid: 6eaae790297b27d4e94507557e1b66cb,
+        type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 2397000346915278465}
     - target: {fileID: 1438714412169234509, guid: 6eaae790297b27d4e94507557e1b66cb,
         type: 3}
       propertyPath: m_Name
