@@ -37,18 +37,15 @@ public class Balloon : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             if(PlayerPrefs.GetInt("Vibe") == 1)
-            Vibration.Vibrate(90);
+                Vibration.Vibrate(90);
 
             for (int i = 0; i < 4; i++)
                 particle[i].Play();
-           
+
             gameObject.GetComponent<SphereCollider>().enabled = false;
             gameObject.GetComponent<MeshRenderer>().enabled = false;
 
             ray.SetActive(true);
-        
-
-            
         }
     }
 

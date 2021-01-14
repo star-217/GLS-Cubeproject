@@ -490,7 +490,6 @@ namespace Es.InkPainter
 
         private void OnDestroy()
         {
-            Debug.Log("InkCanvas has been destroyed.");
             ReleaseRenderTexture();
         }
 
@@ -500,8 +499,10 @@ namespace Es.InkPainter
             {
                 if (debugEraserMainView != null)
                     GUI.DrawTexture(new Rect(0, 0, 100, 100), debugEraserMainView);
+
                 if (debugEraserNormalView != null)
                     GUI.DrawTexture(new Rect(0, 100, 100, 100), debugEraserNormalView);
+
                 if (debugEraserHeightView != null)
                     GUI.DrawTexture(new Rect(0, 200, 100, 100), debugEraserHeightView);
             }
@@ -522,8 +523,6 @@ namespace Es.InkPainter
                 meshOperator = new MeshOperator(meshFilter.sharedMesh);
             else if (skinnedMeshRenderer != null)
                 meshOperator = new MeshOperator(skinnedMeshRenderer.sharedMesh);
-            else
-                Debug.LogWarning("Sometimes if the MeshFilter or SkinnedMeshRenderer does not exist in the component part does not work correctly.");
         }
 
         /// <summary>
@@ -610,22 +609,16 @@ namespace Es.InkPainter
                 {
                     if (p.mainTexture != null)
                         p.paintMainTexture = SetupRenderTexture(p.mainTexture, p.mainTexturePropertyID, p.material);
-                    else
-                        Debug.LogWarning("To take advantage of the main texture paint must set main texture to materials.");
                 }
                 if (p.useNormalPaint)
                 {
                     if (p.normalTexture != null)
                         p.paintNormalTexture = SetupRenderTexture(p.normalTexture, p.normalTexturePropertyID, p.material);
-                    else
-                        Debug.LogWarning("To take advantage of the normal map paint must set normal map to materials.");
                 }
                 if (p.useHeightPaint)
                 {
                     if (p.heightTexture != null)
                         p.paintHeightTexture = SetupRenderTexture(p.heightTexture, p.heightTexturePropertyID, p.material);
-                    else
-                        Debug.LogWarning("To take advantage of the height map paint must set height map to materials.");
                 }
             }
         }
@@ -831,15 +824,19 @@ namespace Es.InkPainter
             {
                 if (debugEraserMainView == null && useMainPaint)
                     debugEraserMainView = new RenderTexture(b.BrushTexture.width, b.BrushTexture.height, 0);
+
                 if (debugEraserNormalView == null && useNormalPaint)
                     debugEraserNormalView = new RenderTexture(b.BrushNormalTexture.width, b.BrushNormalTexture.height, 0);
+
                 if (debugEraserHeightView == null && useHeightpaint)
                     debugEraserHeightView = new RenderTexture(b.BrushHeightTexture.width, b.BrushHeightTexture.height, 0);
 
                 if (useMainPaint)
                     Graphics.Blit(b.BrushTexture, debugEraserMainView);
+
                 if (useNormalPaint)
                     Graphics.Blit(b.BrushNormalTexture, debugEraserNormalView);
+
                 if (useHeightpaint)
                     Graphics.Blit(b.BrushHeightTexture, debugEraserHeightView);
             }
@@ -882,7 +879,6 @@ namespace Es.InkPainter
 
             if (brush == null)
             {
-                Debug.LogError("Do not set the brush.");
                 eraseFlag = false;
                 return false;
             }
@@ -978,7 +974,7 @@ namespace Es.InkPainter
                 return PaintUVDirect(brush, uv, materialSelector);
             else
             {
-                Debug.LogWarning("Could not get the point on the surface.");
+//                Debug.LogWarning("Could not get the point on the surface.");
                 return PaintNearestTriangleSurface(brush, worldPos, materialSelector, renderCamera);
             }
         }
@@ -996,7 +992,7 @@ namespace Es.InkPainter
             {
                 if (hitInfo.collider is MeshCollider)
                     return PaintUVDirect(brush, hitInfo.textureCoord, materialSelector);
-                Debug.LogWarning("If you want to paint using a RaycastHit, need set MeshCollider for object.");
+
                 return PaintNearestTriangleSurface(brush, hitInfo.point, materialSelector);
             }
             return false;
@@ -1103,7 +1099,6 @@ namespace Es.InkPainter
             var data = paintSet.FirstOrDefault(p => p.material.name.Replace(" (Instance)", "") == materialName);
             if (data == null)
             {
-                Debug.LogError("Failed to set texture.");
                 return;
             }
             data.paintMainTexture = newTexture;
@@ -1150,7 +1145,6 @@ namespace Es.InkPainter
             var data = paintSet.FirstOrDefault(p => p.material.name.Replace(" (Instance)", "") == materialName);
             if (data == null)
             {
-                Debug.LogError("Failed to set texture.");
                 return;
             }
             data.paintNormalTexture = newTexture;
@@ -1197,7 +1191,6 @@ namespace Es.InkPainter
             var data = paintSet.FirstOrDefault(p => p.material.name.Replace(" (Instance)", "") == materialName);
             if (data == null)
             {
-                Debug.LogError("Failed to set texture.");
                 return;
             }
             data.paintHeightTexture = newTexture;

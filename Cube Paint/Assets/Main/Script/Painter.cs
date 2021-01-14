@@ -89,6 +89,7 @@ namespace Es.InkPainter.Sample
 			//brush.Color = paintColor;
 
 			float addScale = this.addScale;
+
 			for (int i = 0; i < count; i++)
 			{
 				brush.RotateAngle = UnityEngine.Random.Range(0.0f, 360.0f);

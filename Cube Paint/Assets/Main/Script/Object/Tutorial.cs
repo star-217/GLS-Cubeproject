@@ -22,104 +22,80 @@ public class Tutorial : MonoBehaviour
     private Image arrow_image;
     Sequence sequence;
     Sequence arrow_sequence;
-
+    int bonus;
     // Start is called before the first frame update
     void Start()
     {
         finger_image = GetComponent<Image>();
         arrow_image = Arrow_obj.GetComponent<Image>();
         rect = GetComponent<RectTransform>();
-        if(Arrow_obj != null)
-        Arrow_rectTransform = Arrow_obj.GetComponent<RectTransform>();
+
+        if (Arrow_obj != null)
+            Arrow_rectTransform = Arrow_obj.GetComponent<RectTransform>();
+
         position = transform.position;
         image = GetComponent<Image>();
-        Sequence
+        
         sequence = DOTween.Sequence();
         arrow_sequence = DOTween.Sequence();
+
+        bonus = PlayerPrefs.GetInt("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(PlayerPrefs.GetInt("Player") == 1)
-        DrawTutorial();
-
+        if (bonus == 1)
+            DrawTutorial();
     }
 
     void DrawTutorial()
     {
-        //time += Time.deltaTime;
-        //stayTime += Time.deltaTime;
-        //var sequence = DOTween.Sequence();
+        if (animation_count == 0)
+        {
+            finger_image.enabled = true;
+            arrow_image.enabled = true;
+            sequence.Append(rect.DOLocalMoveY(-670.0f, 1.0f));
+            sequence.Join(Arrow_rectTransform.DOScale(new Vector3(1, 1, 1), 1.0f))
+                .OnComplete(() => {
+                    animation_count = 1;
+                });
+            return;
+        }
 
-        //if (time > 1.0f)
-        //{
-        //    if (!flag)
-        //    {
-        //        sequence.Append(Arrow_rectTransform.DOScale(new Vector3(1, 1, 1), 1.0f));
-        //        flag = true;
-        //    }
+        if(animation_count == 1)
+        {
+            sequence.Append(rect.DOLocalMoveX(-100.0f, 1.0f));
+            sequence.Join(Arrow_rectTransform.DORotate(new Vector3(0.0f, 0.0f, 70.0f), 1.0f))
+                .OnComplete(() => {
+                    animation_count = 2;
+                });
+            return;
+        }
 
-        //    image.enabled = true;
-        //    sequence.Join(rect.DOLocalMoveY(-670.0f, 1.0f)).OnComplete(() =>
-        //    {
-        //        sequence.Append(Arrow_rectTransform.DOScale(new Vector3(0, 1, 1), 0.001f));
-        //        image.enabled = false;
-        //        transform.position = position;
-        //        time = 0;
-        //        flag = false;
-        //    })/*.SetDelay(0.5f)*/;
-        //}
+        if (animation_count == 2)
+        {
+            sequence.Append(rect.DOLocalMoveX(100.0f, 1.0f));
+            sequence.Join(Arrow_rectTransform.DORotate(new Vector3(0.0f, 0.0f, 110.0f), 1.0f))
+                 .OnComplete(() => {
+                     animation_count = 3;
+                 });
+            return;
+        }
 
-        //time += Time.deltaTime;
-         sequence = DOTween.Sequence();
-         arrow_sequence = DOTween.Sequence();
-
-        //if (time > 1.0f)
-        //{
-            if (animation_count == 0)
-            {
-                finger_image.enabled = true;
-                arrow_image.enabled = true;
-                sequence.Append(rect.DOLocalMoveY(-670.0f, 1.0f));
-                sequence.Join(Arrow_rectTransform.DOScale(new Vector3(1, 1, 1), 1.0f))
-                    .OnComplete(() => {
-                        animation_count = 1;
-                    });
-            }
-
-            if(animation_count == 1)
-            {
-                sequence.Append(rect.DOLocalMoveX(-100.0f, 1.0f));
-                sequence.Join(Arrow_rectTransform.DORotate(new Vector3(0.0f, 0.0f, 70.0f), 1.0f))
-                    .OnComplete(() => {
-                        animation_count = 2;
-                    });
-            }
-
-            if(animation_count == 2)
-            {
-                sequence.Append(rect.DOLocalMoveX(100.0f, 1.0f));
-                sequence.Join(Arrow_rectTransform.DORotate(new Vector3(0.0f, 0.0f, 110.0f), 1.0f))
-                     .OnComplete(() => {
-                         animation_count = 3;
-                     });
-            }
-
-            if(animation_count == 3)
-            {
-                finger_image.enabled = false;
-                arrow_image.enabled = false;
-                sequence.Append(rect.DOLocalMoveY(-500.0f, 1.0f));
-                sequence.Join(rect.DOLocalMoveX(0.0f, 1.0f));
-                sequence.Join(Arrow_rectTransform.DORotate(new Vector3(0.0f, 0.0f, 90.0f), 1.0f));
-                sequence.Join(Arrow_rectTransform.DOScale(new Vector3(0, 1, 1), 1.0f))
-                     .OnComplete(() => {
-                         animation_count = 0;
-                         //time = 0.0f;
-                     });
-            }
-        //}
+        if(animation_count == 3)
+        {
+            finger_image.enabled = false;
+            arrow_image.enabled = false;
+            sequence.Append(rect.DOLocalMoveY(-500.0f, 1.0f));
+            sequence.Join(rect.DOLocalMoveX(0.0f, 1.0f));
+            sequence.Join(Arrow_rectTransform.DORotate(new Vector3(0.0f, 0.0f, 90.0f), 1.0f));
+            sequence.Join(Arrow_rectTransform.DOScale(new Vector3(0, 1, 1), 1.0f))
+                 .OnComplete(() => {
+                     animation_count = 0;
+                 });
+            return;
+        }
     }
 
     private void OnEnable()
