@@ -429,6 +429,7 @@ MonoBehaviour:
   intervalSecond: 0.1
   addScale: 0.02
   attenuation: 0.85
+  canvas: {fileID: 0}
 --- !u!114 &3348017399857761102
 MonoBehaviour:
   m_ObjectHideFlags: 0

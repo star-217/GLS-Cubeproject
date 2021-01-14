@@ -919,6 +919,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1489967000008307184}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1846125925046696452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 951293787206880244, guid: 2b2a83d121a92cf42b399e2ae4248037,
+    type: 3}
+  m_PrefabInstance: {fileID: 1489967000008307184}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846125925046696453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04cc1b9412eea6e4a8798f4b2f88b4ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1846125925046696453 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 951293787206880245, guid: 2b2a83d121a92cf42b399e2ae4248037,
@@ -1181,6 +1193,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3209496027744330908, guid: 898c0b64afe23a848ace49c4836486e5,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1846125925046696452}
     - target: {fileID: 3348017399857761102, guid: 898c0b64afe23a848ace49c4836486e5,
         type: 3}
       propertyPath: particleController
