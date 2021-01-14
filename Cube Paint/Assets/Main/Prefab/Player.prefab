@@ -407,15 +407,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3128935329725473750}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06b6877c0db0e6a49a29985b1c9911fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   brush:
     brushTexture: {fileID: 2800000, guid: 4b6e2f4c248baf34fa63bdaffbfcc08f, type: 3}
-    brushNormalTexture: {fileID: 2800000, guid: 945b831b22eb06945bf77e00f16ff51a,
-      type: 3}
+    brushNormalTexture: {fileID: 0}
     brushHeightTexture: {fileID: 0}
     brushScale: 0.04
     rotateAngle: 0
@@ -446,4 +445,4 @@ MonoBehaviour:
     type: 3}
   particle:
   - {fileID: 2892835273324444684, guid: 063237ef20587da418efa0dfce876fd0, type: 3}
-  ray: {fileID: 8669986733552838771, guid: da4459fdc0164f241869aeb6d0182e8c, type: 3}
+  particleController: {fileID: 0}

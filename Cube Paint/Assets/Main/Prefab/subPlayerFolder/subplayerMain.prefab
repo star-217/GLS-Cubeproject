@@ -206,8 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brush:
     brushTexture: {fileID: 2800000, guid: 4b6e2f4c248baf34fa63bdaffbfcc08f, type: 3}
-    brushNormalTexture: {fileID: 2800000, guid: 945b831b22eb06945bf77e00f16ff51a,
-      type: 3}
+    brushNormalTexture: {fileID: 0}
     brushHeightTexture: {fileID: 0}
     brushScale: 0.01
     rotateAngle: 0

@@ -40,15 +40,15 @@ public class PlayerController : MonoBehaviour
 
     //[Header("タップしてもいい回数")]
     //[SerializeField] public int tapCount = 0;
-   
-   // public ParticleSystem balloonparticle;
+
+    // public ParticleSystem balloonparticle;
 
     public float Dir
     {
         get { return dir; }
     }
 
-    public float Clear_Score 
+    public float Clear_Score
     {
         get { return clear_score; }
     }
@@ -60,8 +60,8 @@ public class PlayerController : MonoBehaviour
     //float time = 0;
     float speed = 0;
     [SerializeField] private float speed_up = 1;
-   
-   
+
+
 
     InkCanvas inkCanvas;
     GameObject floor;
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
     bool particle_flag = false;
 
 
-    [SerializeField] private  GameObject next;
+    [SerializeField] private GameObject next;
     [SerializeField] private ParticleSystem particle_clear;
 
     [SerializeField] GameObject Gameover;
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
     float trail_balance;
     TrailRenderer trailRenderer;
 
-    [SerializeField]GameObject ClearEffect;
+    [SerializeField] GameObject ClearEffect;
     float time;
 
     //プレイヤーのスピードを増やす変数（12/10）
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
         floor = GameObject.FindGameObjectWithTag("Floor");
         inkCanvas = floor.GetComponent<InkCanvas>();
         defaultscale = gameObject.transform.localScale;
-       // collisionPainter = GetComponent<CollisionPainter>();
+        // collisionPainter = GetComponent<CollisionPainter>();
         player_color = GetComponent<MeshRenderer>().material.GetColor("_Color");
         defaultposition = gameObject.transform.position;
         //ext = Saveprefab.next;
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
         fingerUp_switch = false;
     }
 
-   
+
 
 
     // Update is called once per frame
@@ -167,7 +167,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(failedFlag  == true)
+        if (failedFlag == true)
         {
             rb.velocity = Vector3.zero;
             mouseDirection = Vector3.zero;
@@ -183,7 +183,8 @@ public class PlayerController : MonoBehaviour
                 finger_obj.SetActive(true);
                 arrow_obj.SetActive(true);
             }
-        }else if(inkCanvas.Per >= 100)
+        }
+        else if (inkCanvas.Per >= 100)
         {
             finger_obj.SetActive(false);
             arrow_obj.SetActive(false);
@@ -201,7 +202,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                
+
                 rb.velocity = Vector3.zero;
 
                 this.screenPoint = Input.mousePosition;
@@ -252,7 +253,7 @@ public class PlayerController : MonoBehaviour
                 {
                     rb.AddForce(-mouseDirection.x * minimum_speed, 0, -mouseDirection.z * minimum_speed);
                 }
-                else if(dir > 100.0f)
+                else if (dir > 100.0f)
                 {
                     rb.AddForce(-mouseDirection.x * max_speed, 0, -mouseDirection.z * max_speed);
                 }
@@ -265,16 +266,16 @@ public class PlayerController : MonoBehaviour
 
             }
 
-                if(rb.velocity.magnitude <= 2.0f)
-                    rb.velocity = Vector3.zero;
+            if (rb.velocity.magnitude <= 2.0f)
+                rb.velocity = Vector3.zero;
         }
         else
         {
             rb.velocity = Vector3.zero;
-        
+
             clearFlag = true;
-            
-           
+
+
             // Roller.SetActive(true);
         }
     }
@@ -301,16 +302,16 @@ public class PlayerController : MonoBehaviour
     void PlayerScaleController(float ink_ratio)
     {
         //position.y = (ボールの初期Scale.y / 2) * 現在のボールのscale.y
-       
+
 
         if (ink_ratio > 0.5f)
         {
             gameObject.transform.localScale = defaultscale;
-            
+
         }
         else if (ink_ratio < 0.5f)
         {
-           
+
             if (ink_ratio < 0.3f)
             {
                 if (ink_ratio < 0.1f)
@@ -326,7 +327,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     gameObject.transform.localScale = defaultscale * (ink_ratio + 0.2f);
-                   
+
                     high = (defaultscale.y / 2.0f) * gameObject.transform.localScale.y;
                     Vector3 pos;
                     pos.y = high;
@@ -338,7 +339,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-        else
+            else
             {
                 gameObject.transform.localScale = defaultscale * 0.7f;
                 high = (defaultscale.y / 2.0f) * gameObject.transform.localScale.y;/*defaultscale * 0.35f;*/
@@ -366,7 +367,7 @@ public class PlayerController : MonoBehaviour
         if (ration_change2 != ration_change3)
         {
             Vector3 pos;
-            pos.y =  high;
+            pos.y = high;
             pos.x = gameObject.transform.position.x;
             pos.z = gameObject.transform.position.z;
 
@@ -396,7 +397,7 @@ public class PlayerController : MonoBehaviour
         //        balloonparticle.Play();
 
         //}
-       
+
     }
 
 
