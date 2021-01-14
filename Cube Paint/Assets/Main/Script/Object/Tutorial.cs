@@ -51,6 +51,9 @@ public class Tutorial : MonoBehaviour
 
     void DrawTutorial()
     {
+        sequence = DOTween.Sequence();
+        arrow_sequence = DOTween.Sequence();
+
         if (animation_count == 0)
         {
             finger_image.enabled = true;
@@ -60,6 +63,7 @@ public class Tutorial : MonoBehaviour
                 .OnComplete(() => {
                     animation_count = 1;
                 });
+
             return;
         }
 
@@ -70,6 +74,7 @@ public class Tutorial : MonoBehaviour
                 .OnComplete(() => {
                     animation_count = 2;
                 });
+
             return;
         }
 
@@ -80,6 +85,7 @@ public class Tutorial : MonoBehaviour
                  .OnComplete(() => {
                      animation_count = 3;
                  });
+
             return;
         }
 
@@ -94,6 +100,7 @@ public class Tutorial : MonoBehaviour
                  .OnComplete(() => {
                      animation_count = 0;
                  });
+
             return;
         }
     }
