@@ -34,7 +34,8 @@ public class PlayerEffectScript : MonoBehaviour
         else
             color = GetComponent<PlayerPainter>().GetColor;
 
-        particleController.ParticleColor(0, color);
+        if (gameObject.name == "Player")
+            particleController.ParticleColor(0, color);
     }
 
     // Update is called once per frame

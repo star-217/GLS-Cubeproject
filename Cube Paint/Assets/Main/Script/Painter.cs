@@ -60,6 +60,7 @@ namespace Es.InkPainter.Sample
 		{
 			if(waitCount < wait)
 				return;
+
 			waitCount = 0;
 			var dir = rigidbody.velocity.normalized * -1;
 			foreach (var p in collision.contacts)
@@ -70,8 +71,9 @@ namespace Es.InkPainter.Sample
 					canvas.Paint(brush,p.point);
 
 				StartCoroutine(HogePaint(canvas, p.point));
+
 				if(rigidbody.velocity.magnitude > 20.0f)
-				Instantiate(effect[effectNumber], p.point + dir * 0.1f, Quaternion.identity);
+					Instantiate(effect[effectNumber], p.point + dir * 0.1f, Quaternion.identity);
 
 			}
 		}

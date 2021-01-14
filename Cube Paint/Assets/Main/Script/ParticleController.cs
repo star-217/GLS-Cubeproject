@@ -34,7 +34,6 @@ public class ParticleController : MonoBehaviour
     [System.Obsolete]
     public void ParticleColor(int particleNum, Color color)
     {
-        CreatePool(particleNum, 1);
         var newColor = new ParticleSystem.MinMaxGradient();
         newColor.mode = ParticleSystemGradientMode.Color;
         newColor.color = color;
@@ -46,7 +45,7 @@ public class ParticleController : MonoBehaviour
     {
         for (int i = 0; i < maxCount; ++i)
         {
-            var newObj = CreateNewObject(num);
+            var newObj = GetObject(num);
             newObj.SetActive(false);
             poolObjList.Add(newObj);
         }
@@ -63,6 +62,7 @@ public class ParticleController : MonoBehaviour
             if (obj.activeSelf == false)
             {
                 obj.SetActive(true);
+                objNum++;
                 return obj;
             }
             objNum++;
