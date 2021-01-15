@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2
   m_IsActive: 1
 --- !u!4 &2211134651776069120
 Transform:
@@ -148,6 +148,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: explosion_line1_v.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7474006352595000963, guid: eab9b93498789854487e6d8283485bba,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7474006352595000966, guid: eab9b93498789854487e6d8283485bba,
         type: 3}
@@ -279,6 +284,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7790028679350225074, guid: dc500d9efbd78b748b32401dba1c8cc9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc500d9efbd78b748b32401dba1c8cc9, type: 3}
 --- !u!1 &9038635781906028084 stripped
@@ -340,6 +350,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: explosion_ink_v.2
       objectReference: {fileID: 0}
+    - target: {fileID: 555790461004724666, guid: 2ed8d9cf2933b9948b931ed81247a5c4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ed8d9cf2933b9948b931ed81247a5c4, type: 3}
 --- !u!4 &3446984797568727954 stripped
@@ -359,6 +374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: explosion_ink_2_v.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082547448082213003, guid: be3b97850b60ce7449b86dd8b342dd67,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9082547448082213046, guid: be3b97850b60ce7449b86dd8b342dd67,
         type: 3}
@@ -414,6 +434,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: explosion_hitmark_v.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582892035965624073, guid: 1ba61dac10173854b819918bd2985312,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8582892035965624074, guid: 1ba61dac10173854b819918bd2985312,
         type: 3}
