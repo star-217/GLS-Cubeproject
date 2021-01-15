@@ -6,20 +6,14 @@ using Es.InkPainter.Sample;
 
 public class PlayerEffectScript : MonoBehaviour
 {
-    //[SerializeField] private int particleNum;
-    private SetMaterial setMaterial;
-    [SerializeField] private GameObject subPlayer;
-    private int particleNumber;
+//    [SerializeField] private GameObject subPlayer;
     public ParticleSystem[] particle;
-    //public GameObject ray;
-    private GameObject ray_color;
-    Color color;
+    private Color color;
 
     [SerializeField] private ParticleController particleController = null;
 
     private Dictionary<string, Quaternion> particleDirection = new Dictionary<string, Quaternion>();
 
-    // Start is called before the first frame update
     [System.Obsolete]
     void Start()
     {
@@ -36,12 +30,6 @@ public class PlayerEffectScript : MonoBehaviour
 
         if (gameObject.name == "Player")
             particleController.ParticleColor(0, color);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     [System.Obsolete]
