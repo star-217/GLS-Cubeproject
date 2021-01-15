@@ -1022,6 +1022,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoveCubemdl
       objectReference: {fileID: 0}
+    - target: {fileID: 978361625084679788, guid: 0842965c903b43643a53f218b1fca791,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 1011346316160333550, guid: 0842965c903b43643a53f218b1fca791,
         type: 3}
       propertyPath: m_LocalRotation.x
