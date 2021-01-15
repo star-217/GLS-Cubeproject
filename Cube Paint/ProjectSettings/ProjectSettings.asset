@@ -170,7 +170,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: gls.gls0403
   buildNumber: {}
-  AndroidBundleVersionCode: 30
+  AndroidBundleVersionCode: 32
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 29
   AndroidPreferredInstallLocation: 1
