@@ -69,6 +69,27 @@ public class SwitchMaterialColor : MonoBehaviour
 
             count++;
         }
+
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Wall");
+
+        foreach (var obj in objects)
+        {
+            if (obj.GetComponent<MeshRenderer>())
+                obj.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[(int)texture]);
+
+
+        }
+
+
+        GameObject[] objects1 = GameObject.FindGameObjectsWithTag("Block");
+
+        foreach (var obj in objects1)
+        {
+            if (obj.GetComponent<MeshRenderer>())
+                obj.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[(int)texture]);
+
+
+        }
     }
 
     // Update is called once per frame
@@ -76,4 +97,6 @@ public class SwitchMaterialColor : MonoBehaviour
     {
         
     }
+
+
 }
