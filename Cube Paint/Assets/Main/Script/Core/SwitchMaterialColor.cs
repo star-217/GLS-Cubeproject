@@ -20,6 +20,7 @@ public class SwitchMaterialColor : MonoBehaviour
     public Image image;
     public TextureColor texture;
     public GameObject[] wall;
+    int save;
 
     void Start()
     {
@@ -66,7 +67,7 @@ public class SwitchMaterialColor : MonoBehaviour
                     image.sprite = bg[2];
                 }
             }
-
+            save = count;
             count++;
         }
 
@@ -74,10 +75,16 @@ public class SwitchMaterialColor : MonoBehaviour
 
         foreach (var obj in objects)
         {
-            if (obj.GetComponent<MeshRenderer>())
+            if (PlayerPrefs.GetInt("StageCount") < 11)
+            {
+                if (obj.GetComponent<MeshRenderer>())
                 obj.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[(int)texture]);
-
-
+            }
+            else
+            {
+                if (obj.GetComponent<MeshRenderer>())
+                    obj.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[save % 3]);
+            }
         }
 
 
@@ -85,10 +92,16 @@ public class SwitchMaterialColor : MonoBehaviour
 
         foreach (var obj in objects1)
         {
-            if (obj.GetComponent<MeshRenderer>())
+            if (PlayerPrefs.GetInt("StageCount") < 11)
+            {
+                if (obj.GetComponent<MeshRenderer>())
                 obj.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[(int)texture]);
-
-
+            }
+            else
+            {
+                if (obj.GetComponent<MeshRenderer>())
+                    obj.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[save % 3]);
+            }
         }
     }
 
