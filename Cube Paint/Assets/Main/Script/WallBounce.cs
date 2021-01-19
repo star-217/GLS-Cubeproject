@@ -24,14 +24,13 @@ public class WallBounce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-
-        if(time > 0.5f)
-        {
-            time = 0;
-            ray.SetActive(false);
-
-        }
+        //time += Time.deltaTime;
+        //
+        //if(time > 0.5f)
+        //{
+        //    time = 0;
+        //
+        //}
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -119,6 +118,8 @@ public class WallBounce : MonoBehaviour
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
             rigidbody.AddForce(Vector3.back * impact, ForceMode.Impulse);
+            ray.SetActive(false);
+
             return;
         }
         if (collision.gameObject.CompareTag("DownWall"))
@@ -126,6 +127,8 @@ public class WallBounce : MonoBehaviour
             // velocity = rigidbody.velocity * speed;
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
+            ray.SetActive(false);
+
             rigidbody.AddForce(Vector3.forward * impact, ForceMode.Impulse);
             return;
         }
@@ -135,6 +138,8 @@ public class WallBounce : MonoBehaviour
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
             rigidbody.AddForce(Vector3.right * impact, ForceMode.Impulse);
+            ray.SetActive(false);
+
             return;
         }
         if (collision.gameObject.CompareTag("RightWall"))
@@ -143,6 +148,8 @@ public class WallBounce : MonoBehaviour
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power,ForceMode.Acceleration);
             rigidbody.AddForce(Vector3.left * impact, ForceMode.Impulse);
+            ray.SetActive(false);
+
             return;
         }
     }
