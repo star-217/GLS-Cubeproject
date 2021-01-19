@@ -10,6 +10,9 @@ public class WallBounce : MonoBehaviour
     public float power;
     [SerializeField] private float impact = 3.0f;
     stop stopSc;
+    float time;
+
+    [SerializeField] private GameObject ray; //壁にぶつかった時に床を塗るためのRayを入れる
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +24,14 @@ public class WallBounce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        time += Time.deltaTime;
+
+        if(time > 0.5f)
+        {
+            time = 0;
+            ray.SetActive(false);
+
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -32,6 +42,7 @@ public class WallBounce : MonoBehaviour
             velocity   *= speed;
             velocity.z *= -1.0f;
             stopSc.time = 0;
+            ray.SetActive(true);
             return;
         }
         if (collision.gameObject.CompareTag("DownWall"))
@@ -40,6 +51,7 @@ public class WallBounce : MonoBehaviour
             velocity *= speed;
             velocity.z *= -1.0f;
             stopSc.time = 0;
+            ray.SetActive(true);
             return;
         }
         if (collision.gameObject.CompareTag("LeftWall"))
@@ -48,6 +60,7 @@ public class WallBounce : MonoBehaviour
             velocity *= speed;
             velocity.x *= -1.0f;
             stopSc.time = 0;
+            ray.SetActive(true);
             return;
         }
         if (collision.gameObject.CompareTag("RightWall"))
@@ -56,6 +69,7 @@ public class WallBounce : MonoBehaviour
             velocity *= speed;
             velocity.x *= -1.0f;
             stopSc.time = 0;
+            ray.SetActive(true);
             return;
         }
     }

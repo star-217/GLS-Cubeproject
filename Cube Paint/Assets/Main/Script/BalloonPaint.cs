@@ -7,6 +7,7 @@ public class BalloonPaint : MonoBehaviour
 {
     [SerializeField] private Brush brush;
     int mask = 1 << 10;
+    float time;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class BalloonPaint : MonoBehaviour
             var canvas = hit.collider.gameObject.GetComponent<InkCanvas>();
             canvas.Paint(brush, hit);
         }
+
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class BalloonPaint : MonoBehaviour
     {
 
     
+
         
     }
 }
