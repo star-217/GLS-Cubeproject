@@ -55,16 +55,19 @@ public class SwitchMaterialColor : MonoBehaviour
                 {
                     wall[i].GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[0]);
                     image.sprite = bg[0];
+                    texture = TextureColor.Green;
                 }
                 if (count % 3 == 1)
                 {
                     wall[i].GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[1]);
                     image.sprite = bg[1];
+                    texture = TextureColor.Blue;
                 }
                 if (count % 3 == 2)
                 {
                     wall[i].GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[2]);
                     image.sprite = bg[2];
+                    texture = TextureColor.Pink;
                 }
             }
             save = count;
@@ -75,16 +78,10 @@ public class SwitchMaterialColor : MonoBehaviour
 
         foreach (var obj in objects)
         {
-            if (PlayerPrefs.GetInt("StageCount") < 11)
-            {
                 if (obj.GetComponent<MeshRenderer>())
                 obj.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[(int)texture]);
-            }
-            else
-            {
-                if (obj.GetComponent<MeshRenderer>())
-                    obj.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[save % 3]);
-            }
+
+            
         }
 
 
@@ -92,16 +89,10 @@ public class SwitchMaterialColor : MonoBehaviour
 
         foreach (var obj in objects1)
         {
-            if (PlayerPrefs.GetInt("StageCount") < 11)
-            {
+           
                 if (obj.GetComponent<MeshRenderer>())
                 obj.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[(int)texture]);
-            }
-            else
-            {
-                if (obj.GetComponent<MeshRenderer>())
-                    obj.GetComponent<MeshRenderer>().material.SetTexture("_MainTex", sprite[save % 3]);
-            }
+            
         }
     }
 
