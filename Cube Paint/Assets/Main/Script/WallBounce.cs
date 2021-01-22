@@ -12,7 +12,6 @@ public class WallBounce : MonoBehaviour
     stop stopSc;
     float time;
 
-    [SerializeField] private GameObject ray; //壁にぶつかった時に床を塗るためのRayを入れる
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +40,6 @@ public class WallBounce : MonoBehaviour
             velocity   *= speed;
             velocity.z *= -1.0f;
             stopSc.time = 0;
-            ray.SetActive(true);
             return;
         }
         if (collision.gameObject.CompareTag("DownWall"))
@@ -50,7 +48,6 @@ public class WallBounce : MonoBehaviour
             velocity *= speed;
             velocity.z *= -1.0f;
             stopSc.time = 0;
-            ray.SetActive(true);
             return;
         }
         if (collision.gameObject.CompareTag("LeftWall"))
@@ -59,7 +56,6 @@ public class WallBounce : MonoBehaviour
             velocity *= speed;
             velocity.x *= -1.0f;
             stopSc.time = 0;
-            ray.SetActive(true);
             return;
         }
         if (collision.gameObject.CompareTag("RightWall"))
@@ -68,7 +64,6 @@ public class WallBounce : MonoBehaviour
             velocity *= speed;
             velocity.x *= -1.0f;
             stopSc.time = 0;
-            ray.SetActive(true);
             return;
         }
     }
@@ -118,7 +113,6 @@ public class WallBounce : MonoBehaviour
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
             rigidbody.AddForce(Vector3.back * impact, ForceMode.Impulse);
-            ray.SetActive(false);
 
             return;
         }
@@ -127,8 +121,6 @@ public class WallBounce : MonoBehaviour
             // velocity = rigidbody.velocity * speed;
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
-            ray.SetActive(false);
-
             rigidbody.AddForce(Vector3.forward * impact, ForceMode.Impulse);
             return;
         }
@@ -138,7 +130,6 @@ public class WallBounce : MonoBehaviour
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power, ForceMode.Acceleration);
             rigidbody.AddForce(Vector3.right * impact, ForceMode.Impulse);
-            ray.SetActive(false);
 
             return;
         }
@@ -148,7 +139,6 @@ public class WallBounce : MonoBehaviour
             // rigidbody.velocity = velocity;
             rigidbody.AddForce(rigidbody.velocity.normalized * power,ForceMode.Acceleration);
             rigidbody.AddForce(Vector3.left * impact, ForceMode.Impulse);
-            ray.SetActive(false);
 
             return;
         }

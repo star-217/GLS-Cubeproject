@@ -9,6 +9,8 @@ public class PlayerEffectScript : MonoBehaviour
 //    [SerializeField] private GameObject subPlayer;
     public ParticleSystem[] particle;
     private Color color;
+    public GameObject ray;
+    private GameObject ray_color;
 
     [SerializeField] private ParticleController particleController = null;
 
@@ -41,6 +43,9 @@ public class PlayerEffectScript : MonoBehaviour
         foreach (var p in collision.contacts)
         {
             particleController.ParticlePlay(0, p.point, particleDirection[collision.gameObject.tag]);
+            ray_color = Instantiate(ray, p.point + new Vector3(0, 1.5f, 0), Quaternion.identity);
+            var s = ray_color.GetComponent<WallPaint>();
+            s.brush.Color = color;
         }
     }
 }

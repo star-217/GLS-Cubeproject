@@ -397,7 +397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1287377316
 Transform:
   m_ObjectHideFlags: 0
@@ -709,11 +709,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 551919452761042476, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: particleController
-      value: 
-      objectReference: {fileID: 1894622507}
     - target: {fileID: 1615210287800713412, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -849,17 +844,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5102849909387993957, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5102849909557533567, guid: ed386ba92b397d14893cf375eb96237f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5102849909791026624, guid: ed386ba92b397d14893cf375eb96237f,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -926,15 +911,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed386ba92b397d14893cf375eb96237f, type: 3}
---- !u!114 &1894622507 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3705030883785522022, guid: ed386ba92b397d14893cf375eb96237f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1894622506}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b4219174b905df43a9f65c5d6edff46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
