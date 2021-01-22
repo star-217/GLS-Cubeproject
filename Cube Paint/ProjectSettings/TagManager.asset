@@ -28,6 +28,7 @@ TagManager:
   - notdoublePaintTag
   - MainPlayer
   - ParticleCont
+  - GetDiamondTag
   layers:
   - Default
   - TransparentFX
